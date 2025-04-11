@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
 :root {
-  --background: #ffffff;
+  --background: #EDECE9;
   --foreground: #171717;
 }
 
@@ -35,8 +37,259 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/*Global CSS */
+.w-full {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.w-fixed {
+  width: 100%;
+  max-width: 1360px;
+  margin: 15px auto;
+
+}
+
+.row {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.ml-30 {
+  margin-left: 30%;
+}
+
+.ml-10 {
+  margin-left: 10%;
+}
+
+.ml-5 {
+  margin-left: 5%;
+}
+
+.pt-1 {
+  padding-top: 40px;
+
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+}
+
+button {
+  background-color: transparent;
+  padding: 10px 20px;
+  width: 200px;
+  cursor: pointer;
+}
+
+/*Global CSS*/
+/*Header CSS*/
+.menu {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.header_text {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.menu li:first-child {
+  list-style-type: disc;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+/*Header CSS*/
+
+/*Hero CSS*/
+.hero-wrapper {
+  background: url(/hero.png) no-repeat;
+  background-size: 100% 100%;
+  height: 540px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+}
+
+.hero-text {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 100%;
+  color: #fff;
+  width: 400px;
+}
+
+.hero-button {
+  border: 1px solid #fff;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+/*Hero CSS*/
+
+/*Bio CSS*/
+.bio-wrapper, .bio-text-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.bio-text {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  width: 455px;
+  color: #363636;
+  margin-right: 12%;
+}
+
+.bio-name {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+
+}
+
+.bio-position {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 100%;
+  padding-bottom: 30px;
+}
+
+/*Bio CSS*/
+/*Company CSS*/
+.company-wrapper {
+  display: flex;
+}
+
+.company-text {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  color: #363636;
+  padding-top: 10px;
+  padding-right: 50px;
+
+}
+
+/*Company CSS*/
+/*Portfolio CSS*/
+.portfolio-full-bg {
+
+  background-color: #E3E1D9;
+  padding: 80px 0;
+}
+
+.portfolio-list-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.portfolio-list-wrapper div {
+  width: 25%;
+  margin-right: 10px;
+  border-right: 0.5px solid #000000;
+}
+
+.portfolio-list-wrapper div:last-child {
+  border-right: none;
+}
+
+.portfolio-items {
+  list-style: none;
+}
+
+.portfolio-items li {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: #575855;
+
+}
+
+.list-circle {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  padding-bottom: 25px;
+
+}
+
+/*Portfolio CSS*/
+/*Footer CSS*/
+.footer_wrapper {
+  background: url(/test.png) no-repeat;
+  background-size: 100% 100%;
+  height: 486px;
+}
+
+@media (max-width: 768px) {
+  .hero-wrapper {
+    background-position: center;
+    height: 400px;
+    /* Add or override other styles here */
+  }
+
+  .bio-text-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .company-wrapper {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .bio-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+
+  .bio-basic {
+    display: flex;
+    padding-top: 40px;
   }
 }
