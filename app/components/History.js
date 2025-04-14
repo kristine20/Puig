@@ -57,10 +57,9 @@ function History() {
     setAnimationKey((prev) => prev + 1);
   };
   return (
-    <section className="w-fixed">
-      {" "}
+    <section className="w-fixed">     
+      <div className="row"> 
       <h2>История PUIG ― </h2>
-      <div>
         <button
           onClick={handlePrev}
           disabled={index === 0}

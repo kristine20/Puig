@@ -241,9 +241,7 @@ function Slider() {
                   </motion.p>
                 </>
               )}
-            </AnimatePresence>
-
-            <AnimatePresence mode="wait">
+        
               {activeIndex === i && (
                 <motion.div
                   key="media"

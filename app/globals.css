@@ -203,7 +203,8 @@ button {
 }
 
 .company-text-wrapper {
-  width: 40%;
+  width: 35%;
+  margin-left: 15px;
 }
 
 .company-text {
@@ -238,7 +239,7 @@ button {
 .slider-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  /*gap: 10px;*/
   justify-content: center;
   margin: 70px 0;
 }
@@ -252,16 +253,19 @@ button {
 }
 
 .slider-item {
-  width: 360px;
+  width: 760px;
   height: 205px;
   /* background-color: #f2f2f2; */
   display: flex;
   justify-content: center;
-  gap: 10px;
+ /* gap: 10px;*/
   align-items: center;
   border-radius: 8px;
   /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
   perspective: 1000px;
+}
+.slide-media{
+  width: 330px;
 }
 
 .slide-text {
@@ -271,6 +275,7 @@ button {
   line-height: 100%;
   color: #575855;
   width: 75px;
+  cursor: pointer;
 }
 
 .slide-circle {
@@ -283,6 +288,7 @@ button {
   position: relative;
   width: 54px;
   height: 54px;
+  cursor: pointer;
 }
 
 .circle-svg {
@@ -346,7 +352,7 @@ button {
   display: flex;
   justify-content: center;
   gap: 10px;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 8px;
   /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
   perspective: 1000px;
