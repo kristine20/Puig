@@ -1,0 +1,125 @@
+"use client";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import arrow from "../assets/images/arrow.png";
+import Image from "next/image";
+const items = [
+  {
+    year: 1914,
+    content: "Антонио Пуч Кастелло открывает компанию Antonio Puig S.A.",
+  },
+  {
+    year: 1922,
+    content: "В продажу поступает Milady, первая испанская губная помада.",
+  },
+  {
+    year: 1940,
+    content:
+      "Запуск аромата Agua Lavanda Puig становится символом успеха компании ",
+  },
+  {
+    year: 1946,
+    content:
+      "Строительство новой фабрики и здания головного офиса компании в Барселоне на улице Travessera de Gràcia.",
+  },
+  {
+    year: 1948,
+    content:
+      "Запуск аромата L'Air du Temps, ставший образцом для индустрии. Через 50 ет дом Nina Ricci войдет в состав компании Puig.",
+  },
+  {
+    year: 1950,
+    content:
+      "Сыновья основателя (Антонио, Мариано, Жозе Мария и Энрике) присоединяются к семейному бизнесу. ",
+  },
+  { year: 2021, content: "Pivoted to remote work" },
+  { year: 2022, content: "Redesigned our product" },
+  { year: 2023, content: "Hit record growth" },
+  { year: 2024, content: "Launched new platform" },
+];
+
+function History() {
+  const [index, setIndex] = useState(0);
+  const visibleCount = 6;
+
+  const handlePrev = () => {
+    setIndex((prev) => Math.max(prev - 1, 0));
+  };
+
+  const handleNext = () => {
+    setIndex((prev) => Math.min(prev + 1, items.length - visibleCount));
+  };
+
+  const visibleItems = items.slice(index, index + visibleCount);
+  const [animationKey, setAnimationKey] = useState(0);
+
+  const restartAnimation = () => {
+    setAnimationKey((prev) => prev + 1);
+  };
+  return (
+    <section className="w-fixed">
+      {" "}
+      <h2>История PUIG ― </h2>
+      <div>
+        <button
+          onClick={handlePrev}
+          disabled={index === 0}
+          className="history-button"
+        >
+          <Image src={arrow} alt="arrow" style={{ rotate: "180deg" }} />
+        </button>
+        <button
+          onClick={handleNext}
+          disabled={index >= items.length - visibleCount}
+          className="history-button"
+        >
+          <Image src={arrow} alt="arrow" />
+        </button>
+        <motion.div className="history-slider-wrapper" layout>
+          {visibleItems.map((item, i) => (
+            <motion.div key={i} className="history-slider-item" layout>
+              <div key={item.year}>
+                <motion.div
+                  className="slide-circle cursor-pointer"
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={() => toggleMedia(i)}
+                >
+                  <div
+                    className="circle-wrapper"
+                    onMouseEnter={restartAnimation}
+                  >
+                    <svg
+                      className="circle-svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      key={animationKey} // force re-render to restart animation
+                    >
+                      <circle
+                        className="circle-path"
+                        cx="20"
+                        cy="20"
+                        r="18"
+                        fill="none"
+                        stroke="#000"
+                        strokeWidth="0.5"
+                      />
+                    </svg>
+                    <p className="year">{item.year}</p>
+                  </div>
+                </motion.div>
+
+                <p className="content">{item.content}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+export default History;

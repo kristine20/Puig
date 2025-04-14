@@ -198,6 +198,12 @@ button {
 /*Company CSS*/
 .company-wrapper {
   display: flex;
+  height: 535px;
+
+}
+
+.company-text-wrapper {
+  width: 40%;
 }
 
 .company-text {
@@ -211,7 +217,168 @@ button {
 
 }
 
+.image-wrapper {
+  position: absolute;
+  right: 0;
+  width: 900px;
+  height: 500px;
+
+}
+
+.image-wrapper img {
+  object-fit: cover;
+}
+
 /*Company CSS*/
+/*Slider CSS*/
+
+
+
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin: 70px 0;
+}
+
+.slider-wrapper {
+  display: flex;
+  overflow: hidden;
+  gap: 10px;
+  height: 205px;
+  margin-top: 80px;
+}
+
+.slider-item {
+  width: 360px;
+  height: 205px;
+  /* background-color: #f2f2f2; */
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
+  perspective: 1000px;
+}
+
+.slide-text {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 100%;
+  color: #575855;
+  width: 75px;
+}
+
+.slide-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-wrapper {
+  position: relative;
+  width: 54px;
+  height: 54px;
+}
+
+.circle-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  width: 54px;
+  height: 54px;
+  /* So it starts at the top (0 degrees) */
+}
+
+.circle-path {
+  stroke-dasharray: 113;
+  /* 2 * π * r (≈ 2 * 3.14 * 18) */
+  stroke-dashoffset: 113;
+  animation: draw-circle 1s forwards;
+}
+
+@keyframes draw-circle {
+  0% {
+    stroke-dashoffset: 113;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.arrow-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  /* Adjust as needed */
+  height: 16px;
+}
+
+/*Slider CSS*/
+
+
+/*History CSS*/
+.history-slider-wrapper {
+  display: flex;
+  overflow: hidden;
+  gap: 10px;
+}
+
+.history-button {
+  border: none;
+  width: 20px;
+  padding: 10px 10px;
+
+}
+
+.history-slider-item {
+  width: 360px;
+  height: 130px;
+  /* background-color: #f2f2f2; */
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
+  perspective: 1000px;
+}
+
+.year {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 13px;
+  text-transform: uppercase;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 54px;
+}
+
+.content {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  color: #575855;
+  width: 200px;
+}
+
+.history-slider-item .slide-circle {
+  justify-content: flex-start;
+}
+
+/*History CSS*/
 /*Portfolio CSS*/
 .portfolio-full-bg {
 
