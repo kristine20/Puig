@@ -51,15 +51,18 @@ function History() {
   };
 
   const visibleItems = items.slice(index, index + visibleCount);
-  const [animationKey, setAnimationKey] = useState(0);
+  const [animationKeys, setAnimationKeys] = useState({});
 
-  const restartAnimation = () => {
-    setAnimationKey((prev) => prev + 1);
+  const restartAnimation = (i) => {
+    setAnimationKeys((prev) => ({
+      ...prev,
+      [i]: (prev[i] || 0) + 1,
+    }));
   };
   return (
-    <section className="w-fixed">     
-      <div className="row"> 
-      <h2>История PUIG ― </h2>
+    <section className="w-fixed pt-2 mb-80">
+      <div className="row">
+        <h2>История PUIG ― </h2>
         <button
           onClick={handlePrev}
           disabled={index === 0}
@@ -88,14 +91,14 @@ function History() {
                 >
                   <div
                     className="circle-wrapper"
-                    onMouseEnter={restartAnimation}
+                    onMouseEnter={() => restartAnimation(i)}
                   >
                     <svg
                       className="circle-svg"
                       width="40"
                       height="40"
                       viewBox="0 0 40 40"
-                      key={animationKey} // force re-render to restart animation
+                      key={animationKeys[i] || 0} // force re-render to restart animation
                     >
                       <circle
                         className="circle-path"

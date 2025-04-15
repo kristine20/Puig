@@ -2,11 +2,11 @@ export default function Portfolio() {
   return (
     <section className="portfolio-full-bg">
       <section className="w-fixed portfolio-wrapper">
-        <div className="">
+        <div className="row">
           <h1>Портфолио брендов PUIG в России </h1>
         </div>
 
-        <div className="pt-1 portfolio-list-wrapper">
+        <div className="pt-1 portfolio-list-wrapper  row">
           <div>
             <ul className="list-circle">
               <li>NICHE</li>

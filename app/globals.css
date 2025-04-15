@@ -80,8 +80,22 @@ a {
   margin-left: 5%;
 }
 
+.mt-1 {
+  margin-top: 20px;
+
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
 .pt-1 {
   padding-top: 40px;
+
+}
+
+.pt-2 {
+  padding-top: 80px;
 
 }
 
@@ -105,11 +119,17 @@ button {
 
 /*Global CSS*/
 /*Header CSS*/
+header {
+  height: 160px;
+
+}
+
 .menu {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
+
 
 .header_text {
   font-family: Montserrat;
@@ -118,7 +138,7 @@ button {
   line-height: 12px;
 }
 
-.menu li:first-child {
+.menu li:hover {
   list-style-type: disc;
 }
 
@@ -126,6 +146,29 @@ button {
   display: flex;
   flex-direction: column;
 }
+
+
+.animation-logo {
+  position: fixed;
+  top: 13px;
+  /* right: 20px; */
+  width: 9.1rem;
+  height: auto;
+  z-index: 1000;
+}
+
+/* .logo-mark_path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.6s ease;
+} */
+
+/* .logo-mark_path {
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  transition: stroke-dashoffset 0.2s ease-out;
+} */
+
 
 /*Header CSS*/
 
@@ -239,9 +282,8 @@ button {
 .slider-container {
   display: flex;
   align-items: center;
-  /*gap: 10px;*/
   justify-content: center;
-  margin: 70px 0;
+
 }
 
 .slider-wrapper {
@@ -253,19 +295,23 @@ button {
 }
 
 .slider-item {
-  width: 760px;
+  width: 360px;
   height: 205px;
-  /* background-color: #f2f2f2; */
   display: flex;
   justify-content: center;
- /* gap: 10px;*/
+  gap: 10px;
   align-items: center;
-  border-radius: 8px;
-  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
   perspective: 1000px;
+  border-right: 0.5px solid black;
+
 }
-.slide-media{
-  width: 330px;
+
+.slider-item:last-child {
+  border-right: none;
+}
+
+.slide-media {
+  padding-right: 12px;
 }
 
 .slide-text {
@@ -336,6 +382,20 @@ button {
   display: flex;
   overflow: hidden;
   gap: 10px;
+  position: relative;
+}
+
+.history-slider-item::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 82%;
+  height: 1px;
+  background-color: black;
+  margin-top: 4px;
+  transition: width 0.3s ease;
+  left: 57px;
+  top: 23px;
 }
 
 .history-button {
@@ -378,11 +438,25 @@ button {
   line-height: 16px;
   color: #575855;
   width: 200px;
+  padding-top: 10px;
 }
 
 .history-slider-item .slide-circle {
   justify-content: flex-start;
 }
+
+.history-slider-wrapper .circle-wrapper .year {
+  transition: border-radius 0.1s ease-in, box-shadow 0.1s ease-in;
+}
+
+.history-slider-wrapper .circle-wrapper:hover .year {
+  background-color: #000000;
+  border-radius: 54px;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
 
 /*History CSS*/
 /*Portfolio CSS*/
@@ -394,7 +468,7 @@ button {
 
 .portfolio-list-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .portfolio-list-wrapper div {
@@ -415,7 +489,7 @@ button {
   font-family: Montserrat;
   font-weight: 500;
   font-size: 14px;
-  line-height: 100%;
+  line-height: 22px;
   color: #575855;
 
 }
@@ -438,6 +512,39 @@ button {
 }
 
 @media (max-width: 768px) {
+  header {
+    justify-content: flex-start !important;
+    gap: 50px;
+  }
+
+  .animation-logo {
+    width: 7.5rem;
+    top: 25px;
+    right: 35px;
+
+  }
+
+  .company-text-wrapper {
+    width: 100%;
+    margin-left: 15px;
+    top: 38%;
+    position: relative;
+    z-index: 100000;
+    column-count: 2;
+  }
+
+  .slider-wrapper {
+    flex-wrap: wrap;
+    overflow: initial;
+    height: 500px;
+    margin-left: 15px;
+    margin-top: 20%;
+  }
+
+  .slider-item:nth-child(2) {
+    border-right: none;
+  }
+
   .hero-wrapper {
     background-position: center;
     height: 400px;
@@ -464,5 +571,44 @@ button {
   .bio-basic {
     display: flex;
     padding-top: 40px;
+  }
+
+  .company-text-wrapper {
+    top: 48%;
+    column-count: unset;
+
+  }
+
+  .slider-wrapper {
+    flex-direction: column;
+    height: 900px;
+  }
+
+  .slider-item {
+    border-right: none;
+
+  }
+
+  .portfolio-list-wrapper {
+    flex-direction: column;
+    margin-left: 10%;
+    gap: 15px;
+  }
+
+  .portfolio-list-wrapper div {
+    width: 35%;
+    margin-bottom: 5px;
+    border-right: none;
+    border-bottom: 0.5px solid #000000;
+    padding-bottom: 15px;
+  }
+
+  .portfolio-list-wrapper div:last-child {
+    border-bottom: none;
+  }
+
+  .footer-content {
+    margin: 0 auto;
+    text-align: center;
   }
 }
