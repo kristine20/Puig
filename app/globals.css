@@ -151,7 +151,7 @@ header {
 .animation-logo {
   position: fixed;
   top: 13px;
-  /* right: 20px; */
+  right: 0px;
   width: 9.1rem;
   height: auto;
   z-index: 1000;
@@ -241,7 +241,8 @@ header {
 /*Company CSS*/
 .company-wrapper {
   display: flex;
-  height: 535px;
+  position: relative;
+  min-height: 535px;
 
 }
 
@@ -271,6 +272,7 @@ header {
 
 .image-wrapper img {
   object-fit: cover;
+  height: 100%;
 }
 
 /*Company CSS*/
@@ -527,12 +529,17 @@ header {
   .company-text-wrapper {
     width: 100%;
     margin-left: 15px;
-    top: 38%;
+    top: 50px;
     position: relative;
     z-index: 100000;
     column-count: 2;
-  }
+}
+.image-wrapper {
+  position: static;  
+  width: 900px;
+  height: 330px;
 
+}
   .slider-wrapper {
     flex-wrap: wrap;
     overflow: initial;
@@ -558,6 +565,7 @@ header {
   .company-wrapper {
     flex-direction: column-reverse;
     flex-wrap: wrap;
+    height: auto;
   }
 }
 
@@ -574,7 +582,7 @@ header {
   }
 
   .company-text-wrapper {
-    top: 48%;
+    /*top: 48%;*/
     column-count: unset;
 
   }
