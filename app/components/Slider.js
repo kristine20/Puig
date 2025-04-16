@@ -4,14 +4,16 @@ import { useState } from "react";
 import Image from "next/image";
 import arrow from "../assets/images/arrow.png";
 import media from "../assets/images/slider-image.png";
+import { useWindowWidth } from "../hooks";
 
 const items = Array.from({ length: 10 }, (_, i) => `Item ${i + 1}`);
 
 function Slider() {
   const [index, setIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(null);
-  const visibleCount = 4;
+  const width = useWindowWidth();
 
+  const visibleCount = width && width <= 490 ? 1 : 4;
   const [animationKeys, setAnimationKeys] = useState({});
 
   const restartAnimation = (i) => {
@@ -38,96 +40,98 @@ function Slider() {
 
   return (
     <div className="slider-container pt-2">
-      {/* <button onClick={handlePrev} disabled={index === 0}>
+      <button onClick={handlePrev} disabled={index === 0}>
         ◀
-      </button> */}
+      </button>
       <motion.div className="slider-wrapper" layout>
         {visibleItems.map((item, i) => (
           <motion.div key={i} className="slider-item" layout>
-            <AnimatePresence mode="wait">
-              {activeIndex !== i && (
-                <>
-                  <motion.div
-                    className="slide-circle cursor-pointer "
-                    initial={{ opacity: 1 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => toggleMedia(i)}
-                  >
-                    <div
-                      className="circle-wrapper"
-                      onMouseEnter={() => restartAnimation(i)}
+            <div key={i}>
+              <AnimatePresence mode="wait">
+                {activeIndex !== i && (
+                  <>
+                    <motion.div
+                      className="slide-circle cursor-pointer "
+                      initial={{ opacity: 1 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      onClick={() => toggleMedia(i)}
                     >
-                      <svg
-                        className="circle-svg"
-                        width="40"
-                        height="40"
-                        viewBox="0 0 40 40"
-                        key={animationKeys[i] || 0}
+                      <div
+                        className="circle-wrapper"
+                        onMouseEnter={() => restartAnimation(i)}
                       >
-                        <circle
-                          className="circle-path"
-                          cx="20"
-                          cy="20"
-                          r="18"
-                          fill="none"
-                          stroke="#000"
-                          strokeWidth="0.5"
-                        />
-                      </svg>
-                      <Image src={arrow} alt="arrow" className="arrow-icon" />
-                    </div>
-                  </motion.div>
+                        <svg
+                          className="circle-svg"
+                          width="40"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          key={animationKeys[i] || 0}
+                        >
+                          <circle
+                            className="circle-path"
+                            cx="20"
+                            cy="20"
+                            r="18"
+                            fill="none"
+                            stroke="#000"
+                            strokeWidth="0.5"
+                          />
+                        </svg>
+                        <Image src={arrow} alt="arrow" className="arrow-icon" />
+                      </div>
+                    </motion.div>
 
-                  <motion.p
-                    key="text"
-                    className="slide-text cursor-pointer"
-                    initial={{ opacity: 1 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => toggleMedia(i)}
+                    <motion.p
+                      key="text"
+                      className="slide-text cursor-pointer"
+                      initial={{ opacity: 1 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      onClick={() => toggleMedia(i)}
+                    >
+                      нажать, чтобы посмотреть
+                    </motion.p>
+                  </>
+                )}
+
+                {activeIndex === i && (
+                  <motion.div
+                    key="media"
+                    className="slide-media"
+                    initial={{
+                      opacity: 0,
+                      y: 80, // Start below (bottom)
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0, // Move upwards to the original position
+                    }}
+                    exit={{
+                      opacity: 0,
+                      y: -80, // Go back down
+                    }}
+                    transition={{
+                      duration: 1,
+                      ease: "easeInOut",
+                    }}
                   >
-                    нажать, чтобы посмотреть
-                  </motion.p>
-                </>
-              )}
-
-              {activeIndex === i && (
-                <motion.div
-                  key="media"
-                  className="slide-media"
-                  initial={{
-                    opacity: 0,
-                    y: 80, // Start below (bottom)
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0, // Move upwards to the original position
-                  }}
-                  exit={{
-                    opacity: 0,
-                    y: -80, // Go back down
-                  }}
-                  transition={{
-                    duration: 1,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <Image src={media} alt="media" />
-                </motion.div>
-              )}
-            </AnimatePresence>
+                    <Image src={media} alt="media" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </motion.div>
         ))}
       </motion.div>
-      {/* <button
+      <button
         onClick={handleNext}
         disabled={index >= items.length - visibleCount}
       >
         ▶
-      </button> */}
+      </button>
     </div>
   );
 }
