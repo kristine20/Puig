@@ -43,8 +43,8 @@ export default function Headers() {
       >
         ☰
       </button>
-
-      <nav className={`nav ${menuOpen ? "open" : ""}`}>
+<div className={`mobile-menu  ${menuOpen ? "open" : ""}`}>
+      <nav className={`nav`}>
         <ul className="menu">
           <li>
             <a href="#" className="header_text">
@@ -68,6 +68,7 @@ export default function Headers() {
           </li>
         </ul>
       </nav>
+      </div>
       {/* <nav className="space-x-4">
         <ul className="menu">
           <li>

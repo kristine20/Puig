@@ -92,7 +92,7 @@ function Slider() {
                       transition={{ duration: 0.3 }}
                       onClick={() => toggleMedia(i)}
                     >
-                      нажать, чтобы посмотреть{i}
+                      нажать, чтобы посмотреть{item}
                     </motion.p>
                   </>
                 )}
