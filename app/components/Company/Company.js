@@ -1,5 +1,6 @@
 import Image from "next/image";
-import company from "../assets/images/company.png";
+import company from "../../assets/images/company.png";
+import "./Company.css";
 
 export default function Company() {
   return (

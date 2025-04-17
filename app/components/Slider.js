@@ -6,7 +6,7 @@ import arrow from "../assets/images/arrow.png";
 import media from "../assets/images/slider-image.png";
 import { useWindowWidth } from "../hooks";
 
-const items = Array.from({ length: 10 }, (_, i) => `Item ${i + 1}`);
+const items = Array.from({ length: 20 }, (_, i) => `Item ${i + 1}`);
 
 function Slider() {
   const [index, setIndex] = useState(0);
@@ -92,7 +92,7 @@ function Slider() {
                       transition={{ duration: 0.3 }}
                       onClick={() => toggleMedia(i)}
                     >
-                      нажать, чтобы посмотреть
+                      нажать, чтобы посмотреть{i}
                     </motion.p>
                   </>
                 )}

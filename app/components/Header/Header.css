@@ -1,0 +1,119 @@
+header {
+    height: 160px;
+
+}
+
+.menu {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+
+.header_text {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu li:hover {
+    list-style-type: disc;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.animation-logo {
+    position: fixed;
+    top: 13px;
+    right: 60px;
+    width: 9.1rem;
+    height: auto;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    header {
+        justify-content: flex-start !important;
+        gap: 50px;
+    }
+
+    .animation-logo {
+        width: 7.5rem;
+        top: 25px;
+        right: 35px;
+
+    }
+}
+
+@media (max-width: 480px) {
+    .w-fixed {
+        margin: 0 auto;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-info {
+        display: none;
+    }
+
+    header {
+        height: 100px;
+
+    }
+
+    header img {
+        width: 70px;
+        height: auto;
+        padding-top: 47px;
+    }
+
+    .animation-logo {
+        left: 25px;
+        width: 2.8rem;
+        top: 8px;
+    }
+}

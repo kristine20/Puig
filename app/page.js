@@ -1,7 +1,7 @@
-import Headers from "./components/Header";
-import Hero from "./components/Hero";
-import Bio from "./components/Bio";
-import Company from "./components/Company";
+import Headers from "./components/Header/Header";
+import Hero from "./components/Hero/Hero";
+import Bio from "./components/Bio/Bio";
+import Company from "./components/Company/Company";
 import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 import Slider from "./components/Slider";
@@ -15,12 +15,12 @@ export default function Home() {
           <Headers />
         </div>
         <Hero />
-        <div className="row">
+        <div className="bio-section">
           <Bio />
         </div>
 
         <Company />
-        <Slider isVisible="true" />
+        <Slider />
         <History />
         <Portfolio />
         <Footer />
