@@ -1,8 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import arrow from "../assets/images/arrow.png";
+import { useEffect, useState } from "react";
+import arrow from "../../assets/images/arrow.png";
 import Image from "next/image";
+import "./History.css";
 const items = [
   {
     year: 1914,
@@ -42,6 +43,16 @@ function History() {
   const [index, setIndex] = useState(0);
   const visibleCount = 6;
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => {
+        const maxIndex = items.length - visibleCount;
+        return prevIndex < maxIndex ? prevIndex + 1 : 0;
+      });
+    }, 4000); // 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
   const handlePrev = () => {
     setIndex((prev) => Math.max(prev - 1, 0));
   };

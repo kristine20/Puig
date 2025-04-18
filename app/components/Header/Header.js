@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import logo from "../../assets/images/logo.png";
 import "./Header.css";
@@ -11,6 +12,7 @@ export default function Headers() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [visiblePath, setVisiblePath] = useState(fullPath);
   const [showExtraPaths, setShowExtraPaths] = useState(true);
+  const [showSubmenu, setShowSubmenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,67 +34,105 @@ export default function Headers() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+  console.log(showSubmenu);
   return (
     <header className="w-fixed flex space-between">
-      <Image src={logo} alt="Logo" width={205} height={62} className="logo" />
-
+      <Link href="/">
+        <Image src={logo} alt="Logo" width={205} height={62} className="logo" />
+      </Link>
       <button
         className="menu-toggle"
         onClick={() => setMenuOpen((prev) => !prev)}
       >
         ☰
       </button>
-<div className={`mobile-menu  ${menuOpen ? "open" : ""}`}>
-      <nav className={`nav`}>
-        <ul className="menu">
-          <li>
-            <a href="#" className="header_text">
-              главная
-            </a>
-          </li>
-          <li>
-            <a href="#" className="header_text">
-              о компании
-            </a>
-          </li>
-          <li>
-            <a href="#" className="header_text">
-              бренды
-            </a>
-          </li>
-          <li>
-            <a href="#" className="header_text">
-              видеообучение
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <div className={`mobile-menu  ${menuOpen ? "open" : ""}`}>
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          X
+        </button>
+
+        <div className="mobile-logo">
+          <Link href="/">
+            {" "}
+            <Image
+              src={logo}
+              alt="Logo"
+              width={205}
+              height={62}
+              className="logo"
+            />
+          </Link>
+        </div>
+        <nav className={`nav`}>
+          <ul className="menu">
+            <li>
+              <a href="#" className="header_text">
+                главная
+              </a>
+            </li>
+            <li className="submenu-parent">
+              <a
+                className="header_text submenu-toggle"
+                onClick={() => setShowSubmenu((prev) => !prev)}
+              >
+                о компании
+              </a>
+            </li>
+            <li>
+              <a href="#" className="header_text">
+                бренды
+              </a>
+            </li>
+            <li>
+              <a href="#" className="header_text">
+                видеообучение
+              </a>
+            </li>
+          </ul>
+
+          {showSubmenu && (
+            <ul className="submenu">
+              <li>
+                <a href="#" className="header_text">
+                  Who We Are
+                </a>
+              </li>
+              <li>
+                <a href="#" className="header_text">
+                  Governance
+                </a>
+              </li>
+              <li>
+                <a href="#" className="header_text">
+                  Ethical Code
+                </a>
+              </li>
+              <li>
+                <a href="#" className="header_text">
+                  Invisible Beauty
+                </a>
+              </li>
+              <li>
+                <a href="#" className="header_text">
+                  Worldwide Presence
+                </a>
+              </li>
+              <li>
+                <a href="#" className="header_text">
+                  Our History
+                </a>
+              </li>
+            </ul>
+          )}
+        </nav>
+        <div className="mobile-contact-info">
+          <span className="header_text">тел: +0 (000) 000 00 00</span>
+          <span className="header_text">e-mail: puig@gmail.com</span>
+        </div>
       </div>
-      {/* <nav className="space-x-4">
-        <ul className="menu">
-          <li>
-            <a href="#" className="header_text">
-              главная
-            </a>
-          </li>
-          <li>
-            <a href="#" className="header_text">
-              о компании
-            </a>
-          </li>
-          <li>
-            <a href="#" className="header_text">
-              бренды{" "}
-            </a>
-          </li>
-          <li>
-            <a href="#" className="header_text">
-              видеообучение
-            </a>
-          </li>
-        </ul>
-      </nav> */}
 
       <div className="contact-info">
         <span className="header_text">тел: +0 (000) 000 00 00</span>
@@ -170,18 +210,17 @@ export default function Headers() {
                 pathLength="1"
                 strokeLinecap="round"
               />
-            </>
-          )}
 
-          <path
-            d="M264,173.4c0-13.3,4.6-59.8,33.6-88.8l0,0c19.3-19.3,19.3-50.7,0-70.1c-19.3-19.3-50.7-19.3-70.1,0 c-19.3,19.3-19.3,50.7,0,70.1l0,0c29,29,33.6,75.5,33.6,88.8s-4.6,59.8-33.6,88.8h0c-19.3,19.3-19.3,50.7,0,70.1 c19.3,19.3,50.7,19.3,70.1,0c19.3-19.3,19.3-50.7,0-70.1C268.6,233.2,264,186.7,264,173.4z M262.5,322c-13.7,0-24.8-11.1-24.8-24.8 s11.1-24.8,24.8-24.8c13.7,0,24.8,11.1,24.8,24.8S276.2,322,262.5,322z"
-            fill="#D0CAC2"
-          />
-          {showExtraPaths && (
-            <path
-              d="M159.6,282.4c0,1.7-0.8,7.5-4.4,11.1h0c-2.4,2.4-2.4,6.3,0,8.8c2.4,2.4,6.3,2.4,8.8,0s2.4-6.3,0-8.8 C160.4,289.9,159.6,284.1,159.6,282.4z"
-              fill="#D0CAC2"
-            />
+              <path
+                d="M264,173.4c0-13.3,4.6-59.8,33.6-88.8l0,0c19.3-19.3,19.3-50.7,0-70.1c-19.3-19.3-50.7-19.3-70.1,0 c-19.3,19.3-19.3,50.7,0,70.1l0,0c29,29,33.6,75.5,33.6,88.8s-4.6,59.8-33.6,88.8h0c-19.3,19.3-19.3,50.7,0,70.1 c19.3,19.3,50.7,19.3,70.1,0c19.3-19.3,19.3-50.7,0-70.1C268.6,233.2,264,186.7,264,173.4z M262.5,322c-13.7,0-24.8-11.1-24.8-24.8 s11.1-24.8,24.8-24.8c13.7,0,24.8,11.1,24.8,24.8S276.2,322,262.5,322z"
+                fill="#D0CAC2"
+              />
+
+              <path
+                d="M159.6,282.4c0,1.7-0.8,7.5-4.4,11.1h0c-2.4,2.4-2.4,6.3,0,8.8c2.4,2.4,6.3,2.4,8.8,0s2.4-6.3,0-8.8 C160.4,289.9,159.6,284.1,159.6,282.4z"
+                fill="#D0CAC2"
+              />
+            </>
           )}
         </svg>
       </div>

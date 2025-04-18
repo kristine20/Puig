@@ -2,9 +2,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
-import arrow from "../assets/images/arrow.png";
-import media from "../assets/images/slider-image.png";
-import { useWindowWidth } from "../hooks";
+import arrow from "../../assets/images/arrow.png";
+import media from "../../assets/images/slider-image.png";
+import { useWindowWidth } from "../../hooks";
+import "./Slider.css";
 
 const items = Array.from({ length: 20 }, (_, i) => `Item ${i + 1}`);
 
@@ -40,9 +41,6 @@ function Slider() {
 
   return (
     <div className="slider-container pt-2">
-      <button onClick={handlePrev} disabled={index === 0}>
-        ◀
-      </button>
       <motion.div className="slider-wrapper" layout>
         {visibleItems.map((item, i) => (
           <motion.div key={i} className="slider-item" layout>
@@ -126,12 +124,27 @@ function Slider() {
           </motion.div>
         ))}
       </motion.div>
-      <button
-        onClick={handleNext}
-        disabled={index >= items.length - visibleCount}
-      >
-        ▶
-      </button>
+      {width && width <= 495 ? (
+        <div className="slider-button-wrapper">
+          {/* <button
+            onClick={handlePrev}
+            disabled={index === 0}
+            className="history-button "
+          >
+            <Image src={arrow} alt="arrow" style={{ rotate: "180deg" }} />
+          </button> */}
+          <span className="see-more">посмотреть ещё</span>{" "}
+          <button
+            onClick={handleNext}
+            disabled={index >= items.length - visibleCount}
+            className="history-button"
+          >
+            <Image src={arrow} alt="arrow" />
+          </button>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

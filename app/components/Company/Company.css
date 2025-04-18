@@ -1,6 +1,6 @@
 .company-wrapper {
     display: flex;
-    position: relative;
+    /* position: relative; */
     min-height: 535px;
 
 }
@@ -60,6 +60,7 @@
 @media (max-width: 480px) {
     .company-wrapper {
         background-color: #fff;
+        position: relative;
     }
 
     .company-text-wrapper {

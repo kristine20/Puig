@@ -1,0 +1,63 @@
+/*Portfolio CSS*/
+.portfolio-full-bg {
+
+    background-color: #E3E1D9;
+    padding: 80px 0;
+}
+
+.portfolio-list-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.portfolio-list-wrapper div {
+    width: 25%;
+    margin-right: 10px;
+    border-right: 0.5px solid #000000;
+}
+
+.portfolio-list-wrapper div:last-child {
+    border-right: none;
+}
+
+.portfolio-items {
+    list-style: none;
+}
+
+.portfolio-items li {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #575855;
+
+}
+
+.list-circle {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    padding-bottom: 25px;
+
+}
+
+@media (max-width: 480px) {
+    .portfolio-list-wrapper {
+        flex-direction: column;
+        margin-left: 10%;
+        gap: 15px;
+    }
+
+    .portfolio-list-wrapper div {
+        width: 35%;
+        margin-bottom: 5px;
+        border-right: none;
+        border-bottom: 0.5px solid #000000;
+        padding-bottom: 15px;
+    }
+
+    .portfolio-list-wrapper div:last-child {
+        border-bottom: none;
+    }
+}

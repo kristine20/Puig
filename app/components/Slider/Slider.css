@@ -1,0 +1,161 @@
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.slider-wrapper {
+    display: flex;
+    overflow: hidden;
+    /* gap: 10px; */
+    height: 205px;
+    margin-top: 80px;
+}
+
+.slider-item {
+    width: 360px;
+    height: 201px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    border-right: 0.5px solid black;
+
+}
+
+.slider-item div {
+    display: flex;
+    gap: 10px;
+}
+
+.slider-item:last-child {
+    border-right: none;
+}
+
+.slide-media {
+    /* padding-right: 12px; */
+}
+
+.slide-text {
+    font-family: Montserrat;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 100%;
+    color: #575855;
+    width: 75px;
+    cursor: pointer;
+}
+
+.slide-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-wrapper {
+    position: relative;
+    width: 54px;
+    height: 54px;
+    cursor: pointer;
+}
+
+.circle-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+    width: 54px;
+    height: 54px;
+    /* So it starts at the top (0 degrees) */
+}
+
+.circle-path {
+    stroke-dasharray: 113;
+    /* 2 * π * r (≈ 2 * 3.14 * 18) */
+    stroke-dashoffset: 113;
+    animation: draw-circle 1s forwards;
+}
+
+@keyframes draw-circle {
+    0% {
+        stroke-dashoffset: 113;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    /* Adjust as needed */
+    height: 16px;
+}
+
+@media (max-width: 768px) {
+    .slider-wrapper {
+        flex-wrap: wrap;
+        overflow: initial;
+        gap: 0px;
+        height: 500px;
+        margin-left: 15px;
+        margin-top: 20%;
+    }
+
+    .slider-item:nth-child(2) {
+        border-right: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-container {
+        background-color: #fff;
+        position: relative;
+        display: block;
+
+    }
+
+    .slider-button-wrapper {
+        position: absolute;
+        right: 30px;
+        bottom: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .slider-button-wrapper button {
+        width: 50px;
+        height: 50px;
+        border: 0.5px solid black;
+        border-radius: 50px;
+        margin-right: 20px;
+    }
+
+    .slider-wrapper {
+        flex-direction: column;
+        height: 300px;
+    }
+
+    .slider-item {
+        border-right: none;
+        width: 100%;
+    }
+
+    .see-more {
+        font-family: Montserrat;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 100%;
+        display: block;
+        width: 100px;
+
+
+    }
+}
