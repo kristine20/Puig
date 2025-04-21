@@ -141,6 +141,7 @@
     .slider-wrapper {
         flex-direction: column;
         height: 300px;
+        margin-left: 0;
     }
 
     .slider-item {

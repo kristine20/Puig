@@ -33,7 +33,18 @@
     height: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1260px) {
+    .image-wrapper {
+        width: 700px;
+        position: relative;
+    }
+
+    .image-wrapper img {
+        margin-left: 60px;
+    }
+}
+
+@media (max-width: 930px) {
     .company-text-wrapper {
         width: 100%;
         margin-left: 15px;
@@ -55,6 +66,10 @@
         height: 330px;
 
     }
+
+    .image-wrapper img {
+        margin-left: 0px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -66,5 +81,10 @@
     .company-text-wrapper {
         column-count: unset;
 
+    }
+
+    .bio-text {
+        width: 400px;
+        margin-right: 7%;
     }
 }

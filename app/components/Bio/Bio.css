@@ -43,14 +43,21 @@
     }
 
     .bio-section {
-
         background-color: #fff;
-
+        margin-top: 100px;
     }
-
 
     .bio-basic {
         display: flex;
         padding-top: 40px;
+    }
+
+    .bio-wrapper, .bio-text-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .bio-text {
+        margin: 0 auto;
     }
 }

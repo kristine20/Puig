@@ -49,7 +49,7 @@ function History() {
         const maxIndex = items.length - visibleCount;
         return prevIndex < maxIndex ? prevIndex + 1 : 0;
       });
-    }, 4000); // 4 seconds
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -71,7 +71,7 @@ function History() {
     }));
   };
   return (
-    <section className="w-fixed pt-2 mb-80">
+    <section className="w-fixed pt-2 mb-80 history">
       <div className="row">
         <h2>История PUIG ― </h2>
         <button

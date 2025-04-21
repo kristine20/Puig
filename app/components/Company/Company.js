@@ -8,16 +8,16 @@ import { useWindowWidth } from "@/app/hooks";
 export default function Company() {
   const width = useWindowWidth();
   return (
-    <section className="w-fixed company-wrapper pt-1 row">
+    <section className="w-fixed company-wrapper pt-1 ">
       {/* Text slides in from the left */}
       <motion.div
         className="company-text-wrapper"
-        initial={width && width <= 490 ? { opacity: 0 } : { opacity: 0, x: 8 }}
-        whileInView={
-          width && width <= 490 ? { opacity: 1 } : { opacity: 1, x: 200 }
-        }
-        viewport={{ once: false, amount: 0.5 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        // initial={width && width <= 490 ? { opacity: 0 } : { opacity: 0, x: 8 }}
+        // whileInView={
+        //   width && width <= 490 ? { opacity: 1 } : { opacity: 1, x: 200 }
+        // }
+        // viewport={{ once: false, amount: 0.5 }}
+        // transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div>
           <h2>Компания PUIG ― </h2>
@@ -41,10 +41,10 @@ export default function Company() {
       {/* Image slides in from the right */}
       <motion.div
         className="image-wrapper"
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: false, amount: 0.5 }}
-        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        // initial={{ opacity: 0, x: 50 }}
+        // whileInView={{ opacity: 1, x: 0 }}
+        // viewport={{ once: false, amount: 0.5 }}
+        // transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
       >
         <Image src={company} alt="Company" />
       </motion.div>

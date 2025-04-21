@@ -13,7 +13,7 @@ export default function Headers() {
   const [visiblePath, setVisiblePath] = useState(fullPath);
   const [showExtraPaths, setShowExtraPaths] = useState(true);
   const [showSubmenu, setShowSubmenu] = useState(false);
-
+  const [showSvg, setShowSvg] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -28,17 +28,25 @@ export default function Headers() {
 
       const newPath = segments.slice(0, visibleCount).join("");
       setVisiblePath(newPath);
+
+      setShowSvg(scrollTop > 100);
       setShowExtraPaths(scrollTop < maxScroll - 10);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  console.log(showSubmenu);
+
   return (
     <header className="w-fixed flex space-between">
       <Link href="/">
-        <Image src={logo} alt="Logo" width={205} height={62} className="logo" />
+        <Image
+          src={logo}
+          alt="Logo"
+          width={205}
+          height={62}
+          className={`logo ${showSvg ? "mobile-logo-img" : ""}`}
+        />
       </Link>
       <button
         className="menu-toggle"
@@ -62,7 +70,8 @@ export default function Headers() {
               alt="Logo"
               width={205}
               height={62}
-              className="logo"
+              className={`logo`}
+              style={{ paddingTop: "50px" }}
             />
           </Link>
         </div>
@@ -142,7 +151,7 @@ export default function Headers() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 521.6 589.6"
-          className="animation-logo"
+          className={`animation-logo ${showSvg ? "visible" : ""}`}
           stroke="black"
           fill="none"
         >

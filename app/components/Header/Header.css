@@ -73,10 +73,45 @@ header {
     z-index: 10;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1360px) {
+    .nav {
+        width: 240px;
+    }
+
+    .animation-logo {
+        position: fixed;
+        top: 30px;
+        right: 35px;
+        width: 7.1rem;
+        height: auto;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 1280px) {
     header {
         justify-content: flex-start !important;
         gap: 50px;
+    }
+
+    .nav {
+        width: 200px;
+    }
+
+    .animation-logo {
+        position: fixed;
+        top: 40px;
+        right: 35px;
+        width: 6.1rem;
+        height: auto;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        justify-content: flex-start !important;
+        gap: 10px;
     }
 
     .animation-logo {
@@ -85,11 +120,26 @@ header {
         right: 35px;
 
     }
+
+    .menu {
+        list-style: none;
+        padding-left: 24px;
+        margin: 0;
+        height: 108px;
+    }
+
+    .submenu, .contact-info {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
     .w-fixed {
         margin: 0 auto;
+    }
+
+    .hero-wrapper {
+        top: 100px;
     }
 
     .menu-toggle {
@@ -152,18 +202,41 @@ header {
 
     header {
         height: 100px;
+        position: fixed;
+        z-index: 11;
+        background: #EDECE9;
+        padding: 0 15px;
+    }
 
+    .row {
+        margin-left: 0;
     }
 
     header img {
+        width: 100px;
+        height: auto;
+    }
+
+    .mobile-logo-img {
         width: 70px;
         height: auto;
         padding-top: 47px;
     }
 
     .animation-logo {
+        margin-top: 1rem;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .animation-logo.visible {
+        opacity: 1;
         left: 25px;
         width: 2.8rem;
-        top: 8px;
+        top: -8px;
+        max-height: 500px;
+        transition: opacity 0.3s ease;
     }
 }
