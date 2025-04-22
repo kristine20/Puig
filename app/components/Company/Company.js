@@ -1,15 +1,15 @@
 "use client";
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 import company from "../../assets/images/company.png";
-import "./Company.css";
 import { useWindowWidth } from "@/app/hooks";
+import "./Company.css";
 
 export default function Company() {
   const width = useWindowWidth();
   return (
     <section className="w-fixed company-wrapper pt-1 ">
-      {/* Text slides in from the left */}
       <motion.div
         className="company-text-wrapper"
         // initial={width && width <= 490 ? { opacity: 0 } : { opacity: 0, x: 8 }}
@@ -37,8 +37,6 @@ export default function Company() {
           </p>
         </div>
       </motion.div>
-
-      {/* Image slides in from the right */}
       <motion.div
         className="image-wrapper"
         // initial={{ opacity: 0, x: 50 }}

@@ -1,9 +1,11 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+
 import arrow from "../../assets/images/arrow.png";
-import Image from "next/image";
 import "./History.css";
+
 const items = [
   {
     year: 1914,
@@ -109,7 +111,7 @@ function History() {
                       width="40"
                       height="40"
                       viewBox="0 0 40 40"
-                      key={animationKeys[i] || 0} // force re-render to restart animation
+                      key={animationKeys[i] || 0}
                     >
                       <circle
                         className="circle-path"

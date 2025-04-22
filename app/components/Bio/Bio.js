@@ -1,15 +1,15 @@
 "use client";
-import { motion } from "framer-motion";
 import Image from "next/image";
-import bio from "../../assets/images/mark.png";
+import { motion } from "framer-motion";
+
 import signature from "../../assets/images/signature.png";
+import bio from "../../assets/images/mark.png";
 import "./Bio.css";
 
 export default function Bio() {
   return (
     <div className="row">
       <section className="w-fixed bio-wrapper pt-1">
-        {/* Image with scale-down effect */}
         <motion.div
           initial={{ scale: 1.2, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -18,8 +18,6 @@ export default function Bio() {
         >
           <Image src={bio} alt="Bio" className="h-auto" />
         </motion.div>
-
-        {/* Text content with fade-up effect */}
         <motion.div
           className="bio-text-wrapper ml-10 items-center row"
           initial={{ opacity: 0, y: 30 }}

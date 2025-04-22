@@ -1,9 +1,11 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+
 import Image from "next/image";
-import arrow from "../../assets/images/arrow.png";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 import media from "../../assets/images/slider-image.png";
+import arrow from "../../assets/images/arrow.png";
 import { useWindowWidth } from "../../hooks";
 import "./Slider.css";
 
@@ -101,15 +103,15 @@ function Slider() {
                     className="slide-media"
                     initial={{
                       opacity: 0,
-                      y: 80, // Start below (bottom)
+                      y: 80,
                     }}
                     animate={{
                       opacity: 1,
-                      y: 0, // Move upwards to the original position
+                      y: 0,
                     }}
                     exit={{
                       opacity: 0,
-                      y: -80, // Go back down
+                      y: -80,
                     }}
                     transition={{
                       duration: 1,
@@ -126,13 +128,6 @@ function Slider() {
       </motion.div>
       {width && width <= 495 ? (
         <div className="slider-button-wrapper">
-          {/* <button
-            onClick={handlePrev}
-            disabled={index === 0}
-            className="history-button "
-          >
-            <Image src={arrow} alt="arrow" style={{ rotate: "180deg" }} />
-          </button> */}
           <span className="see-more">посмотреть ещё</span>{" "}
           <button
             onClick={handleNext}

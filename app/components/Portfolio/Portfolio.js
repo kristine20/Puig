@@ -1,6 +1,8 @@
 "use client";
-import "./Portfolio.css";
+
 import { motion } from "framer-motion";
+
+import "./Portfolio.css";
 
 const circles = [
   {

@@ -133,7 +133,7 @@ header {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 490px) {
     .w-fixed {
         margin: 0 auto;
     }
