@@ -93,7 +93,7 @@ function History() {
         <motion.div className="history-slider-wrapper" layout>
           {visibleItems.map((item, i) => (
             <motion.div key={i} className="history-slider-item" layout>
-              <div key={item.year}>
+              <div key={item.year} style={{ position: "relative" }}>
                 <motion.div
                   className="slide-circle cursor-pointer"
                   initial={{ opacity: 1 }}
@@ -126,8 +126,11 @@ function History() {
                     <p className="year">{item.year}</p>
                   </div>
                 </motion.div>
-
                 <p className="content">{item.content}</p>
+
+                {i === visibleItems.length - 1 && (
+                  <div className="infinite-line"></div>
+                )}
               </div>
             </motion.div>
           ))}

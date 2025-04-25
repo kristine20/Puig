@@ -25,7 +25,7 @@ export default function Modal({ isModalActive, closeModal }) {
             <button className="answer-version">1984</button>
             <button className="answer-version">1922</button>
             <button className="answer-version">1956</button>
-            <button className="answer-version choosed">1914</button>
+            <button className="answer-version">1914</button>
           </div>
         </div>
       </div>
