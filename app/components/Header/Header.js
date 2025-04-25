@@ -54,54 +54,55 @@ export default function Headers() {
       >
         ☰
       </button>
-      <div className={`mobile-menu  ${menuOpen ? "open" : ""}`}>
-        <button
-          className="menu-toggle"
-          onClick={() => setMenuOpen((prev) => !prev)}
-        >
-          X
-        </button>
+      <div className="nav-wrapper">
+        <div className={`mobile-menu  ${menuOpen ? "open" : ""}`}>
+          <button
+            className="menu-toggle"
+            onClick={() => setMenuOpen((prev) => !prev)}
+          >
+            X
+          </button>
 
-        <div className="mobile-logo">
-          <Link href="/">
-            {" "}
-            <Image
-              src={logo}
-              alt="Logo"
-              width={205}
-              height={62}
-              className={`logo`}
-              style={{ paddingTop: "50px" }}
-            />
-          </Link>
-        </div>
-        <nav className={`nav`}>
-          <ul className="menu">
-            <li>
-              <a href="#" className="header_text">
-                главная
-              </a>
-            </li>
-            <li className="submenu-parent">
-              <a
-                className="header_text submenu-toggle"
-                onClick={() => setShowSubmenu((prev) => !prev)}
-              >
-                о компании
-              </a>
-            </li>
-            <li>
-              <a href="#" className="header_text">
-                бренды
-              </a>
-            </li>
-            <li>
-              <a href="#" className="header_text">
-                видеообучение
-              </a>
-            </li>
-          </ul>
-
+          <div className="mobile-logo">
+            <Link href="/">
+              {" "}
+              <Image
+                src={logo}
+                alt="Logo"
+                width={205}
+                height={62}
+                className={`logo`}
+                style={{ paddingTop: "50px" }}
+              />
+            </Link>
+          </div>
+          <nav className={`nav`}>
+            <ul className="menu">
+              <li>
+                <a href="#" className="header_text">
+                  главная
+                </a>
+              </li>
+              <li className="submenu-parent">
+                <a
+                  className="header_text submenu-toggle"
+                  onClick={() => setShowSubmenu((prev) => !prev)}
+                >
+                  о компании
+                </a>
+              </li>
+              <li>
+                <a href="#" className="header_text">
+                  бренды
+                </a>
+              </li>
+              <li>
+                <a href="#" className="header_text">
+                  видеообучение
+                </a>
+              </li>
+            </ul>
+            {/* 
           {showSubmenu && (
             <ul className="submenu">
               <li>
@@ -135,17 +136,18 @@ export default function Headers() {
                 </a>
               </li>
             </ul>
-          )}
-        </nav>
-        <div className="mobile-contact-info">
-          <span className="header_text">тел: +0 (000) 000 00 00</span>
-          <span className="header_text">e-mail: puig@gmail.com</span>
+          )} */}
+          </nav>
+          <div className="mobile-contact-info">
+            <span className="header_text">тел: +0 (000) 000 00 00</span>
+            <span className="header_text">e-mail: puig@gmail.com</span>
+          </div>
         </div>
-      </div>
 
-      <div className="contact-info">
-        <span className="header_text">тел: +0 (000) 000 00 00</span>
-        <span className="header_text"> e-mail: puig@gmail.com</span>
+        <div className="contact-info">
+          <span className="header_text">тел: +0 (000) 000 00 00</span>
+          <span className="header_text"> e-mail: puig@gmail.com</span>
+        </div>
       </div>
       <div>
         <svg
