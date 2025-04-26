@@ -7,7 +7,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 60%;
+    width: 70%;
 }
 
 .menu, .submenu {
@@ -120,23 +120,30 @@ header {
         justify-content: flex-start !important;
         gap: 10px;
     }
-
+    header img{
+     width: 100px;
+     height: auto;
+    }
+    .nav-wrapper{
+    width: 100%;
+    }
     .animation-logo {
         width: 7.5rem;
         top: 25px;
         right: 35px;
-
+    }
+    .nav{
+        width: 140px;
     }
 
     .menu {
-        list-style: none;
-        padding-left: 24px;
+        list-style: none;       
         margin: 0;
         height: 108px;
     }
 
-    .submenu, .contact-info {
-        display: none;
+    .submenu{
+                display: none;
     }
 }
 

@@ -6,6 +6,7 @@ import "./Hero.css";
 export default function Hero() {
   return (
     <section className="hero-wrapper">
+      <div className="shadow-wrapper">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,6 +25,7 @@ export default function Hero() {
       >
         <button className="hero-button">авторизироваться</button>
       </motion.div>
+      </div>
     </section>
   );
 }

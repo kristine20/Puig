@@ -14,7 +14,10 @@ footer {
         background-size: contain;
         height: 320px;
     }
+    .pt-2{
+        padding-top: 40px;
 
+    }
     .footer_wrapper {
 
         height: 320px;

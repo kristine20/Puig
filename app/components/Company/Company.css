@@ -3,12 +3,6 @@
     min-height: 535px;
 
 }
-
-.company-text-wrapper {
-    width: 35%;
-    margin-left: 15px;
-}
-
 .company-text {
     font-family: Montserrat;
     font-weight: 300;
@@ -22,7 +16,7 @@
 .image-wrapper {
     position: absolute;
     right: 0;
-    width: 900px;
+    width: 70%;
     height: 500px;
 
 }
@@ -30,16 +24,30 @@
 .image-wrapper img {
     object-fit: cover;
     height: 100%;
+    width: 100%;
 }
 
+@media (max-width: 1900px) {
+    .image-wrapper {
+        width: 66%;
+       
+    }
+}
+@media (max-width: 1700px) {
+    .image-wrapper {
+        width: 67%;
+       
+    }
+}@media (max-width: 1600px) {
+    .image-wrapper {
+        width: 69%;
+       
+    }
+}
 @media (max-width: 1260px) {
     .image-wrapper {
         width: 700px;
         position: relative;
-    }
-
-    .image-wrapper img {
-        margin-left: 60px;
     }
 }
 
@@ -82,8 +90,4 @@
 
     }
 
-    .bio-text {
-        width: 400px;
-        margin-right: 7%;
-    }
 }

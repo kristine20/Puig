@@ -6,7 +6,8 @@
 
 .portfolio-list-wrapper {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-between; */
+    gap:14%;
 }
 
 .portfolio-list-wrapper div {
@@ -43,8 +44,7 @@
 
 @media (max-width: 480px) {
     .portfolio-list-wrapper {
-        flex-direction: column;
-        margin-left: 10%;
+        flex-direction: column;       
         gap: 15px;
     }
 

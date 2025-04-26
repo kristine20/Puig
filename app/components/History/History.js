@@ -51,7 +51,7 @@ function History() {
         const maxIndex = items.length - visibleCount;
         return prevIndex < maxIndex ? prevIndex + 1 : 0;
       });
-    }, 4000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
@@ -99,8 +99,8 @@ function History() {
                   initial={{ opacity: 1 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  onClick={() => toggleMedia(i)}
+                  transition={{ duration: 3.3 }}
+                  // onClick={() => toggleMedia(i)}
                 >
                   <div
                     className="circle-wrapper"

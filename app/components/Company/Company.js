@@ -11,7 +11,7 @@ export default function Company() {
   return (
     <section className="w-fixed company-wrapper pt-1 ">
       <motion.div
-        className="company-text-wrapper"
+        className="company-text-wrapper w-30 pl-15"
         // initial={width && width <= 490 ? { opacity: 0 } : { opacity: 0, x: 8 }}
         // whileInView={
         //   width && width <= 490 ? { opacity: 1 } : { opacity: 1, x: 200 }

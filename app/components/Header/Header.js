@@ -39,6 +39,7 @@ export default function Headers() {
 
   return (
     <header className="w-fixed flex space-between">
+     <div className="w-30">  
       <Link href="/">
         <Image
           src={logo}
@@ -48,6 +49,7 @@ export default function Headers() {
           className={`logo ${showSvg ? "mobile-logo-img" : ""}`}
         />
       </Link>
+      </div>
       <button
         className="menu-toggle"
         onClick={() => setMenuOpen((prev) => !prev)}
@@ -79,27 +81,27 @@ export default function Headers() {
           <nav className={`nav`}>
             <ul className="menu">
               <li>
-                <a href="#" className="header_text">
+              <Link href="/" className="header_text">
                   главная
-                </a>
+                </Link>
               </li>
               <li className="submenu-parent">
-                <a
+              <Link href="/" 
                   className="header_text submenu-toggle"
                   onClick={() => setShowSubmenu((prev) => !prev)}
                 >
                   о компании
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="header_text">
+              <Link href="/"  className="header_text">
                   бренды
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="header_text">
+              <Link href="/" className="header_text">
                   видеообучение
-                </a>
+                </Link>
               </li>
             </ul>
             {/* 
@@ -153,8 +155,7 @@ export default function Headers() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 521.6 589.6"
-          className={`animation-logo ${showSvg ? "visible" : ""}`}
-          stroke="black"
+          className={`animation-logo ${showSvg ? "visible" : ""}`}         
           fill="none"
         >
           <path
@@ -234,6 +235,7 @@ export default function Headers() {
             </>
           )}
         </svg>
+
       </div>
     </header>
   );

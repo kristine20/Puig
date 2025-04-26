@@ -72,15 +72,6 @@
     width: 200px;
     padding-top: 10px;
 }
-
-.history-slider-item .slide-circle {
-    justify-content: flex-start;
-}
-
-.history-slider-wrapper .circle-wrapper .year {
-    transition: border-radius 0.1s ease-in, box-shadow 0.1s ease-in;
-}
-
 .history-slider-wrapper .circle-wrapper:hover .year {
     background-color: #000000;
     border-radius: 54px;
@@ -88,8 +79,21 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
 }
+.history-slider-item .slide-circle {
+    justify-content: flex-start;
+}
 
-@media (max-width: 768px) {}
+.history-slider-wrapper .circle-wrapper .year {
+    transition:box-shadow 0.1s ease-in;
+}
+
+
+@media (max-width: 768px) {
+    .history-slider-item::after
+{
+width: 81%;
+left: 51px;
+}}
 
 @media (max-width: 480px) {
     .history {
