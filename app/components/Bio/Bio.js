@@ -15,11 +15,12 @@ export default function Bio() {
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-30"
         >
-          <Image src={bio} alt="Bio" className="h-auto" />
+          <Image src={bio} alt="Bio" className="avatar h-auto" />
         </motion.div>
         <motion.div
-          className="bio-text-wrapper ml-10 items-center row"
+          className="bio-text-wrapper items-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.4 }}

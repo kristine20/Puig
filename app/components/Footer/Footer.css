@@ -3,6 +3,11 @@ footer {
     height: 486px;
 }
 
+.footer-content button {
+    border: 1px solid black;
+    color: #000;
+}
+
 .footer_wrapper {
     background: url(/test.png) no-repeat;
     background-size: 100% 100%;
@@ -13,6 +18,11 @@ footer {
     footer {
         background-size: contain;
         height: 320px;
+    }
+
+    .pt-2 {
+        padding-top: 40px;
+
     }
 
     .footer_wrapper {

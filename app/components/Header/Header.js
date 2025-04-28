@@ -38,16 +38,18 @@ export default function Headers() {
   }, []);
 
   return (
-    <header className="w-fixed flex space-between">
-      <Link href="/">
-        <Image
-          src={logo}
-          alt="Logo"
-          width={205}
-          height={62}
-          className={`logo ${showSvg ? "mobile-logo-img" : ""}`}
-        />
-      </Link>
+    <header className="w-fixed flex pt-1">
+      <div className="w-30">
+        <Link href="/">
+          <Image
+            src={logo}
+            alt="Logo"
+            width={205}
+            height={62}
+            className={`logo ${showSvg ? "mobile-logo-img" : ""}`}
+          />
+        </Link>
+      </div>
       <button
         className="menu-toggle"
         onClick={() => setMenuOpen((prev) => !prev)}
@@ -79,27 +81,28 @@ export default function Headers() {
           <nav className={`nav`}>
             <ul className="menu">
               <li>
-                <a href="#" className="header_text">
+                <Link href="/" className="header_text">
                   главная
-                </a>
+                </Link>
               </li>
               <li className="submenu-parent">
-                <a
+                <Link
+                  href="/"
                   className="header_text submenu-toggle"
                   onClick={() => setShowSubmenu((prev) => !prev)}
                 >
                   о компании
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="header_text">
+                <Link href="/" className="header_text">
                   бренды
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="header_text">
+                <Link href="/" className="header_text">
                   видеообучение
-                </a>
+                </Link>
               </li>
             </ul>
             {/* 
@@ -154,7 +157,6 @@ export default function Headers() {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 521.6 589.6"
           className={`animation-logo ${showSvg ? "visible" : ""}`}
-          stroke="black"
           fill="none"
         >
           <path

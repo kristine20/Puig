@@ -44,13 +44,13 @@ const slideDownVariant = {
 
 export default function Portfolio() {
   return (
-    <section className="portfolio-full-bg">
-      <section className="w-fixed portfolio-wrapper">
+    <section className="portfolio-full-bg ">
+      <section className="w-fixed portfolio-wrapper pl-15">
         <div className="row">
           <h1>Портфолио брендов PUIG в России </h1>
         </div>
 
-        <div className="pt-1 portfolio-list-wrapper row">
+        <div className="pt-1 portfolio-list-wrapper pl-15">
           {circles.map((block, i) => (
             <motion.div
               key={block.title}

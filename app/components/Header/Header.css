@@ -5,9 +5,9 @@ header {
 
 .nav-wrapper {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
-    width: 60%;
+    width: 70%;
 }
 
 .menu, .submenu {
@@ -49,7 +49,6 @@ header {
     align-items: baseline;
     width: 320px;
     height: 108px;
-    margin-top: 30px;
 }
 
 .nav li a {
@@ -73,9 +72,9 @@ header {
 
 .animation-logo {
     position: fixed;
-    top: 13px;
+    top: 40px;
     right: 60px;
-    width: 9.1rem;
+    width: 7.1rem;
     height: auto;
     z-index: 10;
 }
@@ -121,21 +120,33 @@ header {
         gap: 10px;
     }
 
+    header img {
+        width: 100px;
+        height: auto;
+    }
+
+    .nav-wrapper {
+        width: 100%;
+    }
+
     .animation-logo {
         width: 7.5rem;
         top: 25px;
         right: 35px;
+    }
 
+    .nav {
+        width: 140px;
+        margin-top: -6px;
     }
 
     .menu {
         list-style: none;
-        padding-left: 24px;
         margin: 0;
         height: 108px;
     }
 
-    .submenu, .contact-info {
+    .submenu {
         display: none;
     }
 }
@@ -154,6 +165,7 @@ header {
         width: auto;
         position: absolute;
         right: 0;
+        color: #000;
     }
 
     .nav {

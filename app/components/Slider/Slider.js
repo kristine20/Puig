@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import media from "../../assets/images/slider-image.png";
@@ -18,6 +18,13 @@ function Slider() {
 
   const visibleCount = width && width <= 490 ? 1 : 4;
   const [animationKeys, setAnimationKeys] = useState({});
+  useEffect(() => {
+    if (width && width <= 768) {
+      setActiveIndex(0); 
+    } else {
+      setActiveIndex(null);
+    }
+  }, [width]);
 
   const restartAnimation = (i) => {
     setAnimationKeys((prev) => ({

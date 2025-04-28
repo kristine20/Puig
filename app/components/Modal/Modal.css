@@ -135,7 +135,7 @@
     }
 
     .question {
-        font-size: 15px;
+        font-size: 20px;
         align-self: center;
         /* width: 48%; */
         line-height: 30px;
@@ -147,5 +147,8 @@
 
     .answer-version {
         width: 90%;
+    }
+    .close-button{
+      right: -26px;
     }
 }

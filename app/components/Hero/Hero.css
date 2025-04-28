@@ -6,7 +6,21 @@
     justify-content: space-around;
     align-items: flex-end;
     flex-wrap: wrap;
+
+}
+
+.shadow-wrapper {
+    background: linear-gradient(177deg, rgba(217, 217, 217, 0) 10.24%, #575855 93.18%);
+    background-size: 100% 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-wrap: wrap;
     padding-bottom: 40px;
+    min-height: 209px;
+    position: relative;
+
 }
 
 .hero-text {
@@ -16,7 +30,6 @@
     line-height: 100%;
     color: #fff;
     width: 400px;
-    text-shadow: 3px 1px 5px #484545;
 }
 
 .hero-button {
@@ -50,6 +63,7 @@
         background-position: center;
         height: 250px;
         position: relative;
+
     }
 
     .hero-button {
@@ -59,11 +73,13 @@
 
     .hero-text {
         font-size: 24px;
+        margin-left: 15px;
     }
 
     .button-wrapper {
         position: absolute;
-        bottom: -60px;
+        bottom: -70px;
         border: 1px solid black;
+        margin-right: 0;
     }
 }

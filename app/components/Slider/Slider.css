@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: -8%;
 
 }
 
@@ -93,10 +94,14 @@
     .slider-wrapper {
         flex-wrap: wrap;
         overflow: initial;
-        gap: 0px;
+        row-gap: 30px;
         height: auto;
         margin-left: 15px;
         margin-top: 20%;
+    }
+
+    .slider-item {
+        width: 358px;
     }
 
     .slider-item:nth-child(2) {

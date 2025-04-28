@@ -73,23 +73,56 @@
     padding-top: 10px;
 }
 
-.history-slider-item .slide-circle {
-    justify-content: flex-start;
-}
-
-.history-slider-wrapper .circle-wrapper .year {
-    transition: border-radius 0.1s ease-in, box-shadow 0.1s ease-in;
-}
-
 .history-slider-wrapper .circle-wrapper:hover .year {
     background-color: #000000;
     border-radius: 54px;
     color: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-
+    transition: background-color 0.3s ease;
 }
 
-@media (max-width: 768px) {}
+.history-slider-item .slide-circle {
+    justify-content: flex-start;
+}
+
+.history-slider-wrapper .circle-wrapper .year {
+    transition: box-shadow 0.1s ease-in;
+}
+
+@media (min-width: 1910px) {
+    .history-slider-item::after {
+        width: 83%;
+        left: 64px;
+    }
+}
+
+@media (max-width: 1710px) {
+    .history-slider-item::after {
+        width: 83%;
+        left: 64px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .history-slider-item::after {
+        width: 82%;
+        left: 61px;
+    }
+}
+
+@media (max-width: 1270px) {
+    .history-slider-item::after {
+        width: 82%;
+        left: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .history-slider-item::after {
+        width: 81%;
+        left: 51px;
+    }
+}
 
 @media (max-width: 480px) {
     .history {
