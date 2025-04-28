@@ -23,7 +23,7 @@
 .history-button {
     border: none;
     width: 20px;
-    padding: 10px 10px;
+    padding: 10px 0px;
 
 }
 
@@ -31,7 +31,7 @@
     width: 360px;
     height: 160px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
     align-items: flex-start;
     border-radius: 8px;
@@ -92,21 +92,28 @@
 @media (min-width: 1910px) {
     .history-slider-item::after {
         width: 83%;
-        left: 64px;
+        left: 50px;
+    }
+}
+
+@media (max-width: 1880px) {
+    .history-slider-item::after {
+        width: 83%;
+        left: 52px;
     }
 }
 
 @media (max-width: 1710px) {
     .history-slider-item::after {
         width: 83%;
-        left: 64px;
+        left: 50px;
     }
 }
 
 @media (max-width: 1400px) {
     .history-slider-item::after {
         width: 82%;
-        left: 61px;
+        left: 53px;
     }
 }
 
