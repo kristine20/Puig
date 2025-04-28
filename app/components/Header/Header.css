@@ -234,6 +234,7 @@ header {
     header img {
         width: 100px;
         height: auto;
+        margin-left: 15px;
     }
 
     .mobile-logo-img {
@@ -252,7 +253,7 @@ header {
 
     .animation-logo.visible {
         opacity: 1;
-        left: 25px;
+        left: 40px;
         width: 2.8rem;
         top: -8px;
         max-height: 500px;

@@ -24,6 +24,11 @@
 
 }
 
+
+/* .slider-item:first-child {
+    justify-content: flex-start;
+} */
+
 .slider-item div {
     display: flex;
     gap: 10px;
@@ -113,11 +118,8 @@
     .slider-item {
         width: 320px;
     }
-}
 
-@media (max-width: 480px) {
     .slider-container {
-        background-color: #fff;
         position: relative;
         display: block;
 
@@ -159,6 +161,14 @@
         line-height: 100%;
         display: block;
         width: 100px;
+
+    }
+}
+
+@media (max-width: 480px) {
+
+    .slider-container {
+        background-color: #fff;
 
     }
 }

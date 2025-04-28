@@ -98,9 +98,15 @@
 }
 
 @media (max-width: 480px) {
+    .portfolio-wrapper {
+        padding-left: 30px;
+    }
+
     .portfolio-list-wrapper {
         flex-direction: column;
         gap: 15px;
+        padding-left: 0;
+
     }
 
     .portfolio-list-wrapper div {

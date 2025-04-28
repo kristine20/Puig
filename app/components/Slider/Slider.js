@@ -20,7 +20,7 @@ function Slider() {
   const [animationKeys, setAnimationKeys] = useState({});
   useEffect(() => {
     if (width && width <= 768) {
-      setActiveIndex(0); 
+      setActiveIndex(0);
     } else {
       setActiveIndex(null);
     }

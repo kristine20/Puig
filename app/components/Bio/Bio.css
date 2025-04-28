@@ -30,12 +30,33 @@
     padding-bottom: 30px;
 }
 
+@media (max-width: 910px) {
+    .bio-text-wrapper {
+        width: 70%;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-around;
+
+    }
+
+    .bio-basic {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 7%;
+    }
+}
+
 @media (max-width: 768px) {
     .bio-text-wrapper {
         flex-wrap: wrap;
+        flex-direction: row;
         justify-content: space-between;
-        width: 55%;
         padding-left: 90px;
+        gap: 20px;
+    }
+
+    .bio-basic {
+        display: block;
     }
 
     .avatar {
@@ -44,7 +65,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 610px) {
     .bio-wrapper {
         flex-wrap: wrap;
         justify-content: center;
@@ -65,6 +86,31 @@
     .bio-text-wrapper {
         padding-left: 30px;
     }
+}
+
+
+
+@media (max-width: 480px) {
+    /* .bio-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 80px;
+    }
+
+    .bio-wrapper .w-30, .bio-text-wrapper {
+        width: 100%;
+
+    }
+
+    .bio-wrapper .w-30 {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .bio-text-wrapper {
+        padding-left: 30px;
+    } */
 
     .bio-section {
         background-color: #fff;
