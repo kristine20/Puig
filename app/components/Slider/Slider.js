@@ -16,7 +16,7 @@ function Slider() {
   const [activeIndex, setActiveIndex] = useState(null);
   const width = useWindowWidth();
 
-  const visibleCount = width && width <= 490 ? 1 : 4;
+  const visibleCount = width && width <= 669 ? 1 : 4;
   const [animationKeys, setAnimationKeys] = useState({});
   useEffect(() => {
     if (width && width <= 768) {
@@ -133,7 +133,7 @@ function Slider() {
           </motion.div>
         ))}
       </motion.div>
-      {width && width <= 495 ? (
+      {width && width <= 669 ? (
         <div className="slider-button-wrapper">
           <span className="see-more">посмотреть ещё</span>{" "}
           <button

@@ -72,6 +72,16 @@ function History() {
       [i]: (prev[i] || 0) + 1,
     }));
   };
+  const handleDragEnd = (event, info) => {
+    const threshold = 50; // Amount of pixels you need to drag to trigger move
+    if (info.offset.x < -threshold && index < items.length - visibleCount) {
+      // Swiped left => Next
+      setIndex((prev) => Math.min(prev + 1, items.length - visibleCount));
+    } else if (info.offset.x > threshold && index > 0) {
+      // Swiped right => Previous
+      setIndex((prev) => Math.max(prev - 1, 0));
+    }
+  };
   return (
     <section className="w-fixed pt-2 mb-80 history">
       <div className="row">
@@ -90,7 +100,14 @@ function History() {
         >
           <Image src={arrow} alt="arrow" />
         </button>
-        <motion.div className="history-slider-wrapper" layout>
+        <motion.div
+          className="history-slider-wrapper"
+          layout
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={handleDragEnd}
+        >
           {visibleItems.map((item, i) => (
             <motion.div key={i} className="history-slider-item" layout>
               <div key={item.year} style={{ position: "relative" }}>
