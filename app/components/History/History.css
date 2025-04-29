@@ -73,7 +73,15 @@
     padding-top: 10px;
 }
 
-.history-slider-wrapper .circle-wrapper:hover .year {
+/* .history-slider-wrapper .circle-wrapper:hover .year {
+    background-color: #000000;
+    border-radius: 54px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+} */
+
+.active {
     background-color: #000000;
     border-radius: 54px;
     color: #fff;
@@ -86,13 +94,13 @@
 }
 
 .history-slider-wrapper .circle-wrapper .year {
-    transition: box-shadow 0.1s ease-in;
+    /* transition: box-shadow 0.1s ease-in; */
 }
 
 @media (min-width: 1910px) {
     .history-slider-item::after {
         width: 83%;
-        left: 50px;
+        left: 51px;
     }
 }
 

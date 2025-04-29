@@ -73,6 +73,7 @@
     font-family: Montserrat;
     font-weight: 300;
     font-size: 14px;
+    color: #000;
 }
 
 .question {
@@ -137,7 +138,8 @@
     }
 
     .question {
-        line-height: 30px;
+        line-height: 50px;
+        color: #000;
 
     }
 

@@ -130,9 +130,9 @@ header {
     }
 
     .animation-logo {
-        width: 7.5rem;
-        top: 25px;
+        top: 45px;
         right: 35px;
+        width: 6.1rem;
     }
 
     .nav {
@@ -151,6 +151,14 @@ header {
     }
 }
 
+@media (max-width: 565px) {
+    .animation-logo {
+        top: 45px;
+        right: 8px;
+        width: 4rem;
+    }
+}
+
 @media (max-width: 490px) {
     .w-fixed {
         margin: 0 auto;
@@ -165,6 +173,7 @@ header {
         width: auto;
         position: absolute;
         right: 0;
+        top: 30px;
         color: #000;
     }
 
