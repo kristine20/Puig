@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import arrow from "../../assets/images/arrow.png";
 import "./History.css";
+import { useWindowWidth } from "@/app/hooks";
 
 const items = [
   {
@@ -45,7 +46,9 @@ function History() {
   const [index, setIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const [animationKeys, setAnimationKeys] = useState({});
-  const visibleCount = 6;
+  const width = useWindowWidth();
+
+  const visibleCount = width && width <= 480 ? 2 : 6;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -125,10 +128,14 @@ function History() {
         <motion.div
           className="history-slider-wrapper"
           layout
+          // drag="x"
+          // dragConstraints={{ left: 0, right: 0 }}
+          // dragElastic={0.2}
+          // onDragEnd={handleDragEnd}
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.2}
-          onDragEnd={handleDragEnd}
+          onPanEnd={handleDragEnd}
         >
           {visibleItems.map((item, i) => {
             const globalIndex = index + i;

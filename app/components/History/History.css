@@ -97,6 +97,22 @@
     /* transition: box-shadow 0.1s ease-in; */
 }
 
+.history-slider-wrapper {
+    touch-action: pan-y;
+}
+
+.history-slider-wrapper {
+    display: flex;
+    /* overflow-x: auto; */
+    scroll-snap-type: x mandatory;
+}
+
+.history-slider-item {
+    min-width: 200px;
+    /* or whatever fits */
+    scroll-snap-align: start;
+}
+
 @media (min-width: 1910px) {
     .history-slider-item::after {
         width: 83%;
