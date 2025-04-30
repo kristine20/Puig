@@ -64,7 +64,7 @@ function History() {
 
         return nextActive;
       });
-    }, 10000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [index]);
@@ -125,7 +125,7 @@ function History() {
           <Image src={arrow} alt="arrow" />
         </button>
 
-        <motion.div
+        {/* <motion.div
           className="history-slider-wrapper"
           layout
           // drag="x"
@@ -155,6 +155,130 @@ function History() {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 3.3 }}
                   >
+                    <div
+                      className="circle-wrapper"
+                      onMouseEnter={() => restartAnimation(i)}
+                    >
+                      <svg
+                        className="circle-svg"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        key={animationKeys[i] || 0}
+                      >
+                        <circle
+                          className="circle-path"
+                          cx="20"
+                          cy="20"
+                          r="18"
+                          fill="none"
+                          stroke="#000"
+                          strokeWidth="0.5"
+                        />
+                      </svg>
+                      <p className={`year ${isActive ? "active" : ""}`}>
+                        {item.year}
+                      </p>
+                    </div>
+                  </motion.div>
+                  <p className="content">{item.content}</p>
+                  {i === visibleItems.length - 1 && (
+                    <div className="infinite-line"></div>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div> */}
+        {/* <motion.div
+          className="history-slider-wrapper"
+          animate={{ x: `-${activeIndex * (100 / visibleCount)}%` }}
+          transition={{ type: "spring", stiffness: 60, damping: 20 }}
+          style={{
+            display: "flex",
+            width: `${(items.length * 100) / visibleCount}%`,
+          }}
+        >
+          {items.map((item, i) => {
+            const isActive = i === activeIndex;
+
+            return (
+              <motion.div
+                key={item.year}
+                className="history-slider-item"
+                style={{
+                  width: `${100 / items.length}%`,
+                  flexShrink: 0,
+                }}
+              >
+                <div style={{ position: "relative" }}>
+                  <motion.div
+                    className="slide-circle cursor-pointer"
+                    initial={{ opacity: 1 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 3.3 }}
+                  >
+                    <div
+                      className="circle-wrapper"
+                      onMouseEnter={() => restartAnimation(i)}
+                    >
+                      <svg
+                        className="circle-svg"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        key={animationKeys[i] || 0}
+                      >
+                        <circle
+                          className="circle-path"
+                          cx="20"
+                          cy="20"
+                          r="18"
+                          fill="none"
+                          stroke="#000"
+                          strokeWidth="0.5"
+                        />
+                      </svg>
+                      <p className={`year ${isActive ? "active" : ""}`}>
+                        {item.year}
+                      </p>
+                    </div>
+                  </motion.div>
+                  <p className="content">{item.content}</p>
+                  {i === items.length - 1 && (
+                    <div className="infinite-line"></div>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div> */}
+        <motion.div
+          className="history-slider-wrapper"
+          style={{ display: "flex", overflow: "hidden" }}
+        >
+          {visibleItems.map((item, i) => {
+            const globalIndex = index + i;
+            const isActive = globalIndex === activeIndex;
+
+            return (
+              <motion.div
+                key={item.year}
+                className="history-slider-item"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.5 }}
+                style={{
+                  flex: "0 0 calc(100% / " + visibleCount + ")",
+                  textAlign: "center",
+                  transform: isActive ? "scale(1.1)" : "scale(1)",
+                  transition: "transform 0.3s ease",
+                }}
+              >
+                <div style={{ position: "relative" }}>
+                  <motion.div className="slide-circle cursor-pointer">
                     <div
                       className="circle-wrapper"
                       onMouseEnter={() => restartAnimation(i)}

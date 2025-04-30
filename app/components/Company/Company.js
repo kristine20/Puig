@@ -12,12 +12,10 @@ export default function Company() {
     <section className="w-fixed company-wrapper pt-1 ">
       <motion.div
         className="company-text-wrapper w-30"
-        // initial={width && width <= 490 ? { opacity: 0 } : { opacity: 0, x: 8 }}
-        // whileInView={
-        //   width && width <= 490 ? { opacity: 1 } : { opacity: 1, x: 200 }
-        // }
-        // viewport={{ once: false, amount: 0.5 }}
-        // transition={{ duration: 0.8, ease: "easeOut" }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.4 }}
+        transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
       >
         <div>
           <h2>Компания PUIG ― </h2>
