@@ -1,8 +1,12 @@
 .history-slider-wrapper {
     display: flex;
-    /* overflow: hidden; */
     gap: 10px;
     position: relative;
+    padding-top: 40px;
+}
+
+.history h2 {
+    line-height: 60px;
 }
 
 .history-slider-item::after {
@@ -19,20 +23,12 @@
 }
 
 
-
-.history-button {
-    border: none;
-    width: 20px;
-    padding: 10px 0px;
-
-}
-
 .history-slider-item {
     width: 360px;
     height: 160px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    gap: 10px;
     align-items: flex-start;
     border-radius: 8px;
     perspective: 1000px;
@@ -113,9 +109,45 @@
     scroll-snap-align: start;
 }
 
+
+.history-button {
+    width: 40px;
+    padding: 10px 0px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0%;
+    transform: translateY(-0%);
+    z-index: 10;
+    left: -12px
+}
+
+
+
+.marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.marquee {
+    display: flex;
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 @media (min-width: 1910px) {
     .history-slider-item::after {
-        width: 83%;
+        width: 53%;
         left: 51px;
     }
 }

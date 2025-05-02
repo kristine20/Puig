@@ -7,11 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import media from "../../assets/images/slider-image.png";
 import arrow from "../../assets/images/arrow.png";
 import { useWindowWidth } from "../../hooks";
-import "./Slider.css";
+import "./ProductSlider.css";
 
 const items = Array.from({ length: 20 }, (_, i) => `Item ${i + 1}`);
 
-function Slider() {
+function ProductSlider() {
   const [index, setIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(1);
   const width = useWindowWidth();
@@ -151,4 +151,4 @@ function Slider() {
   );
 }
 
-export default Slider;
+export default ProductSlider;
