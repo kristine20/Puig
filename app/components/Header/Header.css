@@ -5,7 +5,7 @@ header {
 
 .nav-wrapper {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     width: 70%;
 }
@@ -49,7 +49,6 @@ header {
     align-items: baseline;
     width: 320px;
     height: 108px;
-    margin-top: 30px;
 }
 
 .nav li a {
@@ -73,9 +72,9 @@ header {
 
 .animation-logo {
     position: fixed;
-    top: 13px;
+    top: 40px;
     right: 60px;
-    width: 9.1rem;
+    width: 7.1rem;
     height: auto;
     z-index: 10;
 }
@@ -120,30 +119,43 @@ header {
         justify-content: flex-start !important;
         gap: 10px;
     }
-    header img{
-     width: 100px;
-     height: auto;
+
+    header img {
+        width: 100px;
+        height: auto;
     }
-    .nav-wrapper{
-    width: 100%;
+
+    .nav-wrapper {
+        width: 100%;
     }
+
     .animation-logo {
-        width: 7.5rem;
-        top: 25px;
+        top: 45px;
         right: 35px;
+        width: 6.1rem;
     }
-    .nav{
+
+    .nav {
         width: 140px;
+        margin-top: -6px;
     }
 
     .menu {
-        list-style: none;       
+        list-style: none;
         margin: 0;
         height: 108px;
     }
 
-    .submenu{
-                display: none;
+    .submenu {
+        display: none;
+    }
+}
+
+@media (max-width: 565px) {
+    .animation-logo {
+        top: 45px;
+        right: 8px;
+        width: 4rem;
     }
 }
 
@@ -161,6 +173,8 @@ header {
         width: auto;
         position: absolute;
         right: 0;
+        top: 30px;
+        color: #000;
     }
 
     .nav {
@@ -229,12 +243,13 @@ header {
     header img {
         width: 100px;
         height: auto;
+        margin-left: 15px;
     }
 
     .mobile-logo-img {
         width: 70px;
         height: auto;
-        padding-top: 47px;
+        padding-top: 22px;
     }
 
     .animation-logo {
@@ -247,7 +262,7 @@ header {
 
     .animation-logo.visible {
         opacity: 1;
-        left: 25px;
+        left: 40px;
         width: 2.8rem;
         top: -8px;
         max-height: 500px;

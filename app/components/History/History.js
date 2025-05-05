@@ -1,8 +1,7 @@
 "use client";
+import React, { useState, useEffect } from "react";
+import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-
 import arrow from "../../assets/images/arrow.png";
 import "./History.css";
 
@@ -18,22 +17,20 @@ const items = [
   {
     year: 1940,
     content:
-      "Запуск аромата Agua Lavanda Puig становится символом успеха компании ",
+      "Запуск аромата Agua Lavanda Puig становится символом успеха компании",
   },
   {
     year: 1946,
-    content:
-      "Строительство новой фабрики и здания головного офиса компании в Барселоне на улице Travessera de Gràcia.",
+    content: "Строительство новой фабрики и здания офиса в Барселоне.",
   },
   {
     year: 1948,
     content:
-      "Запуск аромата L'Air du Temps, ставший образцом для индустрии. Через 50 ет дом Nina Ricci войдет в состав компании Puig.",
+      "Запуск аромата L'Air du Temps. Позже Nina Ricci войдет в состав компании.",
   },
   {
     year: 1950,
-    content:
-      "Сыновья основателя (Антонио, Мариано, Жозе Мария и Энрике) присоединяются к семейному бизнесу. ",
+    content: "Сыновья основателя присоединяются к семейному бизнесу.",
   },
   { year: 2021, content: "Pivoted to remote work" },
   { year: 2022, content: "Redesigned our product" },
@@ -42,99 +39,75 @@ const items = [
 ];
 
 function History() {
-  const [index, setIndex] = useState(0);
-  const visibleCount = 6;
+  const [activeIndex, setActiveIndex] = useState(null);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      const nextIndex = (activeIndex + 1) % items.length; // Cycle through items
+      setActiveIndex(nextIndex);
+    }, 5000); // 3 seconds delay before changing index
+
+    return () => clearTimeout(timeoutId); // Cleanup timeout on component unmount or re-render
+  }, [activeIndex]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => {
-        const maxIndex = items.length - visibleCount;
-        return prevIndex < maxIndex ? prevIndex + 1 : 0;
+    const scrollers = document.querySelectorAll(".scroller");
+
+    // If a user hasn't opted in for reduced motion, then we add the animation
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      addAnimation();
+    }
+
+    function addAnimation() {
+      scrollers.forEach((scroller) => {
+        scroller.setAttribute("data-animated", true);
+        const scrollerInner = scroller.querySelector(".scroller__inner");
+        const scrollerContent = Array.from(scrollerInner.children);
+        setActiveIndex(activeIndex + 1);
+        scrollerContent.forEach((item) => {
+          const duplicatedItem = item.cloneNode(true);
+          duplicatedItem.setAttribute("aria-hidden", true);
+          scrollerInner.appendChild(duplicatedItem);
+        });
       });
-    }, 10000);
-
-    return () => clearInterval(interval);
+    }
   }, []);
-  const handlePrev = () => {
-    setIndex((prev) => Math.max(prev - 1, 0));
-  };
 
-  const handleNext = () => {
-    setIndex((prev) => Math.min(prev + 1, items.length - visibleCount));
-  };
-
-  const visibleItems = items.slice(index, index + visibleCount);
-  const [animationKeys, setAnimationKeys] = useState({});
-
-  const restartAnimation = (i) => {
-    setAnimationKeys((prev) => ({
-      ...prev,
-      [i]: (prev[i] || 0) + 1,
-    }));
-  };
   return (
     <section className="w-fixed pt-2 mb-80 history">
-      <div className="row">
-        <h2>История PUIG ― </h2>
-        <button
-          onClick={handlePrev}
-          disabled={index === 0}
-          className="history-button"
-        >
-          <Image src={arrow} alt="arrow" style={{ rotate: "180deg" }} />
-        </button>
-        <button
-          onClick={handleNext}
-          disabled={index >= items.length - visibleCount}
-          className="history-button"
-        >
-          <Image src={arrow} alt="arrow" />
-        </button>
-        <motion.div className="history-slider-wrapper" layout>
-          {visibleItems.map((item, i) => (
-            <motion.div key={i} className="history-slider-item" layout>
-              <div key={item.year} style={{ position: "relative" }}>
-                <motion.div
-                  className="slide-circle cursor-pointer"
-                  initial={{ opacity: 1 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 3.3 }}
-                  // onClick={() => toggleMedia(i)}
-                >
-                  <div
-                    className="circle-wrapper"
-                    onMouseEnter={() => restartAnimation(i)}
+      <h2>История PUIG ―</h2>
+      <div className="scroller" data-direction="left" data-speed="slow">
+        <div className="scroller__inner">
+          {items.map((item, index) => {
+            const isActive = index === activeIndex;
+            return (
+              <div key={item.year} className={`history-slider-item marquee`}>
+                <div className="circle-wrapper">
+                  <svg
+                    className={`circle-svg `}
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
                   >
-                    <svg
-                      className="circle-svg"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                      key={animationKeys[i] || 0}
-                    >
-                      <circle
-                        className="circle-path"
-                        cx="20"
-                        cy="20"
-                        r="18"
-                        fill="none"
-                        stroke="#000"
-                        strokeWidth="0.5"
-                      />
-                    </svg>
-                    <p className="year">{item.year}</p>
-                  </div>
-                </motion.div>
+                    <circle
+                      className="circle-path"
+                      cx="20"
+                      cy="20"
+                      r="18"
+                      fill="none"
+                      stroke={"#000"}
+                      strokeWidth={isActive ? 1 : 0.5}
+                    />
+                  </svg>
+                  <p className={`year ${isActive ? "active" : ""}`}>
+                    {item.year}
+                  </p>
+                </div>
                 <p className="content">{item.content}</p>
-
-                {i === visibleItems.length - 1 && (
-                  <div className="infinite-line"></div>
-                )}
+                {/* <div className="infinite-line"></div> */}
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "framer-motion": "^12.6.5",
+    "lodash": "^4.17.21",
     "motion": "^12.6.5",
     "next": "^15.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-marquee-slider": "^1.1.5",
+    "react-multi-carousel": "^2.8.6",
     "sharp": "^0.34.1",
     "swiper": "^11.2.6"
   }

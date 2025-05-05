@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import close from "../../assets/images/close.png";
+import close from "../../assets/images/close.svg";
 import "./Modal.css";
 
 export default function Modal({ isModalActive, closeModal }) {

@@ -7,22 +7,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import media from "../../assets/images/slider-image.png";
 import arrow from "../../assets/images/arrow.png";
 import { useWindowWidth } from "../../hooks";
-import "./Slider.css";
+import "./ProductSlider.css";
 
 const items = Array.from({ length: 20 }, (_, i) => `Item ${i + 1}`);
 
-function Slider() {
+function ProductSlider() {
   const [index, setIndex] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(1);
   const width = useWindowWidth();
 
-  const visibleCount = width && width <= 490 ? 1 : 4;
+  const visibleCount = width && width <= 669 ? 1 : 4;
   const [animationKeys, setAnimationKeys] = useState({});
   useEffect(() => {
     if (width && width <= 768) {
-      setActiveIndex(0); 
+      setActiveIndex(0);
     } else {
-      setActiveIndex(null);
+      setActiveIndex(1);
     }
   }, [width]);
 
@@ -62,7 +62,7 @@ function Slider() {
                       initial={{ opacity: 1 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.1 }}
                       onClick={() => toggleMedia(i)}
                     >
                       <div
@@ -96,7 +96,7 @@ function Slider() {
                       initial={{ opacity: 1 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.1 }}
                       onClick={() => toggleMedia(i)}
                     >
                       нажать, чтобы посмотреть
@@ -121,7 +121,7 @@ function Slider() {
                       y: -80,
                     }}
                     transition={{
-                      duration: 1,
+                      duration: 0.8,
                       ease: "easeInOut",
                     }}
                   >
@@ -133,7 +133,7 @@ function Slider() {
           </motion.div>
         ))}
       </motion.div>
-      {width && width <= 495 ? (
+      {width && width <= 669 ? (
         <div className="slider-button-wrapper">
           <span className="see-more">посмотреть ещё</span>{" "}
           <button
@@ -151,4 +151,4 @@ function Slider() {
   );
 }
 
-export default Slider;
+export default ProductSlider;
