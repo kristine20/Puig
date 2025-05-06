@@ -24,7 +24,8 @@
 
 
 .history-slider-item {
-    width: 360px;
+    /* width: 360px; */
+    width: 220px;
     height: 160px;
     display: flex;
     flex-direction: column;
@@ -116,11 +117,11 @@
     background: none;
     border: none;
     cursor: pointer;
-    position: absolute;
-    top: 0%;
+    /* position: absolute; */
+    /* top: 0%; */
     transform: translateY(-0%);
     z-index: 10;
-    left: -12px
+    /* left: -12px */
 }
 
 
@@ -141,7 +142,7 @@
 .scroller__inner {
     padding-block: 1rem;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 1rem;
 }
 
@@ -191,42 +192,42 @@
 
 @media (min-width: 1910px) {
     .history-slider-item::after {
-        width: 91%;
+        width: 85%;
         left: 51px;
     }
 }
 
 @media (max-width: 1880px) {
     .history-slider-item::after {
-        width: 83%;
+        width: 85%;
         left: 52px;
     }
 }
 
 @media (max-width: 1710px) {
     .history-slider-item::after {
-        width: 83%;
+        width: 86%;
         left: 50px;
     }
 }
 
 @media (max-width: 1400px) {
     .history-slider-item::after {
-        width: 82%;
+        width: 84%;
         left: 53px;
     }
 }
 
 @media (max-width: 1270px) {
     .history-slider-item::after {
-        width: 82%;
-        left: 50px;
+        width: 85%;
+        left: 51px;
     }
 }
 
 @media (max-width: 768px) {
     .history-slider-item::after {
-        width: 81%;
+        width: 85%;
         left: 51px;
     }
 }
