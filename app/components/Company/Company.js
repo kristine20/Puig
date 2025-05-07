@@ -40,6 +40,18 @@ export default function Company() {
       </motion.div>
       <motion.div
         className="image-wrapper"
+        style={{
+          width:
+            width == 1905 && width <= 1915
+              ? "65%"
+              : width > 2115 && width <= 2375
+              ? "63%"
+              : width > 2380 && width <= 2538
+              ? "62%"
+              : width > 2540
+              ? "61%"
+              : "65%",
+        }}
         // initial={{ opacity: 0, x: 50 }}
         // whileInView={{ opacity: 1, x: 0 }}
         // viewport={{ once: false, amount: 0.5 }}

@@ -50,7 +50,22 @@ function ProductSlider() {
 
   return (
     <div className="slider-container pt-2">
-      <motion.div className="slider-wrapper" layout>
+      <motion.div
+        className="slider-wrapper"
+        style={{
+          width:
+            width == 1905 && width <= 1915
+              ? "90%"
+              : width > 2115 && width <= 2375
+              ? "82%"
+              : width > 2380 && width <= 2538
+              ? "73%"
+              : width > 2540
+              ? "69%"
+              : "90%",
+        }}
+        layout
+      >
         {visibleItems.map((item, i) => (
           <motion.div key={i} className="slider-item" layout>
             <div key={i}>

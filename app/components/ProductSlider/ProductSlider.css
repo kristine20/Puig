@@ -110,6 +110,12 @@
     height: 16px;
 }
 
+@media (max-width: 1769px) {
+    .slider-wrapper {
+        width: 98% !important;
+    }
+}
+
 @media (max-width: 769px) {
     .slider-wrapper {
         flex-wrap: wrap;
