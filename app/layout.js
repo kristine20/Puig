@@ -1,3 +1,4 @@
+import Headers from "./components/Header/Header";
 import "./globals.css";
 
 export const metadata = {
@@ -17,7 +18,14 @@ export default function RootLayout({ children }) {
         name="viewport"
         content="width=device-width, initial-scale=1.0"
       ></meta>
-      <body>{children}</body>
+      <body>
+        <main className="w-full">
+          <div className="row">
+            <Headers />
+          </div>
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

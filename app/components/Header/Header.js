@@ -5,15 +5,22 @@ import { useEffect, useState } from "react";
 
 import logo from "../../assets/images/logo.png";
 import "./Header.css";
+import { usePathname } from "next/navigation";
 
+const menuItems = [
+  { href: "/", label: "главная" },
+  { href: "", label: " о компании" },
+  { href: "/brands", label: "бренды" },
+  { href: "/videotraining", label: "видеообучение" },
+];
 export default function Headers() {
   const fullPath = `M178.5,202.8c0-48.9-33.7-71.2-72.6-79.7c-17.4-3.7-26.6-18-26.6-35c0-17.4,13.4-33.7,44.7-33.7 c51,0,105.3,58,105.3,122.1c0,60.9-44,70-44,123.3c0,40.8,27.7,79,77.1,79c49.5,0,77.2-38.1,77.2-79c0-55.5-44.3-61.2-44.3-121.5 c0-63.2,52-123.3,108.5-123.3c19.8,0,42.6,8.1,42.6,33.1c0,37.2-51.7,33.9-71.8,52.6c-17.7,16.4-25.2,35.2-25.2,62.6 c0,26.3,19.1,58.6,19.1,116.8c0,41.7-30.2,97.8-106.5,97.8S134,367.7,134,301c0-31.6,13.9-45.1,13.9-91.6 c0-34.4-27.2-52.9-49.6-52.9s-45.1,12.8-45.1,45.6c0,34,32.8,54.5,39.2,82.5c2,9.1,4.9,30.1,6,41.9c7.5,79.3,80.1,125.5,164.1,125.5 c99.5,0,139.4-65.7,139.4-123.7c0-41.2-18.8-72.1-18.8-119.7c0-39.6,33.4-52.2,51.8-52.2s42.8,13.9,42.8,44.3 c0,34.5-27.6,49.8-37,74.1c-7.2,18.7-9.4,25.2-9.4,72c0,53.4-47.7,137.3-169.3,137.3c-89,0-205-37.4-205-171.9 c0-21.1-11.3-32.5-22.3-32.5S8.9,290.1,8.9,322c0,80.3,84.1,195.2,253.5,195.3c134.7,0,203.9-78.8,203.9-198.2 c0-29.5,14.3-39.3,24.5-39.3s22.5,8.7,22.5,38.4c0,136.9-94.1,228.1-250.8,228.1l0,0c-9.8,0-17.8,8-17.8,17.8s8,17.8,17.8,17.8 c9.8,0,17.8-8,17.8-17.8s-8-17.8-17.8-17.8c-7.9,0-14.3,6.4-14.3,14.3c0,6,4.8,10.8,10.8,10.8c4,0,7.3-3.3,7.3-7.3s-3.3-7.3-7.3-7.3 s-7.3,3.3-7.3,7.3`; // your full `d` value
   const segments = fullPath.split(/(?=[A-Za-z])/);
   const [menuOpen, setMenuOpen] = useState(false);
   const [visiblePath, setVisiblePath] = useState(fullPath);
   const [showExtraPaths, setShowExtraPaths] = useState(true);
-  const [showSubmenu, setShowSubmenu] = useState(false);
   const [showSvg, setShowSvg] = useState(false);
+  const pathname = usePathname();
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -80,76 +87,27 @@ export default function Headers() {
           </div>
           <nav className={`nav`}>
             <ul className="menu">
-              <li>
-                <Link href="/" className="header_text">
-                  главная
-                </Link>
-              </li>
-              <li className="submenu-parent">
-                <Link
-                  href="/"
-                  className="header_text submenu-toggle"
-                  onClick={() => setShowSubmenu((prev) => !prev)}
+              {menuItems.map(({ href, label }) => (
+                <li
+                  key={href}
+                  className={`${pathname === href ? "active-nav" : ""}`}
                 >
-                  о компании
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="header_text">
-                  бренды
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="header_text">
-                  видеообучение
-                </Link>
-              </li>
+                  <Link href={href} className="header-text">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
-            {/* 
-          {showSubmenu && (
-            <ul className="submenu">
-              <li>
-                <a href="#" className="header_text">
-                  Who We Are
-                </a>
-              </li>
-              <li>
-                <a href="#" className="header_text">
-                  Governance
-                </a>
-              </li>
-              <li>
-                <a href="#" className="header_text">
-                  Ethical Code
-                </a>
-              </li>
-              <li>
-                <a href="#" className="header_text">
-                  Invisible Beauty
-                </a>
-              </li>
-              <li>
-                <a href="#" className="header_text">
-                  Worldwide Presence
-                </a>
-              </li>
-              <li>
-                <a href="#" className="header_text">
-                  Our History
-                </a>
-              </li>
-            </ul>
-          )} */}
           </nav>
           <div className="mobile-contact-info">
-            <span className="header_text">тел: +0 (000) 000 00 00</span>
-            <span className="header_text">e-mail: puig@gmail.com</span>
+            <span className="header-text">тел: +0 (000) 000 00 00</span>
+            <span className="header-text">e-mail: puig@gmail.com</span>
           </div>
         </div>
 
         <div className="contact-info">
-          <span className="header_text">тел: +0 (000) 000 00 00</span>
-          <span className="header_text"> e-mail: puig@gmail.com</span>
+          <span className="header-text">тел: +0 (000) 000 00 00</span>
+          <span className="header-text"> e-mail: puig@gmail.com</span>
         </div>
       </div>
       <div>

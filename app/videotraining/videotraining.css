@@ -1,0 +1,20 @@
+.video-training-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.vt-title {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 0%;
+
+}
+
+.video-image {
+    width: 100%;
+}
+
+.video-training-image {
+    width: 25%;
+}

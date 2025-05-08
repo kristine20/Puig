@@ -18,7 +18,7 @@ header {
 }
 
 
-.header_text {
+.header-text {
     font-family: Montserrat;
     font-weight: 400;
     font-size: 12px;
@@ -63,6 +63,11 @@ header {
 .menu li:hover, .submenu li:hover {
     list-style-type: disc;
 }
+
+.active-nav {
+    list-style-type: disc;
+}
+
 
 .contact-info {
     display: flex;
