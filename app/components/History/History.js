@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
 import arrow from "../../assets/images/arrow.png";
 import "./History.css";
