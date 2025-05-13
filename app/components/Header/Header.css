@@ -78,7 +78,7 @@ header {
 .animation-logo {
     position: fixed;
     top: 40px;
-    right: 60px;
+    right: 10%;
     width: 7.1rem;
     height: auto;
     z-index: 10;

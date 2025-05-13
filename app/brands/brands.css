@@ -1,0 +1,98 @@
+.hero-brands-wrapper {
+    background-image: url(../assets/images/brands/brandbanner.jpg);
+    background-size: 100% 100%;
+    height: 546px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+}
+
+.shadow-wrapper {
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0) 1.57%, #575855 100%);
+
+    background-size: 100% 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+    min-height: 209px;
+    position: relative;
+
+}
+
+.hero-brand-text {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 30px;
+    color: #fff;
+
+
+}
+
+.brand-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.bio-subtitle {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 24px;
+    color: #363636;
+    line-height: 30px;
+
+}
+
+.bio-text-width {
+    width: 366px;
+}
+
+.bio-text-video-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.bio-text-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.brand-bio-content-item {
+    width: 48%;
+}
+
+
+/***/
+.brand-bio-videos-wrapper {
+    position: relative;
+    width: 95%;
+    border-radius: 8px;
+}
+
+.slider-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.video-slider {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.slider-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}

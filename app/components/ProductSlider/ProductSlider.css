@@ -69,21 +69,6 @@
     align-items: center;
 }
 
-.circle-wrapper {
-    position: relative;
-    width: 54px;
-    height: 54px;
-    cursor: pointer;
-}
-
-.circle-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: rotate(-90deg);
-    width: 54px;
-    height: 54px;
-}
 
 .circle-path {
     stroke-dasharray: 113;

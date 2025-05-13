@@ -42,6 +42,14 @@ a {
   width: 30%;
 }
 
+.w-70 {
+  width: 70%;
+}
+
+.w-25 {
+  width: 25%;
+}
+
 .row {
   margin-left: 15px;
   margin-right: 15px;
@@ -81,6 +89,18 @@ a {
   margin-bottom: 80px;
 }
 
+.pt-20 {
+  padding-top: 20px;
+
+
+}
+
+.pb-20 {
+
+  padding-bottom: 20px;
+
+}
+
 .pt-1 {
   padding-top: 40px;
 
@@ -115,6 +135,42 @@ button {
   padding: 10px 20px;
   width: 200px;
   cursor: pointer;
+}
+
+.bio-text {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 14px;
+  width: 455px;
+  color: #363636;
+  margin-right: 3%;
+}
+
+.slider-buttons {
+  width: 40px;
+  padding: 10px 0px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-0%);
+  z-index: 10;
+
+}
+
+.circle-wrapper {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  cursor: pointer;
+}
+
+.circle-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  width: 54px;
+  height: 54px;
 }
 
 
