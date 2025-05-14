@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import "./brands.css";
 import HistorySlider from "../components/History/History";
+import { useWindowWidth } from "../hooks";
 const items = [
   { year: 1939, content: "Рождение Каролины Эррера, Венесуэла, Каракас." },
   {
@@ -40,16 +41,18 @@ const items = [
 ];
 
 const TextTimelineBio = () => {
+  const width = useWindowWidth();
+  const isMobile = width <= 768;
   return (
     <>
       <motion.div
-        className="flex items-center"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.4 }}
-        transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+        className="flex brand-bottom-content"
+        // initial={{ opacity: 0, y: 10 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // viewport={{ once: false, amount: 0.4 }}
+        // transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
       >
-        <p className="bio-text pt-20 ">
+        <p className="bio-text pt-2 ">
           Каролина Эррера де Баез, дочь Каролины Эрреры, с 1996 года занимает
           пост креативного директора парфюмерной линии Дома Carolina Herrera. Ее
           творческий талант и интуиция стали залогом успеха ароматов Дома моды.
@@ -57,8 +60,13 @@ const TextTimelineBio = () => {
           свободу как при создании новых ароматов, так и при разработке
           коллекций линии CH Carolina Herrera.
         </p>
-        <div>
-          <HistorySlider items={items} title="" />
+        <div className="vertical-slider-wrapper">
+          <HistorySlider
+            items={items}
+            title=""
+            buttonPosition="bottom"
+            direction={width <= 768 && width > 480 ? "vertical" : "horizontal"}
+          />
         </div>
       </motion.div>
     </>

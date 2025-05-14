@@ -39,10 +39,8 @@
     position: absolute;
     top: 27px;
     left: 57px;
-    /* align with circle */
     height: 1px;
     width: 2000px;
-    /* simulate "infinite" */
     background-color: black;
     z-index: 1;
 }
@@ -70,14 +68,6 @@
     padding-top: 10px;
 }
 
-/* .history-slider-wrapper .circle-wrapper:hover .year {
-    background-color: #000000;
-    border-radius: 54px;
-    color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-} */
-
 .active {
     background-color: #000000;
     border-radius: 54px;
@@ -90,23 +80,17 @@
     justify-content: flex-start;
 }
 
-.history-slider-wrapper .circle-wrapper .year {
-    /* transition: box-shadow 0.1s ease-in; */
-}
-
 .history-slider-wrapper {
     touch-action: pan-y;
 }
 
 .history-slider-wrapper {
     display: flex;
-    /* overflow-x: auto; */
     scroll-snap-type: x mandatory;
 }
 
 .history-slider-item {
     min-width: 200px;
-    /* or whatever fits */
     scroll-snap-align: start;
 }
 
@@ -117,11 +101,8 @@
     background: none;
     border: none;
     cursor: pointer;
-    /* position: absolute; */
-    /* top: 0%; */
     transform: translateY(-0%);
     z-index: 10;
-    /* left: -12px */
 }
 
 
@@ -161,7 +142,13 @@
 .scroller[data-animated="true"] .scroller__inner {
     width: max-content;
     flex-wrap: nowrap;
-    animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+    animation: scroll var(--_animation-duration, 80s) var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-animated="true"].vertical .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scrollY var(--_animation-duration, 90s) var(--_animation-direction, forwards) linear infinite;
 }
 
 .scroller[data-direction="right"] {
@@ -185,6 +172,56 @@
         transform: translate(calc(-50% - 0.5rem));
     }
 }
+
+@keyframes scrollY {
+    to {
+        transform: translateY(calc(-50% - 0.5rem));
+    }
+}
+
+
+
+/*Vertical Styling*/
+.scroller.horizontal {
+    display: flex;
+    /* overflow-x: auto; */
+    /* white-space: nowrap; */
+}
+
+.scroller.vertical {
+    display: block;
+    /* overflow-y: auto; */
+    max-height: 700px;
+    /* adjust as needed */
+}
+
+.scroller__inner {
+    display: flex;
+    flex-direction: row;
+}
+
+.scroller.vertical .scroller__inner {
+    flex-direction: column;
+}
+
+.history-slider-item {
+    /* padding: 10px; */
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* text-align: center; */
+}
+
+.history.vertical .history-button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 
 
 
@@ -230,6 +267,30 @@
         width: 85%;
         left: 51px;
     }
+
+    .history.vertical .history-slider-item::after {
+        width: 1px;
+        left: 36px;
+        height: 9.2vh;
+        top: 57px;
+    }
+
+    .history.vertical .history-slider-item {
+        align-items: normal;
+        height: 110px;
+    }
+
+    .history.vertical .content {
+        left: 60px;
+        top: -55px;
+        position: relative;
+    }
+
+    .history.vertical .history-button-group>.history-button:first-child {
+        position: absolute;
+        top: 30px;
+    }
+
 }
 
 @media (max-width: 480px) {

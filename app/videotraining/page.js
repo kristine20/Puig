@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import image1 from "../assets/images/videoTraining/image1-full.png";
 import image2 from "../assets/images/videoTraining/image2-full.png";
@@ -33,9 +33,14 @@ const images = [
 ];
 
 const VideoTraining = () => {
-  const [fullscreenImage, setFullscreenImage] = useState(null); // image in fullscreen
-  const [activeVideo, setActiveVideo] = useState(null); // video playing
+  const [fullscreenImage, setFullscreenImage] = useState(null);
+  const [activeVideo, setActiveVideo] = useState(null);
 
+  useEffect(() => {
+    if (fullscreenImage && !activeVideo) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [fullscreenImage, activeVideo]);
   return (
     <div>
       <div className="w-fixed">

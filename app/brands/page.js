@@ -25,6 +25,7 @@ const Brands = () => {
       </section>
       <section className="w-fixed brand-content-wrapper pt-1">
         <TextVideoBio className="w-70" />
+
         <TextBio className="w-30" />
         <TextTimelineBio />
       </section>
