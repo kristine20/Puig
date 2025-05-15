@@ -18,7 +18,7 @@ const Brands = () => {
               viewport={{ once: false, amount: 0.5 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h1 className="hero-brand-text ">Carolina Herrera</h1>
+              <h1 className="hero-brand-text">Carolina Herrera</h1>
             </motion.div>
           </div>
         </div>

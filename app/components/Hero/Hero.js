@@ -1,12 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 
-import "./Hero.css";
+import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
-    <section className="hero-wrapper">
-      <div className="shadow-wrapper">
+    <section className={`${styles.heroWrapper}`}>
+      <div className={`${styles.shadowWrapper}`}>
         <div className="w-fixed flex space-between ">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -15,19 +15,19 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="w-30"
           >
-            <h1 className="hero-text">
+            <h1 className={`${styles.heroText}`}>
               Твой парфюмерный гид в мире брендов PUIG
             </h1>
           </motion.div>
 
           <motion.div
-            className="button-wrapper"
+            className={`${styles.buttonWrapper}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.5 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            <button className="hero-button">авторизироваться</button>
+            <button className={`${styles.heroButton}`}>авторизироваться</button>
           </motion.div>
         </div>
       </div>

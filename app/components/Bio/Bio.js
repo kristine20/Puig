@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 
 import signature from "../../assets/images/signature.png";
 import bio from "../../assets/images/mark.png";
-import "./Bio.css";
-
-export default function Bio() {
+import styles from "./Bio.module.css";
+const Bio = () => {
   return (
     <div className="row">
-      <section className="w-fixed bio-wrapper pt-1">
+      <section className={`${styles.bioWrapper} w-fixed  pt-1`}>
         <motion.div
           initial={{ scale: 1.2, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -17,16 +16,16 @@ export default function Bio() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="w-30"
         >
-          <Image src={bio} alt="Bio" className="avatar h-auto" />
+          <Image src={bio} alt="Bio" className={`${styles.avatar}`} />
         </motion.div>
         <motion.div
-          className="bio-text-wrapper items-center"
+          className={`${styles.bioTextWrapper} items-center`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.4 }}
           transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
         >
-          <p className="bio-text">
+          <p className={`${styles.bioText}`}>
             Компания Puig известна своим умением развивать модные бренды, и мы
             делаем все возможное, чтобы так же успешно действовать в сфере
             парфюмерии. Мы верим, что основа нашего успеха ― сочетание
@@ -34,15 +33,16 @@ export default function Bio() {
             объединили творчество и увлеченность в уникальную бизнес-модель.
           </p>
 
-          <div className="bio-basic">
+          <div className={`${styles.bioBasic}`}>
             <div>
-              <p className="bio-name">Марк Пуч</p>
-              <p className="bio-position">Президент компании</p>
+              <p className={`${styles.bioName}`}>Марк Пуч</p>
+              <p className={`${styles.bioPosition}`}>Президент компании</p>
             </div>
-            <Image src={signature} alt="Signature" className="h-auto" />
+            <Image src={signature} alt="Signature" />
           </div>
         </motion.div>
       </section>
     </div>
   );
-}
+};
+export default Bio;

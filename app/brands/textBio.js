@@ -16,7 +16,7 @@ const bioData = {
 
 const TextBio = () => {
   const width = useWindowWidth();
-  const isMobile = width <= 480;
+  const isMobile = width <= 600;
 
   return (
     <motion.div className="brand-right-text">

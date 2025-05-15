@@ -141,7 +141,8 @@ button {
   font-family: Montserrat;
   font-weight: 300;
   font-size: 14px;
-  width: 455px;
+  max-width: 455px;
+  width: 100%;
   color: #363636;
   margin-right: 3%;
 }

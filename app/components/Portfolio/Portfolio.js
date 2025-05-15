@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-import "./Portfolio.css";
+import styles from "./Portfolio.module.css";
 
 const circles = [
   {
@@ -42,15 +41,15 @@ const slideDownVariant = {
   }),
 };
 
-export default function Portfolio() {
+const Portfolio = () => {
   return (
-    <section className="portfolio-full-bg ">
-      <section className="w-fixed portfolio-wrapper pl-15">
+    <section className={styles.portfolioFullBg}>
+      <section className={`w-fixed pl-15 ${styles.portfolioWrapper}`}>
         <div className="row">
           <h1>Портфолио брендов PUIG в России </h1>
         </div>
 
-        <div className="pt-1 portfolio-list-wrapper pl-15">
+        <div className={`pt-1 pl-15 ${styles.portfolioListWrapper}`}>
           {circles.map((block, i) => (
             <motion.div
               key={block.title}
@@ -60,10 +59,10 @@ export default function Portfolio() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <ul className="list-circle">
+              <ul className={styles.listCircle}>
                 <li>{block.title}</li>
               </ul>
-              <ul className="portfolio-items">
+              <ul className={styles.portfolioItems}>
                 {block.items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
@@ -74,4 +73,6 @@ export default function Portfolio() {
       </section>
     </section>
   );
-}
+};
+
+export default Portfolio;

@@ -1,6 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
 import image1 from "../assets/images/videoTraining/image1-full.png";
 import image2 from "../assets/images/videoTraining/image2-full.png";
 import image3 from "../assets/images/videoTraining/image3-full.png";
@@ -116,4 +117,3 @@ const VideoTraining = () => {
 };
 
 export default VideoTraining;
-

@@ -42,7 +42,6 @@ const items = [
 
 const TextTimelineBio = () => {
   const width = useWindowWidth();
-  const isMobile = width <= 768;
   return (
     <>
       <motion.div
@@ -52,7 +51,7 @@ const TextTimelineBio = () => {
         // viewport={{ once: false, amount: 0.4 }}
         // transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
       >
-        <p className="bio-text pt-2 ">
+        <p className="bio-text bio-text-width pt-2 ">
           Каролина Эррера де Баез, дочь Каролины Эрреры, с 1996 года занимает
           пост креативного директора парфюмерной линии Дома Carolina Herrera. Ее
           творческий талант и интуиция стали залогом успеха ароматов Дома моды.
@@ -65,7 +64,7 @@ const TextTimelineBio = () => {
             items={items}
             title=""
             buttonPosition="bottom"
-            direction={width <= 768 && width > 480 ? "vertical" : "horizontal"}
+            direction={width <= 768 && width > 600 ? "vertical" : "horizontal"}
           />
         </div>
       </motion.div>

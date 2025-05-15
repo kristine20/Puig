@@ -13,7 +13,7 @@ const TextVideoBio = () => {
     <>
       <div className="bio-text-video-wrapper">
         <motion.div
-          className="bio-text-wrapper"
+          className="brand-bio-text-wrapper"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.4 }}

@@ -4,26 +4,28 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import media from "../../assets/images/slider-image.png";
-import arrow from "../../assets/images/arrow.png";
+import defaultMedia from "../../assets/images/slider-image.png";
+import arrowIcon from "../../assets/images/arrow.png";
 import { useWindowWidth } from "../../hooks";
-import "./ProductSlider.css";
 
-const items = Array.from({ length: 20 }, (_, i) => `Item ${i + 1}`);
+import styles from "./ProductSlider.module.css";
 
-function ProductSlider() {
-  const [index, setIndex] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(1);
+const DEFAULT_ITEMS = Array.from({ length: 20 }, (_, i) => ({
+  id: i,
+  text: "нажать, чтобы посмотреть",
+  media: defaultMedia,
+}));
+
+export default function ProductSlider({ items = DEFAULT_ITEMS }) {
   const width = useWindowWidth();
-
-  const visibleCount = width && width <= 669 ? 1 : 4;
+  const [index, setIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
   const [animationKeys, setAnimationKeys] = useState({});
+
+  const visibleCount = width <= 669 ? 1 : 4;
+
   useEffect(() => {
-    if (width && width <= 768) {
-      setActiveIndex(0);
-    } else {
-      setActiveIndex(1);
-    }
+    setActiveIndex(width <= 768 ? 0 : 1);
   }, [width]);
 
   const restartAnimation = (i) => {
@@ -32,6 +34,7 @@ function ProductSlider() {
       [i]: (prev[i] || 0) + 1,
     }));
   };
+
   const handlePrev = () => {
     setIndex((prev) => Math.max(prev - 1, 0));
     setActiveIndex(null);
@@ -49,31 +52,16 @@ function ProductSlider() {
   const visibleItems = items.slice(index, index + visibleCount);
 
   return (
-    <div className="slider-container pt-2">
-      <motion.div
-        className="slider-wrapper"
-        style={{
-          width:
-            width == 1905 && width <= 1915
-              ? "90%"
-              : width > 2115 && width <= 2375
-              ? "82%"
-              : width > 2380 && width <= 2538
-              ? "73%"
-              : width > 2540
-              ? "69%"
-              : "90%",
-        }}
-        layout
-      >
+    <div className={styles.sliderContainer}>
+      <motion.div className={styles.sliderWrapper} layout>
         {visibleItems.map((item, i) => (
-          <motion.div key={i} className="slider-item" layout>
-            <div key={i}>
+          <motion.div key={item.id} className={styles.sliderItem} layout>
+            <div>
               <AnimatePresence mode="wait">
-                {activeIndex !== i && (
+                {activeIndex !== i ? (
                   <>
                     <motion.div
-                      className="slide-circle cursor-pointer "
+                      className={`${styles.slideCircle} cursor-pointer`}
                       initial={{ opacity: 1 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
@@ -81,18 +69,18 @@ function ProductSlider() {
                       onClick={() => toggleMedia(i)}
                     >
                       <div
-                        className="circle-wrapper"
+                        className={styles.circleWrapper}
                         onMouseEnter={() => restartAnimation(i)}
                       >
                         <svg
-                          className="circle-svg"
+                          className={styles.circleSvg}
                           width="40"
                           height="40"
                           viewBox="0 0 40 40"
                           key={animationKeys[i] || 0}
                         >
                           <circle
-                            className="circle-path"
+                            className={styles.circlePath}
                             cx="20"
                             cy="20"
                             r="18"
@@ -101,46 +89,34 @@ function ProductSlider() {
                             strokeWidth="0.5"
                           />
                         </svg>
-                        <Image src={arrow} alt="arrow" className="arrow-icon" />
+                        <Image
+                          src={arrowIcon}
+                          alt="arrow"
+                          className={styles.arrowIcon}
+                        />
                       </div>
                     </motion.div>
-
                     <motion.p
-                      key="text"
-                      className="slide-text cursor-pointer"
+                      className={`${styles.slideText} cursor-pointer`}
                       initial={{ opacity: 1 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.1 }}
                       onClick={() => toggleMedia(i)}
                     >
-                      нажать, чтобы посмотреть
+                      {item.text}
                     </motion.p>
                   </>
-                )}
-
-                {activeIndex === i && (
+                ) : (
                   <motion.div
                     key="media"
-                    className="slide-media"
-                    initial={{
-                      opacity: 0,
-                      y: 80,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                    }}
-                    exit={{
-                      opacity: 0,
-                      y: -80,
-                    }}
-                    transition={{
-                      duration: 0.8,
-                      ease: "easeInOut",
-                    }}
+                    className={styles.slideMedia}
+                    initial={{ opacity: 0, y: 80 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -80 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
                   >
-                    <Image src={media} alt="media" />
+                    <Image src={item.media} alt="media" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -148,22 +124,19 @@ function ProductSlider() {
           </motion.div>
         ))}
       </motion.div>
-      {width && width <= 669 ? (
-        <div className="slider-button-wrapper">
-          <span className="see-more">посмотреть ещё</span>{" "}
+
+      {width <= 669 && (
+        <div className={styles.sliderButtonWrapper}>
+          <span className={styles.seeMore}>посмотреть ещё</span>
           <button
             onClick={handleNext}
             disabled={index >= items.length - visibleCount}
-            className="history-button"
+            className={styles.historyButton}
           >
-            <Image src={arrow} alt="arrow" />
+            <Image src={arrowIcon} alt="arrow" />
           </button>
         </div>
-      ) : (
-        ""
       )}
     </div>
   );
 }
-
-export default ProductSlider;

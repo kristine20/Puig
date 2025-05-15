@@ -6,8 +6,6 @@ export const metadata = {
   description: "PUIG",
   icons: {
     icon: "/favicon.png",
-    // apple: "/apple-touch-icon.png",
-    // shortcut: "/favicon.ico",
   },
 };
 

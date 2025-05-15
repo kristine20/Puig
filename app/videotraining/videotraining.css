@@ -184,8 +184,6 @@
     .video-training-image:nth-of-type(odd) .video-content-wrapper .video-content-content {
         margin-left: 35%;
     }
-
-
 }
 
 @media (max-width: 480px) {
@@ -213,6 +211,4 @@
     .video-training-image:nth-of-type(even) .video-content-wrapper .video-content-content {
         margin-left: 10%;
     }
-
-
 }

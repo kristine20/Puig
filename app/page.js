@@ -1,12 +1,12 @@
+import ProductSlider from "./components/ProductSlider/Product-slider";
+import HistorySlider from "./components/History/History";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Company from "./components/Company/Company";
-import ProductSlider from "./components/ProductSlider/Product-slider";
 import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
 import Bio from "./components/Bio/Bio";
-import HistorySlider from "./components/History/History";
 
-const items = [
+const historySliderItems = [
   {
     year: 1914,
     content: "Антонио Пуч Кастелло открывает компанию Antonio Puig S.A.",
@@ -39,7 +39,7 @@ const items = [
   { year: 2024, content: "Launched new platform" },
 ];
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Hero />
@@ -48,10 +48,10 @@ export default function Home() {
       </div>
       <Company />
       <ProductSlider />
-      <HistorySlider items={items} title="История PUIG ―" />
+      <HistorySlider items={historySliderItems} title="История PUIG ―" />
       <Portfolio />
       <Footer />
     </>
   );
-}
-
+};
+export default Home;

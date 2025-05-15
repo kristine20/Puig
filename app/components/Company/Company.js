@@ -1,63 +1,58 @@
 "use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 
 import company from "../../assets/images/company.png";
 import { useWindowWidth } from "@/app/hooks";
-import "./Company.css";
+import styles from "./Company.module.css";
 
 export default function Company() {
   const width = useWindowWidth();
+
+  // Responsive width logic optimized with useMemo
+  const imageWidth = useMemo(() => {
+    if (width >= 2540) return "61%";
+    if (width > 2380) return "62%";
+    if (width > 2115) return "63%";
+    if (width >= 1905 && width <= 1915) return "65%";
+    return "65%";
+  }, [width]);
+
   return (
-    <section className="w-fixed company-wrapper pt-1 ">
+    <section className={`${styles.companyWrapper} w-fixed pt-1`}>
       <motion.div
-        className="company-text-wrapper w-30"
+        className={`${styles.companyTextWrapper} w-30`}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.4 }}
         transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
       >
-        <div>
-          <h2>Компания PUIG ― </h2>
-          <div className="counted-colum">
-            <p className="company-text">
-              семейная компания, которой в настоящее время управляет третье
-              поколение семьи Puig. Штаб-квартира Puig располагается в
-              Барселоне. Залог успеха компании ― в умелом развитии модных и
-              парфюмерных брендов, грамотном использовании уникальных концепций
-              и высоком качестве продукции.
-            </p>
-            <p className="company-text">
-              PUIG полностью владеет такими домами моды как: Paco Rabanne,
-              Carolina Herrera, Nina Ricci, Jean Paul Gaultier и Dries Van
-              Noten. А также работает по лицензии с марками: Christian
-              Louboutin, Comme Des Garsons, Antonio Banderas, Shakira и United
-              Colors of Benetton. Продукция компании представлена более чем в
-              150 странах мира.
-            </p>
-          </div>
+        <h2>Компания PUIG ― </h2>
+        <div className={`${styles.countedColum}`}>
+          <p className={`${styles.companyText}`}>
+            семейная компания, которой в настоящее время управляет третье
+            поколение семьи Puig. Штаб-квартира Puig располагается в Барселоне.
+            Залог успеха компании ― в умелом развитии модных и парфюмерных
+            брендов, грамотном использовании уникальных концепций и высоком
+            качестве продукции.
+          </p>
+          <p className={`${styles.companyText}`}>
+            PUIG полностью владеет такими домами моды как: Paco Rabanne,
+            Carolina Herrera, Nina Ricci, Jean Paul Gaultier и Dries Van Noten.
+            А также работает по лицензии с марками: Christian Louboutin, Comme
+            Des Garçons, Antonio Banderas, Shakira и United Colors of Benetton.
+            Продукция компании представлена более чем в 150 странах мира.
+          </p>
         </div>
       </motion.div>
+
       <motion.div
-        className="image-wrapper"
-        style={{
-          width:
-            width == 1905 && width <= 1915
-              ? "65%"
-              : width > 2115 && width <= 2375
-              ? "63%"
-              : width > 2380 && width <= 2538
-              ? "62%"
-              : width > 2540
-              ? "61%"
-              : "65%",
-        }}
-        // initial={{ opacity: 0, x: 50 }}
-        // whileInView={{ opacity: 1, x: 0 }}
-        // viewport={{ once: false, amount: 0.5 }}
-        // transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        className={`${styles.imageWrapper}`}
+        style={{ width: imageWidth }}
       >
-        <Image src={company} alt="Company" />
+        <Image src={company} alt="Company" priority />
       </motion.div>
     </section>
   );

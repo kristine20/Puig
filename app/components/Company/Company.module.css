@@ -1,10 +1,10 @@
-.company-wrapper {
+.companyWrapper {
     display: flex;
     min-height: 535px;
 
 }
 
-.company-text {
+.companyText {
     font-family: Montserrat;
     font-weight: 300;
     font-size: 14px;
@@ -14,7 +14,7 @@
 
 }
 
-.image-wrapper {
+.imageWrapper {
     position: absolute;
     right: 0;
     width: 65%;
@@ -22,63 +22,41 @@
 
 }
 
-.image-wrapper img {
+.imageWrapper img {
     object-fit: cover;
     height: 100%;
     width: 100%;
 }
 
-/* 
-@media (min-width: 2300px) {
-    .image-wrapper {
-        width: 60%;
-    }
-}
-
-@media (min-width: 2120px) {
-    .image-wrapper {
-        width: 63%;
-    }
-}
-
-@media (max-width: 1909px) {
-    .image-wrapper {
-        width: 65%;
-    }
-} */
-
 @media (max-width: 1732px) {
-    .image-wrapper {
+    .imageWrapper {
         width: 67% !important;
 
     }
 }
 
 @media (max-width: 1600px) {
-    .image-wrapper {
+    .imageWrapper {
         width: 69% !important;
-        ;
 
     }
 }
 
 @media (max-width: 1460px) {
-    .company-text-wrapper {
+    .companyTextWrapper {
         margin-left: 25px;
     }
 }
 
 @media (max-width: 1260px) {
-    .image-wrapper {
+    .imageWrapper {
         width: 700px !important;
         position: relative;
     }
-
-
 }
 
 @media (max-width: 930px) {
-    .company-text-wrapper {
+    .companyTextWrapper {
         width: 100%;
         margin-left: 15px;
         top: 50px;
@@ -87,42 +65,41 @@
 
     }
 
-    .counted-colum {
+    .countedColum {
         column-count: 2;
     }
 
-    .company-wrapper {
+    .companyWrapper {
         flex-direction: column-reverse;
         flex-wrap: wrap;
         height: auto;
     }
 
-    .image-wrapper {
+    .imageWrapper {
         position: static;
         width: 900px !important;
-        ;
         height: 330px;
 
     }
 
-    .image-wrapper img {
+    .imageWrapper img {
         margin-left: 0px;
     }
 }
 
 @media (max-width: 480px) {
-    .company-wrapper {
+    .companyWrapper {
         background-color: #fff;
         position: relative;
     }
 
-    .company-text-wrapper {
+    .companyTextWrapper {
         column-count: unset;
         margin-left: 30px;
 
     }
 
-    .counted-colum {
+    .countedColum {
         column-count: 1;
     }
 

@@ -1,4 +1,4 @@
-.hero-wrapper {
+.heroWrapper {
     background: url(/hero.png) no-repeat;
     background-size: 100% 100%;
     height: 540px;
@@ -9,7 +9,7 @@
 
 }
 
-.shadow-wrapper {
+.shadowWrapper {
     background: linear-gradient(177deg, rgba(217, 217, 217, 0) 10.24%, #575855 93.18%);
     background-size: 100% 100%;
     width: 100%;
@@ -23,7 +23,7 @@
 
 }
 
-.hero-text {
+.heroText {
     font-family: Montserrat;
     font-weight: 500;
     font-size: 30px;
@@ -32,7 +32,7 @@
     width: 400px;
 }
 
-.hero-button {
+.heroButton {
     border: 1px solid #fff;
     font-family: Montserrat;
     font-weight: 500;
@@ -42,57 +42,57 @@
     color: #fff;
 }
 
-.button-wrapper {
+.buttonWrapper {
     margin-right: 15%;
 }
 
 @media (min-width: 1910px) {
-    .button-wrapper {
+    .buttonWrapper {
         margin-right: 8%;
     }
 }
 
 @media (min-width: 1735px) {
-    .button-wrapper {
+    .buttonWrapper {
         margin-right: 15%;
     }
 }
 
 @media (max-width: 1500px) {
-    .button-wrapper {
+    .buttonWrapper {
         margin-right: 17%;
     }
 
-    .hero-text {
+    .heroText {
         margin-left: 25px;
     }
 }
 
 @media (max-width: 975px) {
-    .hero-wrapper {
+    .herowrapper {
         background-position: center;
         height: 400px;
     }
 }
 
 @media (max-width: 768px) {
-    .hero-wrapper {
+    .heroWrapper {
         background-position: center;
         height: 300px;
     }
 
-    .button-wrapper {
+    .buttonWrapper {
         margin-right: 40px;
     }
 
-    .hero-text {
+    .heroText {
         font-size: 24px;
         margin-left: 15px;
     }
 }
 
 @media (max-width: 593px) {
-    .button-wrapper {
+    .buttonWrapper {
         position: absolute;
         bottom: -70px;
         border: 1px solid black;
@@ -102,34 +102,34 @@
         margin: auto;
     }
 
-    .hero-button {
+    .heroButton {
         color: #000;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-wrapper {
+    .heroWrapper {
         background-position: center;
         height: 400px;
     }
 
-    .hero-wrapper {
+    .heroWrapper {
         background-position: center;
         height: 250px;
         position: relative;
 
     }
 
-    .shadow-wrapper {
+    .shadowWrapper {
         justify-content: flex-start;
     }
 
-    .hero-button {
+    .heroBbutton {
         color: #000;
 
     }
 
-    .hero-text {
+    .heroText {
         font-size: 24px;
         margin-left: 30px;
     }

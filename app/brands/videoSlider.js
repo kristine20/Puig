@@ -14,7 +14,7 @@ const videos = [
 const VideoSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const width = useWindowWidth();
-  const isMobile = width <= 768;
+  const isMobile = width <= 780;
 
   const prevSlide = () =>
     setCurrentIndex((prev) => (prev === 0 ? videos.length - 1 : prev - 1));
