@@ -15,6 +15,7 @@
     perspective: 1000px;
     border-right: 0.5px solid black;
     margin: 0 auto;
+    position: relative;
 }
 
 
@@ -39,6 +40,7 @@
 .sliderItem div {
     display: flex;
     gap: 10px;
+    position: relative;
 
 }
 
@@ -81,9 +83,9 @@
 
 .arrowIcon {
     position: absolute;
-    top: 50%;
-    left: 40%;
-    transform: translate(-50%, -50%);
+    top: 30%;
+    left: 12px;
+    right: 0;
     width: 16px;
     height: 16px;
 }

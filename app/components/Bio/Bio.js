@@ -25,7 +25,7 @@ const Bio = () => {
           viewport={{ once: false, amount: 0.4 }}
           transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
         >
-          <p className={`${styles.bioText}`}>
+          <p className={`bio-text`}>
             Компания Puig известна своим умением развивать модные бренды, и мы
             делаем все возможное, чтобы так же успешно действовать в сфере
             парфюмерии. Мы верим, что основа нашего успеха ― сочетание
@@ -38,7 +38,8 @@ const Bio = () => {
               <p className={`${styles.bioName}`}>Марк Пуч</p>
               <p className={`${styles.bioPosition}`}>Президент компании</p>
             </div>
-            <Image src={signature} alt="Signature" />
+            {/* <Image src={signature} alt="Signature" /> */}
+            <p id="dex-sign" className="play"></p>
           </div>
         </motion.div>
       </section>
