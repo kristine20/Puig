@@ -13,7 +13,7 @@ function HistorySlider({
 }) {
   const [activeIndex, setActiveIndex] = useState(1);
   const width = useWindowWidth();
-  const isMobile = width <= 480;
+  const isMobile = width <= 600;
   const isVertical = direction === "vertical";
 
   useEffect(() => {

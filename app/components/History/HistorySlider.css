@@ -262,6 +262,27 @@
     }
 }
 
+@media (max-width: 960px) {
+
+    .history.vertical .history-slider-item::after {
+        width: 1px;
+        left: 27px;
+        height: 15.3vh;
+        top: 47px;
+    }
+
+    .history.vertical .content {
+        left: 60px;
+        top: -55px;
+        position: relative;
+    }
+
+    .history.vertical .history-button-group {
+        right: -80px;
+    }
+
+}
+
 @media (max-width: 768px) {
     .history-slider-item::after {
         width: 85%;

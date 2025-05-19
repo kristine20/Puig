@@ -40,6 +40,7 @@ a {
 
 .w-30 {
   width: 30%;
+  margin-left: 15px;
 }
 
 .w-70 {
@@ -180,17 +181,17 @@ button {
   margin: 30px 10px 15px 10px; */
   /* width: 255px; */
   width: 200px;
-  height: 80px;
-  background: url(/frames.png) no-repeat;
+  height: 82px;
+  background: url(/frames1.png) no-repeat;
 }
 
 #dex-sign.play {
-  animation: sign-anim 3.5s 0.2s steps(11) forwards;
+  animation: sign-anim 1.5s 0.2s steps(10) forwards;
 }
 
 @keyframes sign-anim {
   to {
-    background-position: 0 -900px;
+    background-position: 0 -837px;
   }
 }
 
