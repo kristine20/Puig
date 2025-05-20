@@ -45,8 +45,8 @@ import TextTimelineBio from "./texttimelineBio";
 
 const brandOptions = [
   { id: "carolina", label: "Carolina Herrera" },
-  { id: "dior", label: "Dior" },
-  { id: "versace", label: "Versace" },
+  // { id: "dior", label: "Dior" },
+  // { id: "versace", label: "Versace" },
 ];
 
 const carolinaBio = {
@@ -130,6 +130,7 @@ const Brands = () => {
                     className={`link-button
                        ${activeBrand === brand.id ? "activeBrand" : ""}`}
                     onClick={() => setActiveBrand(brand.id)}
+                    style={{ width: "288px" }}
                   >
                     <h1 className="hero-brand-text"> {brand.label}</h1>
                   </button>
