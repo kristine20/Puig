@@ -35,9 +35,10 @@
 
 "use client";
 import { motion } from "framer-motion";
-import "./brands.css";
-import { useWindowWidth } from "../hooks";
+import "../brands.css";
+
 import VideoSlider from "./videoSlider";
+import { useWindowWidth } from "@/app/hooks";
 
 const TextBio = ({ bioData, videos }) => {
   const width = useWindowWidth();

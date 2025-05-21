@@ -55,8 +55,8 @@
 
 "use client";
 import { motion } from "framer-motion";
-import "./brands.css";
-import { useWindowWidth } from "../hooks";
+import "../brands.css";
+import { useWindowWidth } from "@/app/hooks";
 import VideoSlider from "./videoSlider";
 
 const TextVideoBio = ({ sections, showVideoOnDesktop = true, videos }) => {

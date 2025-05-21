@@ -74,9 +74,9 @@
 // export default TextTimelineBio;
 "use client";
 import { motion } from "framer-motion";
-import HistorySlider from "../components/History/History";
-import { useWindowWidth } from "../hooks";
-import "./brands.css";
+import { useWindowWidth } from "@/app/hooks";
+import "../brands.css";
+import HistorySlider from "@/app/components/History/History";
 
 const TextTimelineBio = ({ bioTimelineData, timelineItems }) => {
   const width = useWindowWidth();

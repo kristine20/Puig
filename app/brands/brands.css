@@ -1,5 +1,5 @@
 .hero-brands-wrapper {
-    background-image: url(../assets/images/brands/brandbanner.jpg);
+    /* background-image: url(../assets/images/brands/brandbanner.jpg); */
     background-size: cover;
     height: 546px;
     display: flex;
@@ -11,7 +11,6 @@
 
 .shadow-wrapper {
     background: linear-gradient(180deg, rgba(217, 217, 217, 0) 1.57%, #575855 100%);
-
     background-size: 100% 100%;
     width: 100%;
     display: flex;
