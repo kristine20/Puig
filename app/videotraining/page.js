@@ -86,4 +86,3 @@ const VideoTraining = ({ videos }) => {
 };
 
 export default VideoTraining;
-

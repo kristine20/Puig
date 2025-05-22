@@ -8,62 +8,156 @@ import nina1 from "../../assets/images/videoTraining/nina1-full.png";
 import nina2 from "../../assets/images/videoTraining/nina2-full.png";
 import nina3 from "../../assets/images/videoTraining/nina3-full.png";
 
+import jeanpaulgaultier1 from "../../assets/images/videoTraining/jean-paul-gaultier1-full.png";
+import jeanpaulgaultier2 from "../../assets/images/videoTraining/jean-paul-gaultier2-full.png";
+
+import banderas1 from "../../assets/images/videoTraining/banderas1-full.png";
+
+import rabanne1 from "../../assets/images/videoTraining/rabanne1-full.png";
+import rabanne2 from "../../assets/images/videoTraining/rabanne2-full.png";
+import rabanne3 from "../../assets/images/videoTraining/rabanne3-full.png";
+import rabanne4 from "../../assets/images/videoTraining/rabanne4-full.png";
+import rabanne5 from "../../assets/images/videoTraining/rabanne5-full.png";
+import rabanne6 from "../../assets/images/videoTraining/rabanne6-full.png";
+import rabanne7 from "../../assets/images/videoTraining/rabanne7-full.png";
+
 import playicon from "../../assets/images/videoTraining/playicon.svg";
 import VideoTraining from "../page";
 
-// Define multiple brand data sets
-const brandData = {
-  "carolina-herrera": [
-    {
-      src: image1,
-      title: "Very Good Girl Glam",
-      videoUrl: "https://www.youtube.com/embed/SqI5bIDF3UA?autoplay=1",
-      playIcon: playicon,
-    },
-    {
-      src: image2,
-      title: "Bad boy Cobalt",
-      videoUrl: "https://www.youtube.com/embed/4QrEocTz69Y?autoplay=1",
-      playIcon: playicon,
-    },
-    {
-      src: image3,
-      title: "Very Good Girl & Bad Boy Le Parfum",
-      videoUrl: "https://www.youtube.com/embed/1v4ITdghGGQ?autoplay=1",
-      playIcon: playicon,
-    },
-    {
-      src: image4,
-      title: "Gud Girl Supreme",
-      videoUrl: "https://www.youtube.com/embed/y4pMsroDb1k?autoplay=1",
-      playIcon: playicon,
-    },
-  ],
-  "nina-ricci": [
-    {
-      src: nina1,
-      title: "Nina Ricci — Nina Fleur",
-      videoUrl: "https://www.youtube.com/embed/p20cW2Y42aA?autoplay=1",
-      playIcon: playicon,
-    },
-    {
-      src: nina2,
-      title: "Nina Ricci – Nina Extra Rouge",
-      videoUrl: "https://www.youtube.com/embed/hT75-ckGm4w?autoplay=1",
-      playIcon: playicon,
-    },
-    {
-      src: nina3,
-      title: "Nina Ricci — Nina Rose",
-      videoUrl: "https://www.youtube.com/embed/IgdhX1IfSX0?autoplay=1",
-      playIcon: playicon,
-    },
-  ],
+const videoTrainingData = {
+  carolina: {
+    trainer: "Carolina Herrera",
+    videos: [
+      {
+        src: image1,
+        title: "Very Good Girl Glam",
+        videoUrl: "https://www.youtube.com/embed/SqI5bIDF3UA?autoplay=1",
+        playIcon: playicon,
+      },
+      {
+        src: image2,
+        title: "Bad boy Cobalt",
+        videoUrl: "https://www.youtube.com/embed/4QrEocTz69Y?autoplay=1",
+        playIcon: playicon,
+      },
+      {
+        src: image3,
+        title: "Very Good Girl & Bad Boy Le Parfum",
+        videoUrl: "https://www.youtube.com/embed/1v4ITdghGGQ?autoplay=1",
+        playIcon: playicon,
+      },
+      {
+        src: image4,
+        title: "Gud Girl Supreme",
+        videoUrl: "https://www.youtube.com/embed/y4pMsroDb1k?autoplay=1",
+        playIcon: playicon,
+      },
+    ],
+  },
+  "nina-ricci": {
+    trainer: "Nina Ricci",
+    videos: [
+      {
+        src: nina1,
+        title: "Nina Ricci — Nina Fleur",
+        videoUrl: "https://www.youtube.com/embed/p20cW2Y42aA?autoplay=1",
+        playIcon: playicon,
+      },
+      {
+        src: nina2,
+        title: "Nina Ricci – Nina Extra Rouge",
+        videoUrl: "https://www.youtube.com/embed/hT75-ckGm4w?autoplay=1",
+        playIcon: playicon,
+      },
+      {
+        src: nina3,
+        title: "Nina Ricci — Nina Rose",
+        videoUrl: "https://www.youtube.com/embed/IgdhX1IfSX0?autoplay=1",
+        playIcon: playicon,
+      },
+    ],
+  },
+  "jean-paul-gaultier": {
+    trainer: "Jean Paul Gaultier",
+    videos: [
+      {
+        src: jeanpaulgaultier1,
+        title: "Jean Paul Gaultier — Scandal Pour Homme",
+        videoUrl: "https://www.youtube.com/embed/V-cKx1xnlhA?autoplay=1",
+        playIcon: playicon,
+      },
+      {
+        src: jeanpaulgaultier2,
+        title: "Jean Paul Gaultier — So Scandal",
+        videoUrl: "https://www.youtube.com/embed/qIjlpHfUK3s?autoplay=1",
+        playIcon: playicon,
+      },
+    ],
+  },
+  banderas: {
+    trainer: "Banderas",
+    videos: [
+      {
+        src: banderas1,
+        title: "Antonio Banderas — The Icon",
+        videoUrl: "https://www.youtube.com/embed/BSvgvSqn1os?autoplay=1",
+        playIcon: playicon,
+      },
+    ],
+  },
+  "paco-rabanne": {
+    trainer: "RABANNE",
+    videos: [
+      {
+        src: rabanne1,
+        title: "Paco Rabanne — Olympea Solar",
+        videoUrl: "https://www.youtube.com/embed/_-xB5gwYwCU?autoplay=1",
+        playIcon: playicon,
+      },
+      {
+        src: rabanne2,
+        title: "Paco Rabanne — Invictus Platinum",
+        videoUrl: "https://www.youtube.com/embed/iOQ7dUOYFNA?autoplay=1",
+        playIcon: playicon,
+      },
+      {
+        src: rabanne3,
+        title: "Paco Rabanne — 1 Million Elixir",
+        videoUrl: "https://www.youtube.com/embed/EVJyQ0QBR1k?autoplay=1",
+        playIcon: playicon,
+      },
+      {
+        src: rabanne4,
+        title: "Paco Rabanne – Lady Million Fabulous",
+        videoUrl: "https://www.youtube.com/embed/iIJlHulme0A?autoplay=1",
+        playIcon: playicon,
+      },
+      {
+        src: rabanne5,
+        title: "Paco Rabanne — Phantom",
+        videoUrl: "https://www.youtube.com/embed/F6nY949FrH4?autoplay=1",
+        playIcon: playicon,
+      },
+      {
+        src: rabanne6,
+        title: "Paco Rabanne — Olympea Blossom & Invictus Victory",
+        videoUrl: "https://www.youtube.com/embed/gJiw-mhlMrs?autoplay=1",
+        playIcon: playicon,
+      },
+      {
+        src: rabanne7,
+        title: "Paco Rabanne — 1 Million Parfum",
+        videoUrl: "https://www.youtube.com/embed/NvXvnwl1KP0?autoplay=1",
+        playIcon: playicon,
+      },
+    ],
+  },
 };
 
 export default function Page({ params }) {
-  const videos = brandData[params.training] || [];
-  console.log(params);
-  return <VideoTraining videos={videos} />;
+  const data = videoTrainingData[params.training] || {
+    trainer: "",
+    videos: [],
+  };
+  return <VideoTraining videos={data.videos} trainer={data.trainer} />;
 }
-
