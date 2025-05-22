@@ -31,25 +31,29 @@ const videoTrainingData = {
       {
         src: image1,
         title: "Very Good Girl Glam",
-        videoUrl: "https://www.youtube.com/embed/SqI5bIDF3UA?autoplay=1",
+        videoUrl:
+          "https://rutube.ru/play/embed/88844419c5f13099ce4d08cbfce419d1/",
         playIcon: playicon,
       },
       {
         src: image2,
         title: "Bad boy Cobalt",
-        videoUrl: "https://www.youtube.com/embed/4QrEocTz69Y?autoplay=1",
+        videoUrl:
+          "https://rutube.ru/play/embed/3c518d737c42543b5cb09ea805f65c2d/",
         playIcon: playicon,
       },
       {
         src: image3,
         title: "Very Good Girl & Bad Boy Le Parfum",
-        videoUrl: "https://www.youtube.com/embed/1v4ITdghGGQ?autoplay=1",
+        videoUrl:
+          "https://rutube.ru/play/embed/7a77fc94b0fde63e6b32c26dc458eaa5/",
         playIcon: playicon,
       },
       {
         src: image4,
         title: "Gud Girl Supreme",
-        videoUrl: "https://www.youtube.com/embed/y4pMsroDb1k?autoplay=1",
+        videoUrl:
+          "https://rutube.ru/play/embed/d14667bec8cf6a1d95dab8d7b68a1176/",
         playIcon: playicon,
       },
     ],
