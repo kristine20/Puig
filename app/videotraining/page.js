@@ -1,58 +1,29 @@
+// components/VideoTraining.tsx
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
-import image1 from "../assets/images/videoTraining/image1-full.png";
-import image2 from "../assets/images/videoTraining/image2-full.png";
-import image3 from "../assets/images/videoTraining/image3-full.png";
-import image4 from "../assets/images/videoTraining/image4-full.png";
-import playicon from "../assets/images/videoTraining/playicon.svg";
-
 import "./videotraining.css";
 
-const images = [
-  {
-    src: image1,
-    title: "Very Good Girl Glam",
-    videoUrl: "https://www.youtube.com/embed/SqI5bIDF3UA?autoplay=1",
-  },
-  {
-    src: image2,
-    title: "Bad boy Cobalt",
-    videoUrl: "https://www.youtube.com/embed/4QrEocTz69Y?autoplay=1",
-  },
-  {
-    src: image3,
-    title: "Very Good Girl & Bad Boy Le Parfum",
-    videoUrl: "https://www.youtube.com/embed/1v4ITdghGGQ?autoplay=1",
-  },
-  {
-    src: image4,
-    title: "Gud Girl Supreme",
-    videoUrl: "https://www.youtube.com/embed/y4pMsroDb1k?autoplay=1",
-  },
-];
-
-const VideoTraining = () => {
+const VideoTraining = ({ videos }) => {
   const [fullscreenImage, setFullscreenImage] = useState(null);
   const [activeVideo, setActiveVideo] = useState(null);
-
   useEffect(() => {
     if (fullscreenImage && !activeVideo) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [fullscreenImage, activeVideo]);
+
   return (
     <div>
       <div className="w-fixed">
         <h2 className="vt-title">Carolina Herrera</h2>
       </div>
       <div className="video-training-wrapper">
-        {images.map((image, index) => (
+        {videos?.map((image, index) => (
           <div key={index} className="video-training-image">
             <Image src={image.src} alt={image.title} className="video-image" />
             <Image
-              src={playicon}
+              src={image.playIcon}
               alt="playIcon"
               className="play-icon"
               onClick={() => setFullscreenImage(image)}
@@ -67,7 +38,6 @@ const VideoTraining = () => {
         ))}
       </div>
 
-      {/* Step 1: Show full screen image with second play icon */}
       {fullscreenImage && !activeVideo && (
         <div className="fullscreen-image active">
           <Image
@@ -77,7 +47,7 @@ const VideoTraining = () => {
             className="fullscreen-image-content"
           />
           <Image
-            src={playicon}
+            src={fullscreenImage.playIcon}
             alt="playIcon"
             className="fullscreen-play-icon"
             onClick={() => setActiveVideo(fullscreenImage.videoUrl)}
@@ -91,7 +61,6 @@ const VideoTraining = () => {
         </div>
       )}
 
-      {/* Step 2: Show fullscreen video */}
       {activeVideo && (
         <div className="fullscreen-video active">
           <iframe
@@ -117,3 +86,4 @@ const VideoTraining = () => {
 };
 
 export default VideoTraining;
+
