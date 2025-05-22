@@ -26,7 +26,7 @@ const BrandPage = ({ params }) => {
             {data.bio && data.videos && (
               <TextBio bioData={data.bio} videos={data.videos} />
             )}
-            {data.timelineItems && (
+            {data.timelineText && data.timelineItems && (
               <TextTimelineBio
                 bioTimelineData={data.timelineText}
                 timelineItems={data.timelineItems}

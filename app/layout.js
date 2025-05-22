@@ -1,5 +1,6 @@
 import Headers from "./components/Header/Header";
 import "./globals.css";
+import { SessionProviderWrapper } from "./providers/SessionProviderWrapper";
 
 export const metadata = {
   title: "PUIG",
@@ -17,12 +18,14 @@ export default function RootLayout({ children }) {
         content="width=device-width, initial-scale=1.0"
       ></meta>
       <body>
-        <main className="w-full">
-          <div className="row">
-            <Headers />
-          </div>
-          {children}
-        </main>
+        <SessionProviderWrapper>
+          <main className="w-full">
+            <div className="row">
+              <Headers />
+            </div>
+            {children}
+          </main>
+        </SessionProviderWrapper>
       </body>
     </html>
   );

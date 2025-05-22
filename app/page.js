@@ -1,3 +1,4 @@
+"use client";
 import ProductSlider from "./components/ProductSlider/Product-slider";
 import HistorySlider from "./components/History/History";
 import Portfolio from "./components/Portfolio/Portfolio";
@@ -54,4 +55,6 @@ const Home = () => {
     </>
   );
 };
+
 export default Home;
+

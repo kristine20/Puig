@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 const menuItems = [
   { href: "/", label: "главная" },
   { href: "", label: " о компании" },
-  { href: "/brands", label: "бренды" },
+  { href: "/brands/carolina", label: "бренды" },
   { href: "/videotraining", label: "видеообучение" },
 ];
 export default function Headers() {
