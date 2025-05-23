@@ -76,7 +76,7 @@
 import { motion } from "framer-motion";
 import { useWindowWidth } from "../../hooks";
 import "../brands.css";
-import HistorySlider from "../../components/History/History";
+import HistorySlider from "../../components/home/History/History";
 
 const TextTimelineBio = ({ bioTimelineData, timelineItems }) => {
   const width = useWindowWidth();

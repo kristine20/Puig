@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import arrow from "../../assets/images/arrow.png";
+import arrow from "../../../assets/images/arrow.png";
 import "./HistorySlider.css";
-import { useWindowWidth } from "../../hooks";
+import { useWindowWidth } from "../../../hooks";
 
 function HistorySlider({
   items,

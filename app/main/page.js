@@ -1,12 +1,12 @@
 "use client";
 
-import Bio from "../components/Bio/Bio";
-import Company from "../components/Company/Company";
-import Footer from "../components/Footer/Footer";
-import Hero from "../components/Hero/Hero";
-import HistorySlider from "../components/History/History";
-import Portfolio from "../components/Portfolio/Portfolio";
-import ProductSlider from "../components/ProductSlider/Product-slider";
+import Bio from "../components/home/Bio/Bio";
+import Company from "../components/home/Company/Company";
+import Footer from "../components/home/Footer/Footer";
+import Hero from "../components/home/Hero/Hero";
+import HistorySlider from "../components/home/History/History";
+import Portfolio from "../components/home/Portfolio/Portfolio";
+import ProductSlider from "../components/home/ProductSlider/Product-slider";
 
 const historySliderItems = [
   {

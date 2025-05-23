@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import defaultMedia from "../../assets/images/slider-image.png";
-import arrowIcon from "../../assets/images/arrow.png";
-import { useWindowWidth } from "../../hooks";
+import defaultMedia from "../../../assets/images/slider-image.png";
+import arrowIcon from "../../../assets/images/arrow.png";
+import { useWindowWidth } from "../../../hooks";
 
 import styles from "./ProductSlider.module.css";
 

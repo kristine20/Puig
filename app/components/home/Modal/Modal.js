@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import closeIcon from "../../assets/images/close.svg";
+import closeIcon from "../../../assets/images/close.svg";
 import styles from "./Modal.module.css";
 
 const Modal = ({

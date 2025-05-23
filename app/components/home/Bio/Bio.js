@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import signature from "../../assets/images/signature.png";
-import bio from "../../assets/images/mark.png";
+import signature from "../../../assets/images/signature.png";
+import bio from "../../../assets/images/mark.png";
 import styles from "./Bio.module.css";
 import { useEffect } from "react";
 const Bio = () => {

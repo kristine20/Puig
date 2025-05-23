@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import logo from "../../assets/images/logo.png";
+import logo from "../../../assets/images/logo.png";
 import "./Header.css";
 import { usePathname } from "next/navigation";
 
