@@ -2,12 +2,12 @@
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import carolinaBanner from "../assets/images/brands/brandbanner.jpg";
-import penhaligonsBanner from "../assets/images/brands/penhaligons-banner.jpg";
-import lartisanparfumeurBanner from "../assets/images/brands/lartisanparfumeur-banner.png";
-import pacorabanneBanner from "../assets/images/brands/pacorabanne-banner.png";
-import ninaricciBanner from "../assets/images/brands/ninaricci-banner.jpg";
-import jeanpaulgaultierBanner from "../assets/images/brands/jeanpaulgaultier-banner.png";
-import banderasBanner from "../assets/images/brands/banderas-banner.jpg";
+import penhaligonsBanner from "../assets/images/brands/penhaligons-banner-cropped.jpg";
+import lartisanparfumeurBanner from "../assets/images/brands/lartisanparfumeur-banner-cropped.png";
+import pacorabanneBanner from "../assets/images/brands/pacorabanne-banner-cropped.png";
+import ninaricciBanner from "../assets/images/brands/ninaricci-banner-cropped.jpg";
+import jeanpaulgaultierBanner from "../assets/images/brands/jeanpaulgaultier-banner-cropped.png";
+import banderasBanner from "../assets/images/brands/banderas-banner-cropped.jpg";
 const brandOptions = [
   { id: "carolina", label: "Carolina Herrera" },
   { id: "penhaligons", label: "Penhaligon's" },
@@ -59,4 +59,3 @@ const BrandsNav = () => {
 };
 
 export default BrandsNav;
-
