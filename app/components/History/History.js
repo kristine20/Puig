@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import arrow from "../../assets/images/arrow.png";
 import "./HistorySlider.css";
-import { useWindowWidth } from "@/app/hooks";
+import { useWindowWidth } from "../../hooks";
 
 function HistorySlider({
   items,
@@ -15,6 +15,71 @@ function HistorySlider({
   const width = useWindowWidth();
   const isMobile = width <= 600;
   const isVertical = direction === "vertical";
+
+  const [isDragging, setIsDragging] = useState(false);
+  const [startPosition, setStartPosition] = useState(0);
+  const [scrollStart, setScrollStart] = useState(0);
+  const scrollerRef = React.useRef(null);
+
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+
+    const axis = isVertical ? "pageY" : "pageX";
+    const scrollAxis = isVertical ? "scrollTop" : "scrollLeft";
+
+    const onMouseDown = (e) => {
+      setIsDragging(true);
+      setStartPosition(e[axis]);
+      setScrollStart(scroller[scrollAxis]);
+    };
+
+    const onMouseMove = (e) => {
+      if (!isDragging) return;
+      const distance = e[axis] - startPosition;
+      scroller[scrollAxis] = scrollStart - distance;
+    };
+
+    const onMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    const onTouchStart = (e) => {
+      setIsDragging(true);
+      setStartPosition(e.touches[0][axis]);
+      setScrollStart(scroller[scrollAxis]);
+    };
+
+    const onTouchMove = (e) => {
+      if (!isDragging) return;
+      const distance = e.touches[0][axis] - startPosition;
+      scroller[scrollAxis] = scrollStart - distance;
+    };
+
+    const onTouchEnd = () => {
+      setIsDragging(false);
+    };
+
+    // Mouse
+    scroller.addEventListener("mousedown", onMouseDown);
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", onMouseUp);
+
+    // Touch
+    scroller.addEventListener("touchstart", onTouchStart);
+    scroller.addEventListener("touchmove", onTouchMove);
+    window.addEventListener("touchend", onTouchEnd);
+
+    return () => {
+      scroller.removeEventListener("mousedown", onMouseDown);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onMouseUp);
+
+      scroller.removeEventListener("touchstart", onTouchStart);
+      scroller.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
+    };
+  }, [isDragging, startPosition, scrollStart, isVertical]);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -76,7 +141,10 @@ function HistorySlider({
         </div>
       )}
 
-      <div className={`scroller ${isVertical ? "vertical" : "horizontal"}`}>
+      <div
+        className={`scroller ${isVertical ? "vertical" : "horizontal"}`}
+        ref={scrollerRef}
+      >
         <div className="scroller__inner">
           {(isMobile && !isVertical ? items : [...items, ...items]).map(
             (item, index) => {

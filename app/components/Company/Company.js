@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useMemo } from "react";
 
 import company from "../../assets/images/company.jpg";
-import { useWindowWidth } from "@/app/hooks";
+import { useWindowWidth } from "../../hooks";
 import styles from "./Company.module.css";
 
 export default function Company() {

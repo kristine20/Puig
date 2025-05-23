@@ -70,6 +70,33 @@
     display: block;
 }
 
+.socialButtons {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 20px;
+    margin: 20px;
+}
+
+.socialButton {
+    background-color: #eee;
+    border: none;
+    width: 80px;
+    padding: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+}
+
+.socialIcon {
+    width: 25px;
+    height: auto;
+}
+
+.socialButton:hover {
+    background-color: #ddd;
+}
+
 @media (max-width: 768px) {
     .formWrapper {
         width: 100%;

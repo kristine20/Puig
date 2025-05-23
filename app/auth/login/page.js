@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import animationLogo from "../../assets/images/group.png";
 import logo from "../../assets/images/logo.png";
+import SocialsLogin from "./socialsLogin";
 import Link from "next/link";
 
 const Login = () => {
@@ -24,6 +25,10 @@ const Login = () => {
             className={styles.animationLogo}
           />
           <Image src={logo} alt="PUIG Logo" className={styles.logo} />
+        </div>
+        <div>
+          {" "}
+          <SocialsLogin />
         </div>
         <div className={styles.authheader}>
           <form

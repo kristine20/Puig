@@ -225,7 +225,14 @@
 
 
 
+.scroller {
+    overflow: auto;
+    cursor: grab;
+}
 
+.scroller:active {
+    cursor: grabbing;
+}
 
 @media (min-width: 1910px) {
     .history-slider-item::after {
