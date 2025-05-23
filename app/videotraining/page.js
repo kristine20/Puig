@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import "./videotraining.css";
 
-const VideoTraining = ({ videos }) => {
+const VideoTraining = ({ videos, trainer }) => {
   const [fullscreenImage, setFullscreenImage] = useState(null);
   const [activeVideo, setActiveVideo] = useState(null);
   useEffect(() => {
@@ -16,7 +16,7 @@ const VideoTraining = ({ videos }) => {
   return (
     <div>
       <div className="w-fixed">
-        <h2 className="vt-title">Carolina Herrera</h2>
+        <h2 className="vt-title">{trainer}</h2>
       </div>
       <div className="video-training-wrapper">
         {videos?.map((image, index) => (
@@ -30,7 +30,7 @@ const VideoTraining = ({ videos }) => {
             />
             <div className="video-content-wrapper">
               <div className="video-content-content">
-                <span className="trainner">Carolina Herrera — </span>
+                <span className="trainner">{trainer} — </span>
                 <p className="video-title">{image.title}</p>
               </div>
             </div>

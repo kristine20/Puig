@@ -5,7 +5,18 @@ import { motion } from "framer-motion";
 import signature from "../../assets/images/signature.png";
 import bio from "../../assets/images/mark.png";
 import styles from "./Bio.module.css";
+import { useEffect } from "react";
 const Bio = () => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const sign = document.getElementById("dex-sign");
+      if (sign) {
+        sign.classList.add("play");
+      }
+    }, 2000); // 2 seconds delay
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div className="row">
       <section className={`${styles.bioWrapper} w-fixed  pt-1`}>
@@ -39,7 +50,7 @@ const Bio = () => {
               <p className={`${styles.bioPosition}`}>Президент компании</p>
             </div>
             {/* <Image src={signature} alt="Signature" /> */}
-            <p id="dex-sign" className="play"></p>
+            <p id="dex-sign" className="play-target" />
           </div>
         </motion.div>
       </section>

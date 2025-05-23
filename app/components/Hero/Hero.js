@@ -47,7 +47,7 @@ export default function Hero() {
         <iframe
           width="100%"
           height="100%"
-          src="https://rutube.ru/play/embed/109f18e44b80545de8d3e6cfe860a5f8/?autoplay=1"
+          src="https://rutube.ru/play/embed/109f18e44b80545de8d3e6cfe860a5f8?autoplay=1&muted=1&ui=0"
           allow="clipboard-write; autoplay"
           allowFullScreen
         ></iframe>
