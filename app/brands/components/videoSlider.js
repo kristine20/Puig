@@ -75,8 +75,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import arrow from "../../assets/images/arrow.png";
-import { useWindowWidth } from "@/app/hooks";
 import "../brands.css";
+import { useWindowWidth } from "../../hooks";
 
 const VideoSlider = ({ videos }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -38,7 +38,7 @@ import { motion } from "framer-motion";
 import "../brands.css";
 
 import VideoSlider from "./videoSlider";
-import { useWindowWidth } from "@/app/hooks";
+import { useWindowWidth } from "../../hooks";
 
 const TextBio = ({ bioData, videos }) => {
   const width = useWindowWidth();

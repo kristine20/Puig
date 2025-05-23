@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useMemo } from "react";
 
-import company from "../../assets/images/building.jpg";
+import company from "../../assets/images/company.jpg";
 import { useWindowWidth } from "@/app/hooks";
 import styles from "./Company.module.css";
 

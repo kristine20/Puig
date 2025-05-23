@@ -114,6 +114,21 @@
     color: #fff;
 }
 
+.correct {
+    background-color: #e0f8e9;
+    border-left: 5px solid green;
+}
+
+.wrong {
+    background-color: #fdecea;
+    border-left: 5px solid red;
+}
+
+.resultSummary {
+    padding: 10px;
+    line-height: 65px;
+}
+
 @media (max-width: 950px) {
     .questionsBlock {
         padding: 0px 0 0 56px

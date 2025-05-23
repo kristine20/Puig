@@ -135,7 +135,10 @@ export const brandData = {
       },
     ],
     videos: [
-      { id: 1, url: "https://www.youtube.com/embed/KopS3J59-5o" },
+      {
+        id: 1,
+        url: "https://rutube.ru/play/embed/9afa3b36a0dc9a6acb4d72460ecef44b/",
+      },
       //{ id: 2, url: "https://www.youtube.com/embed/YCyZbdqugkw" },
     ],
     bio: {
@@ -191,7 +194,10 @@ export const brandData = {
       },
     ],
     videos: [
-      { id: 1, url: "https://www.youtube.com/embed/stM52BU0sVM" },
+      {
+        id: 1,
+        url: "https://rutube.ru/play/embed/590f3924da207d99dd392742f2c141a9/",
+      },
       //{ id: 2, url: "https://www.youtube.com/embed/YCyZbdqugkw" },
     ],
     bio: {
@@ -285,7 +291,10 @@ export const brandData = {
       },
     ],
     videos: [
-      { id: 1, url: "https://www.youtube.com/embed/3Rc-Zu3zajM" },
+      {
+        id: 1,
+        url: "https://rutube.ru/play/embed/72e42953623043a2a1f033af56408fa1/",
+      },
       //{ id: 2, url: "https://www.youtube.com/embed/YCyZbdqugkw" },
     ],
     bio: {
@@ -341,7 +350,10 @@ export const brandData = {
       },
     ],
     videos: [
-      { id: 1, url: "https://www.youtube.com/embed/zIupG2oXvIk" },
+      {
+        id: 1,
+        url: "https://rutube.ru/play/embed/abfc5d8342f9e4b107ed7533d50f308c/",
+      },
       //{ id: 2, url: "https://www.youtube.com/embed/YCyZbdqugkw" },
     ],
     bio: {
@@ -423,8 +435,11 @@ export const brandData = {
       },
     ],
     videos: [
-      { id: 1, url: "https://www.youtube.com/embed/FNQ0tBo4k1I" },
-      { id: 2, url: "https://www.youtube.com/embed/DCTSaNJX6Q8" },
+      {
+        id: 1,
+        url: "https://rutube.ru/play/embed/437a77d31391596deb2365bc57ff258c/",
+      },
+      // { id: 2, url: "https://www.youtube.com/embed/DCTSaNJX6Q8" },
     ],
     bio: {
       subtitle: "",

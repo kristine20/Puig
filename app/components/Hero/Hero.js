@@ -47,10 +47,8 @@ export default function Hero() {
         <iframe
           width="100%"
           height="100%"
-          src="https://www.youtube.com/embed/fhtiGvky8P8?autoplay=1&mute=1&controls=0&loop=1&playlist=fhtiGvky8P8&modestbranding=1&showinfo=0&rel=0"
-          title="YouTube background"
-          frameBorder="0"
-          allow="autoplay; fullscreen"
+          src="https://rutube.ru/play/embed/109f18e44b80545de8d3e6cfe860a5f8/?autoplay=1"
+          allow="clipboard-write; autoplay"
           allowFullScreen
         ></iframe>
       </div>
