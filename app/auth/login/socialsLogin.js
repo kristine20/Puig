@@ -7,19 +7,28 @@ import yandex from "../../assets/images/Yandex.png";
 import Image from "next/image";
 
 const SocialsLogin = () => {
+  const handleLogin = (provider) => {
+    signIn(provider, {
+      callbackUrl: "/main",
+    });
+  };
+
   return (
     <div className={styles.socialButtons}>
-      <button onClick={() => signIn("vk")} className={styles.socialButton}>
+      <button onClick={() => handleLogin("vk")} className={styles.socialButton}>
         <Image src={vk} alt="PUIG VK" className={styles.socialIcon} />
       </button>
       <button
-        onClick={() => signIn("odnoklassniki")}
+        // onClick={() => handleLogin("odnoklassniki")}
         className={styles.socialButton}
       >
         <Image src={ok} alt="PUIG OK" className={styles.socialIcon} />
       </button>
-      <button onClick={() => signIn("yandex")} className={styles.socialButton}>
-        <Image src={yandex} alt="PUIG yandex" className={styles.socialIcon} />
+      <button
+        onClick={() => handleLogin("yandex")}
+        className={styles.socialButton}
+      >
+        <Image src={yandex} alt="PUIG Yandex" className={styles.socialIcon} />
       </button>
     </div>
   );
