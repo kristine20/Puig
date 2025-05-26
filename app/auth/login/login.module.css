@@ -19,7 +19,7 @@
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-color: #726f6fab;
+    /* background-color: #726f6fab; */
     z-index: 10;
     display: flex;
     align-items: center;
@@ -95,6 +95,17 @@
 
 .socialButton:hover {
     background-color: #ddd;
+}
+
+.logout {
+    position: relative;
+    right: -10%;
+    top: -30%;
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {

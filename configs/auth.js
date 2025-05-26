@@ -1,33 +1,110 @@
 import vkProviders from "next-auth/providers/vk";
 import CredentialsProvider from "next-auth/providers/credentials";
+
 export const authConfig = {
   providers: [
     vkProviders({ clientId: "", clientSecret: "" }),
+
+    // 🔐 LOGIN
     CredentialsProvider({
-      name: "Credentials",
+      id: "credentials-login",
+      name: "Login",
       credentials: {
-        email: { label: "Email", type: "text" },
-        password: { label: "Password", type: "password" },
+        email: { label: "Email", type: "email", required: true },
+        password: { label: "Password", type: "password", required: true },
       },
       async authorize(credentials) {
-        // Replace this with your real backend call
-        const res = await fetch("https://your-api.com/api/login", {
+        if (!credentials?.email || !credentials?.password) return null;
+
+        const res = await fetch("https://puigback.artean.ru/api/login", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
           body: JSON.stringify({
             email: credentials.email,
             password: credentials.password,
           }),
         });
 
-        const user = await res.json();
+        if (!res.ok) {
+          console.error("Login failed:", res.status);
+          return null;
+        }
 
-        if (res.ok && user) {
-          return user; // This will become the JWT payload
+        const data = await res.json();
+
+        if (data?.access_token) {
+          return {
+            id: data.access_token,
+            accessToken: data.access_token,
+          };
         }
 
         return null;
       },
     }),
+
+    // 🆕 REGISTRATION
+    CredentialsProvider({
+      id: "credentials-register",
+      name: "Register",
+      credentials: {
+        name: { label: "name", type: "text" },
+        email: { label: "email", type: "email" },
+        password: { label: "password", type: "password" },
+        password_confirmation: { label: "confirm", type: "password" },
+      },
+      async authorize(credentials) {
+        if (!credentials?.email || !credentials?.password) return null;
+        try {
+          const res = await fetch("https://puigback.artean.ru/api/register", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: credentials.name,
+              email: credentials.email,
+              password: credentials.password,
+              password_confirmation: credentials.password_confirmation,
+            }),
+          });
+
+          if (!res.ok) {
+            const data = await res.json();
+            console.error("Registration failed:", data);
+            return null;
+          }
+
+          const data = await res.json();
+
+          return { ...data };
+        } catch (err) {
+          console.log(err, "errr");
+        }
+      },
+    }),
   ],
+
+  pages: {
+    signIn: "/auth", // use this for both login and register
+  },
+
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user?.accessToken) {
+        token.accessToken = user.accessToken;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      console.log(session, "session");
+      // session.accessToken = token.accessToken;
+      return session;
+    },
+  },
+
+  debug: true,
 };

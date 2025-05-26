@@ -4,24 +4,52 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import defaultMedia from "../../../assets/images/slider-image.png";
+import img1 from "../../../assets/images/home/slide1.jpg";
+import img2 from "../../../assets/images/home/slide2.jpg";
+import img3 from "../../../assets/images/home/slide3.jpg";
+import img4 from "../../../assets/images/home/slide4.jpg";
+import playIcon from "../../../assets/images/videoTraining/playicon.svg";
+
 import arrowIcon from "../../../assets/images/arrow.png";
 import { useWindowWidth } from "../../../hooks";
 
 import styles from "./ProductSlider.module.css";
 
-const DEFAULT_ITEMS = Array.from({ length: 20 }, (_, i) => ({
-  id: i,
-  text: "нажать, чтобы посмотреть",
-  media: defaultMedia,
-}));
+const DEFAULT_ITEMS = [
+  {
+    id: 1,
+    text: "нажать, чтобы посмотреть",
+    media: img1,
+    videoUrl: "https://www.youtube.com/embed/QROtDjUy4d4",
+  },
+  {
+    id: 2,
+    text: "нажать, чтобы посмотреть",
+    media: img2,
+    videoUrl: "https://www.youtube.com/embed/l8kT72DirtM",
+  },
+  {
+    id: 3,
+    text: "нажать, чтобы посмотреть",
+    media: img3,
+    videoUrl: "https://www.youtube.com/embed/heHUrkaEKeE",
+  },
+  {
+    id: 4,
+    text: "нажать, чтобы посмотреть",
+    media: img4,
+    videoUrl: "https://www.youtube.com/embed/DvaEt-8cDYU",
+  },
+];
 
 export default function ProductSlider({ items = DEFAULT_ITEMS }) {
   const width = useWindowWidth();
   const [index, setIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(null);
   const [animationKeys, setAnimationKeys] = useState({});
+  const [popupVideo, setPopupVideo] = useState(null);
 
+  const closePopup = () => setPopupVideo(null);
   const visibleCount = width <= 669 ? 1 : 4;
 
   useEffect(() => {
@@ -116,7 +144,17 @@ export default function ProductSlider({ items = DEFAULT_ITEMS }) {
                     exit={{ opacity: 0, y: -80 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
                   >
-                    <Image src={item.media} alt="media" />
+                    <Image
+                      src={item.media}
+                      alt="media"
+                      className={styles.sliedImg}
+                    />
+                    <Image
+                      src={playIcon}
+                      alt="play"
+                      className={styles.playIcon}
+                      onClick={() => setPopupVideo(item.videoUrl)}
+                    />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -136,6 +174,49 @@ export default function ProductSlider({ items = DEFAULT_ITEMS }) {
             <Image src={arrowIcon} alt="arrow" />
           </button>
         </div>
+      )}
+
+      {popupVideo && (
+        <motion.div
+          className={styles.videoOverlay}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={closePopup}
+        >
+          <button
+            onClick={closePopup}
+            style={{
+              position: "absolute",
+              top: 10,
+              right: 10,
+              zIndex: 10,
+              fontSize: "24px",
+              background: "transparent",
+              color: "#fff",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            ✕
+          </button>
+          <motion.div
+            className={styles.videoWrapper}
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.8 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            onClick={(e) => e.stopPropagation()} // prevent overlay click from closing
+          >
+            <iframe
+              src={popupVideo}
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              className={styles.videoIframe}
+            />
+          </motion.div>
+        </motion.div>
       )}
     </div>
   );

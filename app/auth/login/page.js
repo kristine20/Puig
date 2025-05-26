@@ -80,21 +80,30 @@ import animationLogo from "../../assets/images/group.png";
 import logo from "../../assets/images/logo.png";
 import SocialsLogin from "./socialsLogin";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-const Login = () => {
+// const Login = () => {
+export default function Login() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const res = await signIn("credentials", {
-      redirect: true,
-      callbackUrl: "/",
+    setLoading(true);
+
+    const res = await signIn("credentials-login", {
+      redirect: false,
       email,
       password,
     });
 
-    if (!res?.ok) {
+    setLoading(false);
+
+    if (res?.ok) {
+      router.push("/main");
+    } else {
       alert("Ошибка входа");
     }
   };
@@ -102,7 +111,7 @@ const Login = () => {
   return (
     <div className={styles.authBg}>
       <video autoPlay muted loop playsInline className={styles.videoBg}>
-        <source src="./login.mp4" type="video/mp4" />
+        <source src="./auth.mov" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -154,6 +163,6 @@ const Login = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Login;
+// export default Login;

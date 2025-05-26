@@ -1,21 +1,59 @@
 "use client";
+
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import styles from "./register.module.css";
 import Image from "next/image";
-
 import animationLogo from "../../assets/images/group.png";
 import logo from "../../assets/images/logo.png";
 import Link from "next/link";
+import { useState } from "react";
 
-const Registration = () => {
+export default function Registration() {
+  const router = useRouter();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [network, setNetwork] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    if (password !== confirmPassword) {
+      alert("Пароли не совпадают");
+      return;
+    }
+
+    setLoading(true);
+
+    const res = await signIn("credentials-register", {
+      redirect: false,
+      name,
+      email,
+      password,
+      password_confirmation: confirmPassword,
+      network: "",
+    });
+
+    setLoading(false);
+
+    if (res?.ok) {
+      router.push("/auth");
+    } else {
+      alert("Ошибка регистрации");
+    }
+  };
+
   return (
     <div className={styles.authBg}>
-      {/* Background video */}
       <video autoPlay muted loop playsInline className={styles.videoBg}>
-        <source src="./login.mp4" type="video/mp4" />
+        <source src="./auth.mov" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      {/* Overlay */}
+
       <div className={styles.formWrapper}>
         <div className={styles.authheader}>
           <Image
@@ -25,13 +63,21 @@ const Registration = () => {
           />
           <Image src={logo} alt="PUIG Logo" className={styles.logo} />
         </div>
+
         <div className={styles.authheader}>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              signIn("credentials", { redirect: true, callbackUrl: "/" });
-            }}
-          >
+          <form onSubmit={handleRegister}>
+            <label className={styles.label}>
+              Полное имя
+              <input
+                type="text"
+                name="name"
+                required
+                className={styles.input}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </label>
+
             <label className={styles.label}>
               Ваш E-mail
               <input
@@ -39,8 +85,11 @@ const Registration = () => {
                 name="email"
                 required
                 className={styles.input}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </label>
+
             <label className={styles.label}>
               Пароль
               <input
@@ -48,11 +97,32 @@ const Registration = () => {
                 name="password"
                 required
                 className={styles.input}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </label>
+
             <label className={styles.label}>
+              Повторите пароль
+              <input
+                type="password"
+                name="confirmPassword"
+                required
+                className={styles.input}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+            </label>
+
+            {/* <label className={styles.label}>
               Парфюмерная сеть
-              <select name="" required="" className={styles.input}>
+              <select
+                name="network"
+                required
+                className={styles.input}
+                value={network}
+                onChange={(e) => setNetwork(e.target.value)}
+              >
                 <option value="">Выберите сеть...</option>
                 <option value="artikli">Артиколи</option>
                 <option value="vizazh">Визаж</option>
@@ -64,11 +134,17 @@ const Registration = () => {
                 <option value="puig">PUIG</option>
                 <option value="sng">СНГ</option>
               </select>
-            </label>
-            <button type="submit" className={styles.loginButton}>
-              Зарегистрироваться
+            </label> */}
+
+            <button
+              type="submit"
+              className={styles.loginButton}
+              disabled={loading}
+            >
+              {loading ? "Регистрация..." : "Зарегистрироваться"}
             </button>
           </form>
+
           <Link href="/auth/login" className={styles.registerLink}>
             Войти
           </Link>
@@ -76,6 +152,6 @@ const Registration = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Registration;
+// export default Registration;

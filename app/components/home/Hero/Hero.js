@@ -44,13 +44,17 @@ export default function Hero() {
     <section className={styles.heroWrapper}>
       {/* YouTube background iframe */}
       <div className={styles.videoBackground}>
-        <iframe
+        {/* <iframe
           width="100%"
           height="100%"
           src="https://rutube.ru/play/embed/109f18e44b80545de8d3e6cfe860a5f8?autoplay=1&muted=1&ui=0"
           allow="clipboard-write; autoplay"
           allowFullScreen
-        ></iframe>
+        ></iframe> */}
+        <video autoPlay muted loop playsInline>
+          <source src="./PUIG2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       {/* Content */}
@@ -68,7 +72,7 @@ export default function Hero() {
             </h1>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             className={styles.buttonWrapper}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +80,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
             <button className={styles.heroButton}>авторизироваться</button>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
