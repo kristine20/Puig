@@ -158,8 +158,9 @@ const videoTrainingData = {
   },
 };
 
-const Page = ({ params }) => {
-  const data = videoTrainingData[params.training];
+export default function Page({ params }) {
+  const { training } = params;
+  const data = videoTrainingData[training] || { trainer: "", videos: [] };
+
   return <VideoTraining videos={data.videos} trainer={data.trainer} />;
-};
-export default Page;
+}
