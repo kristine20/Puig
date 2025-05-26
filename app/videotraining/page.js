@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import "./videotraining.css";
 
-const VideoTraining = ({ videos, trainer }) => {
+export default function VideoTraining({ videos, trainer }) {
   const [fullscreenImage, setFullscreenImage] = useState(null);
   const [activeVideo, setActiveVideo] = useState(null);
   useEffect(() => {
@@ -84,5 +84,3 @@ const VideoTraining = ({ videos, trainer }) => {
     </div>
   );
 };
-
-export default VideoTraining;
