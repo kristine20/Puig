@@ -88,11 +88,11 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const error = useSearchParams().get("error");
+  // const error = useSearchParams().get("error");
 
-  if (error === "OAuthAccountNotLinked") {
-    // Show user message: "Account already exists with a different sign-in method"
-  }
+  // if (error === "OAuthAccountNotLinked") {
+  //   // Show user message: "Account already exists with a different sign-in method"
+  // }
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
