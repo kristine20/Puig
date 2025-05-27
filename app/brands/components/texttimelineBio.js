@@ -88,7 +88,8 @@ const TextTimelineBio = ({ bioTimelineData, timelineItems }) => {
           items={timelineItems}
           title=""
           buttonPosition="bottom"
-          direction={width <= 960 && width > 600 ? "vertical" : "horizontal"}
+          // direction={width <= 960 && width > 600 ? "vertical" : "horizontal"}
+          direction={width <= 960 && width > 600 ? "horizontal" : "horizontal"}
         />
       </div>
     </motion.div>

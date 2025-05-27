@@ -2,30 +2,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import carolinaBanner from "../assets/images/brands/brandbanner.jpg";
-import penhaligonsBanner from "../assets/images/brands/penhaligons-banner-cropped.jpg";
-import lartisanparfumeurBanner from "../assets/images/brands/lartisanparfumeur-banner-cropped.png";
-import pacorabanneBanner from "../assets/images/brands/pacorabanne-banner-cropped.png";
-import ninaricciBanner from "../assets/images/brands/ninaricci-banner-cropped.jpg";
-import jeanpaulgaultierBanner from "../assets/images/brands/jeanpaulgaultier-banner-cropped.png";
-import banderasBanner from "../assets/images/brands/banderas-banner-cropped.jpg";
-const brandOptions = [
-  { id: "carolina", label: "Carolina Herrera" },
-  { id: "penhaligons", label: "Penhaligon's" },
-  { id: "lartisanparfumeur", label: "Lartisan-Parfumeur" },
-  { id: "rabanne", label: "Rabanne" },
-  { id: "ninaricci", label: "Nina Ricci" },
-  { id: "jeanpaulgaultier", label: "Jean Paul Gaultier" },
-  { id: "banderas", label: "Banderas" },
-];
-const brandBackgrounds = {
-  carolina: carolinaBanner,
-  penhaligons: penhaligonsBanner,
-  lartisanparfumeur: lartisanparfumeurBanner,
-  pacorabanne: pacorabanneBanner,
-  ninaricci: ninaricciBanner,
-  jeanpaulgaultier: jeanpaulgaultierBanner,
-  banderas: banderasBanner,
-};
+import { brandBackgrounds, brandOptions } from "./data/brandsData";
 
 const BrandsNav = () => {
   const router = useRouter();

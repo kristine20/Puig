@@ -3,7 +3,7 @@
 
 import { usePathname } from "next/navigation";
 import Headers from "../home/Header/Header";
-import Providers from "../Providers";
+import Providers from "../General/Providers";
 
 export default function ClientLayout({ children }) {
   const pathname = usePathname();

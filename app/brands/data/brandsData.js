@@ -1,4 +1,59 @@
-// app/data/brandsData.js
+import penhaligonsBanner from "../../assets/images/brands/penhaligons-banner-cropped.jpg";
+import lartisanparfumeurBanner from "../../assets/images/brands/lartisanparfumeur-banner-cropped.png";
+import pacorabanneBanner from "../../assets/images/brands/pacorabanne-banner-cropped.png";
+import ninaricciBanner from "../../assets/images/brands/ninaricci-banner-cropped.jpg";
+import jeanpaulgaultierBanner from "../../assets/images/brands/jeanpaulgaultier-banner-cropped.png";
+import banderasBanner from "../../assets/images/brands/banderas-banner-cropped.jpg";
+import carolinaBanner from "../../assets/images/brands/brandbanner.jpg";
+
+/*Carolina Images imports */
+import carolinaimg1 from "../../assets/images/brands/carolina/1.jpg";
+import carolinaimg2 from "../../assets/images/brands/carolina/2.jpg";
+import carolinaimg3 from "../../assets/images/brands/carolina/3.jpg";
+import carolinaimg4 from "../../assets/images/brands/carolina/4.jpg";
+import carolinaimg5 from "../../assets/images/brands/carolina/5.jpg";
+import carolinaimg6 from "../../assets/images/brands/carolina/6.jpg";
+import carolinaimg7 from "../../assets/images/brands/carolina/7.jpg";
+import carolinaimg8 from "../../assets/images/brands/carolina/8.jpg";
+import carolinaimg9 from "../../assets/images/brands/carolina/9.jpg";
+import carolinaimg10 from "../../assets/images/brands/carolina/10.jpg";
+import carolinaimg11 from "../../assets/images/brands/carolina/11.jpg";
+import carolinaimg12 from "../../assets/images/brands/carolina/12.jpg";
+import carolinaimg13 from "../../assets/images/brands/carolina/13.jpg";
+import carolinaimg14 from "../../assets/images/brands/carolina/14.jpg";
+import carolinaimg15 from "../../assets/images/brands/carolina/15.jpg";
+
+import cover1 from "../../assets/images/brands/carolina/videogallery1.jpg";
+import cover2 from "../../assets/images/brands/carolina/videogallery2.jpg";
+import cover3 from "../../assets/images/brands/carolina/videogallery3.jpg";
+import cover4 from "../../assets/images/brands/carolina/videogallery4.jpg";
+import cover5 from "../../assets/images/brands/carolina/videogallery5.jpg";
+import cover6 from "../../assets/images/brands/carolina/videogallery6.jpg";
+
+import carolinaUniverse1 from "../../assets/images/brands/carolina/universe1.jpeg";
+import carolinaUniverse2 from "../../assets/images/brands/carolina/universe2.png";
+import carolinaUniverse3 from "../../assets/images/brands/carolina/universe3.png";
+import carolinaUniverse4 from "../../assets/images/brands/carolina/universe4.jpg";
+import carolinaUniverse5 from "../../assets/images/brands/carolina/universe5.png";
+import carolinaUniverse6 from "../../assets/images/brands/carolina/universe6.png";
+
+import carolinaBBUniverse1 from "../../assets/images/brands/carolina/bb-universe1.jpg";
+import carolinaBBUniverse2 from "../../assets/images/brands/carolina/bb-universe2.png";
+import carolinaBBUniverse3 from "../../assets/images/brands/carolina/bb-universe3.png";
+import carolinaBBUniverse4 from "../../assets/images/brands/carolina/bb-universe4.png";
+import carolinaBBUniverse5 from "../../assets/images/brands/carolina/bb-universe5.png";
+
+import carolina212Universe1 from "../../assets/images/brands/carolina/212_1.jpg";
+import carolina212Universe2 from "../../assets/images/brands/carolina/212-2.jpeg";
+import carolina212Universe3 from "../../assets/images/brands/carolina/212-3.jpeg";
+import carolina212Universe4 from "../../assets/images/brands/carolina/212_4.jpg";
+import carolina212Universe5 from "../../assets/images/brands/carolina/212-5.jpeg";
+import carolina212Universe6 from "../../assets/images/brands/carolina/212_6.jpg";
+
+import carolinachUniverse1 from "../../assets/images/brands/carolina/ch-1.png";
+import carolinachUniverse2 from "../../assets/images/brands/carolina/ch-2.jpeg";
+
+import carolinaclassicUniverse1 from "../../assets/images/brands/carolina/classic_1.jpg";
 
 export const brandData = {
   carolina: {
@@ -17,6 +72,55 @@ export const brandData = {
     videos: [
       { id: 1, url: "https://www.youtube.com/embed/xShF57dLhSk" },
       { id: 2, url: "https://www.youtube.com/embed/YCyZbdqugkw" },
+    ],
+    videogallery: [
+      {
+        id: 1,
+        url: "https://www.youtube.com/embed/sddDuLqRIhI",
+        cover: cover1,
+      },
+      {
+        id: 2,
+        url: "https://www.youtube.com/embed/RpQuGsNSW7E",
+        cover: cover2,
+      },
+      {
+        id: 3,
+        url: "https://www.youtube.com/embed/7A8dMMyxU3M",
+        cover: cover3,
+      },
+      {
+        id: 4,
+        url: "https://www.youtube.com/embed/ZUtIoXn6xf8",
+        cover: cover4,
+      },
+      {
+        id: 5,
+        url: "https://www.youtube.com/embed/Al0Wg4WMca4",
+        cover: cover5,
+      },
+      {
+        id: 6,
+        url: "https://www.youtube.com/embed/BTNDCicTvBc",
+        cover: cover6,
+      },
+    ],
+    images: [
+      { id: 1, url: carolinaimg1 },
+      { id: 2, url: carolinaimg2 },
+      { id: 3, url: carolinaimg3 },
+      { id: 4, url: carolinaimg4 },
+      { id: 5, url: carolinaimg5 },
+      { id: 6, url: carolinaimg6 },
+      { id: 7, url: carolinaimg7 },
+      { id: 8, url: carolinaimg8 },
+      { id: 9, url: carolinaimg9 },
+      { id: 10, url: carolinaimg10 },
+      { id: 11, url: carolinaimg11 },
+      { id: 12, url: carolinaimg12 },
+      { id: 13, url: carolinaimg13 },
+      { id: 14, url: carolinaimg14 },
+      { id: 15, url: carolinaimg15 },
     ],
     bio: {
       subtitle: "Новое видение",
@@ -517,3 +621,87 @@ export const brandData = {
     ],
   },
 };
+export const brandOptions = [
+  { id: "carolina", label: "Carolina Herrera" },
+  { id: "penhaligons", label: "Penhaligon's" },
+  { id: "lartisanparfumeur", label: "Lartisan-Parfumeur" },
+  { id: "rabanne", label: "Rabanne" },
+  { id: "ninaricci", label: "Nina Ricci" },
+  { id: "jeanpaulgaultier", label: "Jean Paul Gaultier" },
+  { id: "banderas", label: "Banderas" },
+];
+export const brandBackgrounds = {
+  carolina: carolinaBanner,
+  penhaligons: penhaligonsBanner,
+  lartisanparfumeur: lartisanparfumeurBanner,
+  pacorabanne: pacorabanneBanner,
+  ninaricci: ninaricciBanner,
+  jeanpaulgaultier: jeanpaulgaultierBanner,
+  banderas: banderasBanner,
+};
+
+export const perfumeryUniverses = [
+  {
+    title: "Good Girl",
+    subtitle: "6 ароматов",
+    content:
+      "Carolina Herrera с гордостью представляет вселенную ароматов Good Girl ― воплощение образа современной женщины.",
+    historyLink: "#",
+    images: [
+      { id: 1, url: carolinaUniverse1, title: "GOOD GIRL" },
+      { id: 2, url: carolinaUniverse2, title: "GOOD GIRL SUPREME" },
+      { id: 3, url: carolinaUniverse3, title: "VERY GOOD GIRL" },
+      { id: 4, url: carolinaUniverse4, title: "VERY GOOD GIRL GLAM" },
+      { id: 5, url: carolinaUniverse5, title: "GOOD GIRL BLUSH" },
+      { id: 6, url: carolinaUniverse6, title: "GOOD GIRL BLUSH ELIXIR" },
+    ],
+  },
+  {
+    title: "Bad Boy",
+    subtitle: "5 ароматов",
+    content:
+      "Carolina Herrera начинает новое приключение вместе с Bad Boy, притягательным ароматом, который переносит легенду о вечном бунтаре в наше время. Он тот, кто не боится нарушать правила и выбирает свой собственный путь. Девиз «Как хорошо быть плохим» подчеркивает истинный смысл нового парфюмерного творения.",
+    historyLink: "#",
+    images: [
+      { id: 1, url: carolinaBBUniverse1, title: "BAD BOY" },
+      { id: 2, url: carolinaBBUniverse2, title: "BAD BOY LE PARFUM " },
+      { id: 3, url: carolinaBBUniverse3, title: "BAD BOY COBALT" },
+      { id: 4, url: carolinaBBUniverse4, title: "BAD BOY EXTREME" },
+      { id: 5, url: carolinaBBUniverse5, title: "BAD BOY COBALT ELIXIR" },
+    ],
+  },
+  {
+    title: "212",
+    subtitle: "6 ароматов",
+    content:
+      "212 ― запоминающееся название парфюмерной вселенной, включает в себя комбинацию из цифр, при этом полностью раскрывает ее суть. 212 ― международный код Нью-Йорка ― города стремительной, красивой, стильной жизни, ярких событий и вечеринок, город, который так заманчив для всех тех, кто стремится к самореализации. Нью-Йорк ― город огромных возможностей для тех, кто молод душой, уверен в своих силах, верен себе и своим жизненным принципам. Именно такой представляется парфюмерная вселенная 212 от Carolina Herrera. Она насыщена всевозможными оттенками этого мегаполиса-мечты, города-вечеринок, все это вызывает ощущение реального присутствия, гармонии, радости и веселья.Именно в этом городе, все мечты Каролины Эррера воплотились в жизнь! А ее дочь, Каролина Эррера мл. нашла вдохновение для создания культовых ароматов.",
+    historyLink: "#",
+    images: [
+      { id: 1, url: carolina212Universe1, title: "212 NYC" },
+      { id: 2, url: carolina212Universe2, title: "212 NYC MEN" },
+      { id: 3, url: carolina212Universe3, title: "212 VIP" },
+      { id: 4, url: carolina212Universe4, title: "212 VIP MEN" },
+      { id: 5, url: carolina212Universe5, title: "212 VIP ROSE" },
+      { id: 6, url: carolina212Universe6, title: "212 VIP MEN BLACK" },
+    ],
+  },
+  {
+    title: "CH",
+    subtitle: "2 ароматов",
+    content:
+      "Американский модный дом Carolina Herrera регулярно представляет восхитительные коллекции невероятно стильной одежды. Эстетика продукции этой именитой марки заключается в сногсшибательной элегантности, благородной сдержанности и неповторимой соблазнительности. Великолепная парфюмерия бренда также наполнена исключительным изяществом.",
+    historyLink: "#",
+    images: [
+      { id: 1, url: carolinachUniverse1, title: "CH CAROLINA HERRERA " },
+      { id: 2, url: carolinachUniverse2, title: "CH MEN" },
+    ],
+  },
+  {
+    title: "Classic",
+    subtitle: "1 аромат",
+    content:
+      "В классической вселенной ароматов от Carolina Herrera сегодня представлен один мужской аромат. И мы смело можем сказать, что это элегантность и изысканность в одном флаконе. Как и любая классика, такой аромат никогда не выйдет из моды и найдёт себе поклонников вовсе времена. Стиль Carolina Herrera чувствуется в каждой ноте...",
+    historyLink: "#",
+    images: [{ id: 1, url: carolinaclassicUniverse1, title: "CHIC FOR MEN" }],
+  },
+];

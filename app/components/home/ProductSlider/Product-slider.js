@@ -14,6 +14,7 @@ import arrowIcon from "../../../assets/images/arrow.png";
 import { useWindowWidth } from "../../../hooks";
 
 import styles from "./ProductSlider.module.css";
+import PopupVideo from "../../General/PopupVideo";
 
 const DEFAULT_ITEMS = [
   {
@@ -176,48 +177,7 @@ export default function ProductSlider({ items = DEFAULT_ITEMS }) {
         </div>
       )}
 
-      {popupVideo && (
-        <motion.div
-          className={styles.videoOverlay}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={closePopup}
-        >
-          <button
-            onClick={closePopup}
-            style={{
-              position: "absolute",
-              top: 10,
-              right: 10,
-              zIndex: 10,
-              fontSize: "24px",
-              background: "transparent",
-              color: "#fff",
-              border: "none",
-              cursor: "pointer",
-            }}
-          >
-            ✕
-          </button>
-          <motion.div
-            className={styles.videoWrapper}
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 0.8 }}
-            transition={{ type: "spring", stiffness: 260, damping: 20 }}
-            onClick={(e) => e.stopPropagation()} // prevent overlay click from closing
-          >
-            <iframe
-              src={popupVideo}
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              className={styles.videoIframe}
-            />
-          </motion.div>
-        </motion.div>
-      )}
+      {popupVideo && <PopupVideo videoUrl={popupVideo} onClose={closePopup} />}
     </div>
   );
 }

@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 
-import signature from "../../../assets/images/signature.png";
 import bio from "../../../assets/images/mark.png";
 import styles from "./Bio.module.css";
-import { useEffect } from "react";
+
 const Bio = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -49,8 +49,12 @@ const Bio = () => {
               <p className={`${styles.bioName}`}>Марк Пуч</p>
               <p className={`${styles.bioPosition}`}>Президент компании</p>
             </div>
-            {/* <Image src={signature} alt="Signature" /> */}
+
             <p id="dex-sign" className="play-target" />
+            {/* <video autoPlay muted loop playsInline>
+              <source src="/sign_2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video> */}
           </div>
         </motion.div>
       </section>
