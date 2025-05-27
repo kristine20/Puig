@@ -50,7 +50,7 @@ export default function Registration() {
   return (
     <div className={styles.authBg}>
       <video autoPlay muted loop playsInline className={styles.videoBg}>
-        <source src="./auth.mov" type="video/mp4" />
+        <source src="/auth.mov" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

@@ -19,7 +19,7 @@
     position: absolute;
     width: 27%;
     height: 100vh;
-    background-color: #726f6fab;
+    /* background-color: #726f6fab; */
     z-index: 10;
     display: flex;
     align-items: center;
