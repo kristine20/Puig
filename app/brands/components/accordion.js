@@ -28,16 +28,19 @@ const AccordionItem = ({ item, isOpen, onToggle }) => (
           <p className="accordion-content-item"> {item.content}</p>
           <button className="read-history">Читать историю</button>
           <div className="universe-image-wrapper">
-            {item.images.map((it, idx) => (
-              <div key={idx} className="universe-item">
-                <Image
-                  src={it.url}
-                  alt={it.title}
-                  className="universe-image-item"
-                />
-                <span>{it.title}</span>
-              </div>
-            ))}
+            {Array.isArray(item.images) &&
+              item.images.map((it, idx) => (
+                <div key={idx} className="universe-item">
+                  <Image
+                    src={it.url}
+                    alt={it.title}
+                    className="universe-image-item"
+                    width={300}
+                    height={300}
+                  />
+                  <span>{it.title}</span>
+                </div>
+              ))}
           </div>
         </div>
       )}

@@ -640,68 +640,70 @@ export const brandBackgrounds = {
   banderas: banderasBanner,
 };
 
-export const perfumeryUniverses = [
-  {
-    title: "Good Girl",
-    subtitle: "6 ароматов",
-    content:
-      "Carolina Herrera с гордостью представляет вселенную ароматов Good Girl ― воплощение образа современной женщины.",
-    historyLink: "#",
-    images: [
-      { id: 1, url: carolinaUniverse1, title: "GOOD GIRL" },
-      { id: 2, url: carolinaUniverse2, title: "GOOD GIRL SUPREME" },
-      { id: 3, url: carolinaUniverse3, title: "VERY GOOD GIRL" },
-      { id: 4, url: carolinaUniverse4, title: "VERY GOOD GIRL GLAM" },
-      { id: 5, url: carolinaUniverse5, title: "GOOD GIRL BLUSH" },
-      { id: 6, url: carolinaUniverse6, title: "GOOD GIRL BLUSH ELIXIR" },
-    ],
-  },
-  {
-    title: "Bad Boy",
-    subtitle: "5 ароматов",
-    content:
-      "Carolina Herrera начинает новое приключение вместе с Bad Boy, притягательным ароматом, который переносит легенду о вечном бунтаре в наше время. Он тот, кто не боится нарушать правила и выбирает свой собственный путь. Девиз «Как хорошо быть плохим» подчеркивает истинный смысл нового парфюмерного творения.",
-    historyLink: "#",
-    images: [
-      { id: 1, url: carolinaBBUniverse1, title: "BAD BOY" },
-      { id: 2, url: carolinaBBUniverse2, title: "BAD BOY LE PARFUM " },
-      { id: 3, url: carolinaBBUniverse3, title: "BAD BOY COBALT" },
-      { id: 4, url: carolinaBBUniverse4, title: "BAD BOY EXTREME" },
-      { id: 5, url: carolinaBBUniverse5, title: "BAD BOY COBALT ELIXIR" },
-    ],
-  },
-  {
-    title: "212",
-    subtitle: "6 ароматов",
-    content:
-      "212 ― запоминающееся название парфюмерной вселенной, включает в себя комбинацию из цифр, при этом полностью раскрывает ее суть. 212 ― международный код Нью-Йорка ― города стремительной, красивой, стильной жизни, ярких событий и вечеринок, город, который так заманчив для всех тех, кто стремится к самореализации. Нью-Йорк ― город огромных возможностей для тех, кто молод душой, уверен в своих силах, верен себе и своим жизненным принципам. Именно такой представляется парфюмерная вселенная 212 от Carolina Herrera. Она насыщена всевозможными оттенками этого мегаполиса-мечты, города-вечеринок, все это вызывает ощущение реального присутствия, гармонии, радости и веселья.Именно в этом городе, все мечты Каролины Эррера воплотились в жизнь! А ее дочь, Каролина Эррера мл. нашла вдохновение для создания культовых ароматов.",
-    historyLink: "#",
-    images: [
-      { id: 1, url: carolina212Universe1, title: "212 NYC" },
-      { id: 2, url: carolina212Universe2, title: "212 NYC MEN" },
-      { id: 3, url: carolina212Universe3, title: "212 VIP" },
-      { id: 4, url: carolina212Universe4, title: "212 VIP MEN" },
-      { id: 5, url: carolina212Universe5, title: "212 VIP ROSE" },
-      { id: 6, url: carolina212Universe6, title: "212 VIP MEN BLACK" },
-    ],
-  },
-  {
-    title: "CH",
-    subtitle: "2 ароматов",
-    content:
-      "Американский модный дом Carolina Herrera регулярно представляет восхитительные коллекции невероятно стильной одежды. Эстетика продукции этой именитой марки заключается в сногсшибательной элегантности, благородной сдержанности и неповторимой соблазнительности. Великолепная парфюмерия бренда также наполнена исключительным изяществом.",
-    historyLink: "#",
-    images: [
-      { id: 1, url: carolinachUniverse1, title: "CH CAROLINA HERRERA " },
-      { id: 2, url: carolinachUniverse2, title: "CH MEN" },
-    ],
-  },
-  {
-    title: "Classic",
-    subtitle: "1 аромат",
-    content:
-      "В классической вселенной ароматов от Carolina Herrera сегодня представлен один мужской аромат. И мы смело можем сказать, что это элегантность и изысканность в одном флаконе. Как и любая классика, такой аромат никогда не выйдет из моды и найдёт себе поклонников вовсе времена. Стиль Carolina Herrera чувствуется в каждой ноте...",
-    historyLink: "#",
-    images: [{ id: 1, url: carolinaclassicUniverse1, title: "CHIC FOR MEN" }],
-  },
-];
+export const perfumeryUniverses = {
+  carolina: [
+    {
+      title: "Good Girl",
+      subtitle: "6 ароматов",
+      content:
+        "Carolina Herrera с гордостью представляет вселенную ароматов Good Girl ― воплощение образа современной женщины.",
+      historyLink: "#",
+      images: [
+        { id: 1, url: carolinaUniverse1, title: "GOOD GIRL" },
+        { id: 2, url: carolinaUniverse2, title: "GOOD GIRL SUPREME" },
+        { id: 3, url: carolinaUniverse3, title: "VERY GOOD GIRL" },
+        { id: 4, url: carolinaUniverse4, title: "VERY GOOD GIRL GLAM" },
+        { id: 5, url: carolinaUniverse5, title: "GOOD GIRL BLUSH" },
+        { id: 6, url: carolinaUniverse6, title: "GOOD GIRL BLUSH ELIXIR" },
+      ],
+    },
+    {
+      title: "Bad Boy",
+      subtitle: "5 ароматов",
+      content:
+        "Carolina Herrera начинает новое приключение вместе с Bad Boy, притягательным ароматом, который переносит легенду о вечном бунтаре в наше время. Он тот, кто не боится нарушать правила и выбирает свой собственный путь. Девиз «Как хорошо быть плохим» подчеркивает истинный смысл нового парфюмерного творения.",
+      historyLink: "#",
+      images: [
+        { id: 1, url: carolinaBBUniverse1, title: "BAD BOY" },
+        { id: 2, url: carolinaBBUniverse2, title: "BAD BOY LE PARFUM " },
+        { id: 3, url: carolinaBBUniverse3, title: "BAD BOY COBALT" },
+        { id: 4, url: carolinaBBUniverse4, title: "BAD BOY EXTREME" },
+        { id: 5, url: carolinaBBUniverse5, title: "BAD BOY COBALT ELIXIR" },
+      ],
+    },
+    {
+      title: "212",
+      subtitle: "6 ароматов",
+      content:
+        "212 ― запоминающееся название парфюмерной вселенной, включает в себя комбинацию из цифр, при этом полностью раскрывает ее суть. 212 ― международный код Нью-Йорка ― города стремительной, красивой, стильной жизни, ярких событий и вечеринок, город, который так заманчив для всех тех, кто стремится к самореализации. Нью-Йорк ― город огромных возможностей для тех, кто молод душой, уверен в своих силах, верен себе и своим жизненным принципам. Именно такой представляется парфюмерная вселенная 212 от Carolina Herrera. Она насыщена всевозможными оттенками этого мегаполиса-мечты, города-вечеринок, все это вызывает ощущение реального присутствия, гармонии, радости и веселья.Именно в этом городе, все мечты Каролины Эррера воплотились в жизнь! А ее дочь, Каролина Эррера мл. нашла вдохновение для создания культовых ароматов.",
+      historyLink: "#",
+      images: [
+        { id: 1, url: carolina212Universe1, title: "212 NYC" },
+        { id: 2, url: carolina212Universe2, title: "212 NYC MEN" },
+        { id: 3, url: carolina212Universe3, title: "212 VIP" },
+        { id: 4, url: carolina212Universe4, title: "212 VIP MEN" },
+        { id: 5, url: carolina212Universe5, title: "212 VIP ROSE" },
+        { id: 6, url: carolina212Universe6, title: "212 VIP MEN BLACK" },
+      ],
+    },
+    {
+      title: "CH",
+      subtitle: "2 ароматов",
+      content:
+        "Американский модный дом Carolina Herrera регулярно представляет восхитительные коллекции невероятно стильной одежды. Эстетика продукции этой именитой марки заключается в сногсшибательной элегантности, благородной сдержанности и неповторимой соблазнительности. Великолепная парфюмерия бренда также наполнена исключительным изяществом.",
+      historyLink: "#",
+      images: [
+        { id: 1, url: carolinachUniverse1, title: "CH CAROLINA HERRERA " },
+        { id: 2, url: carolinachUniverse2, title: "CH MEN" },
+      ],
+    },
+    {
+      title: "Classic",
+      subtitle: "1 аромат",
+      content:
+        "В классической вселенной ароматов от Carolina Herrera сегодня представлен один мужской аромат. И мы смело можем сказать, что это элегантность и изысканность в одном флаконе. Как и любая классика, такой аромат никогда не выйдет из моды и найдёт себе поклонников вовсе времена. Стиль Carolina Herrera чувствуется в каждой ноте...",
+      historyLink: "#",
+      images: [{ id: 1, url: carolinaclassicUniverse1, title: "CHIC FOR MEN" }],
+    },
+  ],
+};

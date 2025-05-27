@@ -21,7 +21,7 @@ const BrandPage = ({ params }) => {
       <section className="w-fixed brand-content-wrapper pt-1">
         {data ? (
           <>
-            {data.timelineText && data.timelineItems && (
+            {data.timelineItems && (
               <TextTimelineBio
                 bioTimelineData={data.timelineText}
                 timelineItems={data.timelineItems}
@@ -41,7 +41,7 @@ const BrandPage = ({ params }) => {
             {data.content && <div>{data.content}</div>}
             <ImageGallery images={data.images} />
             <VideoGallery videos={data.videogallery} />
-            <Accordion items={perfumeryUniverses} />
+            <Accordion items={perfumeryUniverses[brand] ?? []} />
             <Test questions={questions[brand]} />
           </>
         ) : (
