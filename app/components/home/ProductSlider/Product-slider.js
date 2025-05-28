@@ -16,6 +16,7 @@ import { useWindowWidth } from "../../../hooks";
 import styles from "./ProductSlider.module.css";
 import PopupVideo from "../../General/PopupVideo";
 
+
 const DEFAULT_ITEMS = [
   {
     id: 1,
@@ -33,13 +34,13 @@ const DEFAULT_ITEMS = [
     id: 3,
     text: "нажать, чтобы посмотреть",
     media: img3,
-    videoUrl: "https://www.youtube.com/embed/heHUrkaEKeE",
+    videoUrl: "/general_4_3_PUIG.mp4",
   },
   {
     id: 4,
     text: "нажать, чтобы посмотреть",
     media: img4,
-    videoUrl: "https://www.youtube.com/embed/DvaEt-8cDYU",
+    videoUrl: "/general_4_4_PUIG.mp4",
   },
 ];
 

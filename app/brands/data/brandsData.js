@@ -70,8 +70,9 @@ export const brandData = {
       },
     ],
     videos: [
-      { id: 1, url: "https://www.youtube.com/embed/xShF57dLhSk" },
-      { id: 2, url: "https://www.youtube.com/embed/YCyZbdqugkw" },
+      { id: 1, url: "/brand/CarolinaHerrera.mp4" },
+      // { id: 2, url: "https://www.youtube.com/embed/xShF57dLhSk" },
+      { id: 3, url: "https://www.youtube.com/embed/YCyZbdqugkw" },
     ],
     videogallery: [
       {

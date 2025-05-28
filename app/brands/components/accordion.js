@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+import DetailsPopup from "./detailsPopup";
 
-const AccordionItem = ({ item, isOpen, onToggle }) => (
+const AccordionItem = ({ item, isOpen, onToggle, onImageClick }) => (
   <div className="accordion-item">
     <button className="accordion-header" onClick={onToggle}>
       <span>{item.title}</span>
@@ -25,12 +25,17 @@ const AccordionItem = ({ item, isOpen, onToggle }) => (
     >
       {isOpen && (
         <div className="accordion-content">
-          <p className="accordion-content-item"> {item.content}</p>
+          <p className="accordion-content-item">{item.content}</p>
           <button className="read-history">Читать историю</button>
           <div className="universe-image-wrapper">
             {Array.isArray(item.images) &&
               item.images.map((it, idx) => (
-                <div key={idx} className="universe-item">
+                <div
+                  key={idx}
+                  className="universe-item"
+                  onClick={() => onImageClick(it)}
+                  style={{ cursor: "pointer" }}
+                >
                   <Image
                     src={it.url}
                     alt={it.title}
@@ -50,6 +55,7 @@ const AccordionItem = ({ item, isOpen, onToggle }) => (
 
 const Accordion = ({ items }) => {
   const [openIndex, setOpenIndex] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -61,13 +67,15 @@ const Accordion = ({ items }) => {
       {items.map((item, index) => (
         <AccordionItem
           key={index}
-          //   title={item.title}
-          //   content={item.content}
           item={item}
           isOpen={openIndex === index}
           onToggle={() => toggle(index)}
+          onImageClick={setSelectedImage}
         />
       ))}
+
+      {/* Modal with image details */}
+      <DetailsPopup image={selectedImage} onClose={() => setSelectedImage(null)} />
     </div>
   );
 };
