@@ -50,11 +50,11 @@ const Bio = () => {
               <p className={`${styles.bioPosition}`}>Президент компании</p>
             </div>
 
-            <p id="dex-sign" className="play-target" />
-            {/* <video autoPlay muted loop playsInline>
-              <source src="/sign_2.mp4" type="video/mp4" />
+            {/* <p id="dex-sign" className="play-target" /> */}
+            <video autoPlay muted loop playsInline  style={{width:"40%"}}>
+              <source src="/signin2.mp4" type="video/mp4"/>
               Your browser does not support the video tag.
-            </video> */}
+            </video>
           </div>
         </motion.div>
       </section>
