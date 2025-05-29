@@ -77,32 +77,32 @@ export const brandData = {
     videogallery: [
       {
         id: 1,
-        url: "https://www.youtube.com/embed/sddDuLqRIhI",
+        url: "https://rutube.ru/play/embed/b34379597ccd1da61ce3b6a9e468909e/",
         cover: cover1,
       },
       {
         id: 2,
-        url: "https://www.youtube.com/embed/RpQuGsNSW7E",
+        url: "https://rutube.ru/play/embed/94f1f8032306fe74396534a6effe5faa",
         cover: cover2,
       },
       {
         id: 3,
-        url: "https://www.youtube.com/embed/7A8dMMyxU3M",
+        url: "https://rutube.ru/play/embed/86870eefc2392e317d9f4dc6304bc4aa",
         cover: cover3,
       },
       {
         id: 4,
-        url: "https://www.youtube.com/embed/ZUtIoXn6xf8",
+        url: "https://rutube.ru/play/embed/931606826298e5266a46753e7c0353ec",
         cover: cover4,
       },
       {
         id: 5,
-        url: "https://www.youtube.com/embed/Al0Wg4WMca4",
+        url: "https://rutube.ru/play/embed/e065ff83b6f28a9349c2052e55b98ad0",
         cover: cover5,
       },
       {
         id: 6,
-        url: "https://www.youtube.com/embed/BTNDCicTvBc",
+        url: "https://rutube.ru/play/embed/f6a6d8c0d269e5605f7e9fffa02eec17",
         cover: cover6,
       },
     ],

@@ -42,29 +42,32 @@ const VideoGallery = ({ videos }) => {
               src={playIcon}
               alt="play"
               className="playIcon"
-              onClick={() => setPopupVideo(video.url)}
+              // onClick={() => setPopupVideo(video.url)}
             />
           </div>
         ))}
       </div>
 
       {selectedIndex !== null && (
-        <div className="popup-overlay" onClick={closeVideo}>
-          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-            <button className="popup-close" onClick={closeVideo}>
+        <div className="video-popup-overlay" onClick={closeVideo}>
+          <div
+            className="video-popup-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="video-popup-close" onClick={closeVideo}>
               ✕
             </button>
-            <button className="popup-nav prev" onClick={showPrev}>
+            <button className="video-popup-nav prev" onClick={showPrev}>
               ‹
             </button>
-            <button className="popup-nav next" onClick={showNext}>
+            <button className="video-popup-nav next" onClick={showNext}>
               ›
             </button>
 
-            <div className="popup-slider">
+            <div className="video-popup-slider">
               {videos.map((video, idx) => (
                 <div
-                  className="popup-slide"
+                  className="video-popup-slide"
                   key={idx}
                   style={{
                     transform: `translateX(-${selectedIndex * 100}%)`,
@@ -74,7 +77,7 @@ const VideoGallery = ({ videos }) => {
                     src={video.url}
                     allow="autoplay; encrypted-media"
                     allowFullScreen
-                    className="popup-video"
+                    className="video-popup-video"
                     title={`popup-${video.id || idx}`}
                   />
                 </div>

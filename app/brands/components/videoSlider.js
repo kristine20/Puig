@@ -42,7 +42,7 @@ const VideoSlider = ({ videos }) => {
             key={video.id}
             src={video.url}
             controls
-            autoPlay
+            // autoPlay
             className="video-item"
             title={`video-${video.id}`}
           />
@@ -85,7 +85,6 @@ const VideoSlider = ({ videos }) => {
               <video
                 src={videos[currentIndex].url}
                 controls
-                autoPlay
                 className="slider-video"
                 title={`video-${videos[currentIndex].id}`}
               />

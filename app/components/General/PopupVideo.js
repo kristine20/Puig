@@ -21,7 +21,9 @@ export default function PopupVideo({ videoUrl, onClose }) {
   return (
     <div className={styles.videoOverlay} onClick={onClose}>
       <div className={styles.popup} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.closeButton} onClick={onClose}>✕</button>
+        <button className={styles.closeButton} onClick={onClose}>
+          ✕
+        </button>
 
         {isYouTubeUrl(videoUrl) ? (
           <iframe
@@ -31,12 +33,7 @@ export default function PopupVideo({ videoUrl, onClose }) {
             className={styles.video}
           />
         ) : (
-          <video
-            controls
-            autoPlay
-            className={styles.video}
-            src={videoUrl}
-          >
+          <video controls className={styles.video} src={videoUrl}>
             Your browser does not support the video tag.
           </video>
         )}

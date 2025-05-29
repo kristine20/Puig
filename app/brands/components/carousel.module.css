@@ -1,0 +1,69 @@
+.carouselWrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.carouselWrapper>div {
+    width: 50%;
+}
+
+/* carousel.module.css */
+.carousel-container {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-item {
+    padding: 10px;
+}
+
+.custom-dot-list-style {
+    bottom: 40px;
+}
+
+.custom-arrow {
+    position: absolute;
+    bottom: 10%;
+    transform: translateY(-50%);
+    /* background: white; */
+    border: none;
+    /* border-radius: 50%; */
+    width: 40px;
+    height: 40px;
+    font-size: 35px;
+    z-index: 1;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); */
+    cursor: pointer;
+}
+
+.custom-left-arrow {
+    left: 25px;
+}
+
+.custom-right-arrow {
+    right: 40px;
+}
+
+.text1 {
+    font-size: 16px;
+    color: #444343;
+    padding: 10px 80px 0 0;
+    line-height: 20px;
+}
+
+.rightContent, .rightContent>div {
+    margin-top: 40px;
+
+}
+
+
+.text {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.subtext {
+    font-size: 15px;
+    color: #818181;
+}

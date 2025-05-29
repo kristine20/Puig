@@ -75,7 +75,10 @@ const Accordion = ({ items }) => {
       ))}
 
       {/* Modal with image details */}
-      <DetailsPopup image={selectedImage} onClose={() => setSelectedImage(null)} />
+      <DetailsPopup
+        image={selectedImage}
+        onClose={() => setSelectedImage(null)}
+      />
     </div>
   );
 };
