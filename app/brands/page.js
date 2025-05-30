@@ -53,7 +53,7 @@ import Hero from "../components/home/Hero/Hero";
 const BrandsNav = () => {
   const pathname = usePathname();
   const activeBrand = pathname?.split("/").pop();
-  const bgImage = brandBackgrounds[activeBrand].src || carolinaBanner;
+  const bgImage = brandBackgrounds[activeBrand]?.src || carolinaBanner;
   const brandData = brandBackgrounds[activeBrand] || {};
   const currentBrand = brandOptions.find((b) => b.id === activeBrand);
 
