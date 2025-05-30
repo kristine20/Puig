@@ -82,6 +82,7 @@ const DetailsPopup = ({ image, onClose }) => {
                       paddingTop: "10px",
                     }}
                   >
+                    {desc.title && <h2>{desc.title}</h2>}
                     <p style={{ marginBottom: "0.5rem" }}>{desc.text}</p>
                     {desc.video && (
                       <div

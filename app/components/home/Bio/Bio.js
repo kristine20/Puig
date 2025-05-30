@@ -51,8 +51,8 @@ const Bio = () => {
             </div>
 
             {/* <p id="dex-sign" className="play-target" /> */}
-            <video autoPlay muted loop playsInline  style={{width:"40%"}}>
-              <source src="/signin2.mp4" type="video/mp4"/>
+            <video autoPlay muted playsInline style={{ width: "40%" }}>
+              <source src="/signin2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

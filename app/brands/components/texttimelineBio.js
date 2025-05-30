@@ -81,18 +81,22 @@ import HistorySlider from "../../components/home/History/History";
 const TextTimelineBio = ({ bioTimelineData, timelineItems }) => {
   const width = useWindowWidth();
   return (
-    <motion.div className="flex brand-bottom-content">
-      <p className="bio-text bio-text-width pt-2">{bioTimelineData}</p>
-      <div className="vertical-slider-wrapper">
-        <HistorySlider
-          items={timelineItems}
-          title=""
-          buttonPosition="bottom"
-          // direction={width <= 960 && width > 600 ? "vertical" : "horizontal"}
-          direction={width <= 960 && width > 600 ? "horizontal" : "horizontal"}
-        />
-      </div>
-    </motion.div>
+    <>
+      <motion.div className="flex brand-bottom-content">
+        <div className="vertical-slider-wrapper">
+          <HistorySlider
+            items={timelineItems}
+            title=""
+            buttonPosition="bottom"
+            // direction={width <= 960 && width > 600 ? "vertical" : "horizontal"}
+            direction={
+              width <= 960 && width > 600 ? "horizontal" : "horizontal"
+            }
+          />
+        </div>
+      </motion.div>
+      {/* <p className="bio-text bio-text-width pt-2">{bioTimelineData}</p> */}
+    </>
   );
 };
 

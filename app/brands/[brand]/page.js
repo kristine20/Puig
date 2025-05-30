@@ -18,6 +18,7 @@ const BrandPage = ({ params }) => {
   return (
     <>
       <BrandsNav />
+
       <section className="w-fixed brand-content-wrapper pt-1">
         {data ? (
           <>

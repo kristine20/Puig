@@ -7,24 +7,21 @@ const circles = [
   {
     title: "NICHE",
     items: [
-      "Herrera Confidential",
       "Penhaligon's",
       "L'Artisan Parfumeur",
+      "Bayredo",
       "Christian Louboutin",
+      "Herrera Confidential",
+      "Christian Louboutin Beauty",
     ],
   },
   {
     title: "PRESTIGE",
-    items: [
-      "Paco Rabanne",
-      "Carolina Herrera",
-      "Nina Ricci",
-      "Jean Paul Gaultier",
-    ],
+    items: ["Rabanne", "Carolina Herrera", "Nina Ricci", "Jean Paul Gaultier"],
   },
   {
     title: "LIFESTYLE",
-    items: ["Antonio Banderas", "United Colors of Benetton", "Shakira"],
+    items: ["Banderas", "United Colors of Benetton", "Shakira"],
   },
 ];
 

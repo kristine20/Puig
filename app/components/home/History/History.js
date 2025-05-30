@@ -115,9 +115,7 @@ function HistorySlider({
 
   return (
     <section
-      className={`w-fixed pt-1 mb-80 history ${
-        isVertical ? "vertical" : "horizontal"
-      }`}
+      className={`w-fixed history ${isVertical ? "vertical" : "horizontal"}`}
     >
       {title && <h2>{title}</h2>}
       {buttonPosition === "top" && (

@@ -52,7 +52,7 @@ const VideoSlider = ({ videos }) => {
   ) : (
     <>
       <div className="slider-buttons">
-        <button onClick={prevSlide} className="slider-buttons">
+        {/* <button onClick={prevSlide} className="slider-buttons">
           <Image
             src={arrow}
             alt="prev"
@@ -61,7 +61,7 @@ const VideoSlider = ({ videos }) => {
         </button>
         <button onClick={nextSlide} className="slider-buttons">
           <Image src={arrow} alt="next" />
-        </button>
+        </button> */}
       </div>
 
       <div className="video-slider">

@@ -44,15 +44,19 @@ const historySliderItems = [
 const Main = () => {
   return (
     <>
-      <Hero />
+      <Hero
+        title={"PUIG LOVE BRANDS"}
+        videoSrc={"/PUIG.mp4"}
+        showPopup={true}
+      />
       <div className="bio-section">
         <Bio />
       </div>
       <Company />
-      <ProductSlider />
       <HistorySlider items={historySliderItems} title="История PUIG ―" />
       <Portfolio />
       <Footer />
+      <ProductSlider />
     </>
   );
 };

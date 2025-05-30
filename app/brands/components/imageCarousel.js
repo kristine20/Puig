@@ -51,7 +51,7 @@ const ImageCarousel = ({ galleryItems }) => {
           customLeftArrow={<CustomLeftArrow />}
           customRightArrow={<CustomRightArrow />}
         >
-          {galleryItems.imagegallery.map((item, index) => (
+          {galleryItems?.imagegallery.map((item, index) => (
             <div key={index}>
               <Image
                 src={item.src}
@@ -63,17 +63,16 @@ const ImageCarousel = ({ galleryItems }) => {
         </Carousel>
       </div>
       <div>
-        {" "}
         <Image
-          src={galleryItems.rightImage[0].src}
+          src={galleryItems?.rightImage[0].src}
           alt="PUIG"
           style={{ maxWidth: "100%", height: "auto", marginTop: "10px" }}
         />
-        <p className={styles.text1}>{galleryItems.rightImage[0].title}</p>
+        <p className={styles.text1}>{galleryItems?.rightImage[0].title}</p>
         <div className={styles.rightContent}>
-          {galleryItems.rightContent.map((item) => {
+          {galleryItems?.rightContent.map((item, index) => {
             return (
-              <div>
+              <div key={index}>
                 <span className={styles.subtext}>{item.subtext}</span>
                 <p className={styles.text}>{item.text}</p>
               </div>
