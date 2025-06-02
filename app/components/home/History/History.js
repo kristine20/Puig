@@ -169,9 +169,20 @@ function HistorySlider({
                         strokeWidth={isActive ? 1 : 0.5}
                       />
                     </svg>
-                    <p className={`year ${isActive ? "active" : ""}`}>
-                      {item.year}
-                    </p>
+                    <div className="year-container">
+                      <p className={`year ${isActive ? "active" : ""}`}>
+                        {item.year}
+                      </p>
+                      {item.image && (
+                        <div className="tooltip">
+                          <Image
+                            src={item.image}
+                            alt={`Year ${item.year} image`}
+                            className="tooltip-image"
+                          />
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <p className="content">{item.content}</p>
                 </div>

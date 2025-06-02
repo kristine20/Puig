@@ -234,6 +234,54 @@
     cursor: grabbing;
 }
 
+/**hhh*/
+
+.year-container {
+    position: relative;
+    /* display: inline-block; */
+    z-index: 10;
+}
+
+/* The tooltip itself: hidden by default */
+.year-container .tooltip {
+    position: absolute;
+    top: -90px;
+    /* adjust so it appears above the circle year */
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ccc;
+    padding: 4px;
+    border-radius: 4px;
+    width: 500px;
+    height: 800px;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Show tooltip on hover of the year‐wrapper */
+.year-container:hover .tooltip {
+    display: block;
+}
+
+/* Optional: style the img inside tooltip */
+.year-container .tooltip-image {
+    display: block;
+    width: 500px;
+    /* adjust to whatever fits your design */
+    height: auto;
+    /* maintain aspect ratio */
+    border-radius: 2px;
+    z-index: 1000;
+}
+
+
+/*gggv*/
+
+
+
+
 @media (min-width: 1910px) {
     .history-slider-item::after {
         width: 85%;

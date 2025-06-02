@@ -3,18 +3,22 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import DetailsPopup from "./detailsPopup";
+import accordionBg from "../../assets/images/brands/accordionbg.png";
 
 const AccordionItem = ({ item, isOpen, onToggle, onImageClick }) => (
   <div className="accordion-item">
-    <button className="accordion-header" onClick={onToggle}>
-      <span>{item.title}</span>
-      {isOpen && <span className="universe-subtitle">{item.subtitle}</span>}
-      <span
-        className="toggle-button"
-        style={isOpen ? { transform: "rotate(45deg)" } : undefined}
-      >
-        +
-      </span>
+    <button
+      className={isOpen ? "accordion-header-open" : "accordion-header"}
+      onClick={onToggle}
+    >
+      <span className="universe-subtitle">{item.subtitle}</span>
+
+      <div className="accordion-title-wrapper">
+        <Image src={accordionBg} alt="background" className="accordion-bg" />
+        <span className="universe-item-title">{item.title}</span>
+      </div>
+
+      <span className={`toggle-button ${isOpen ? "rotated" : ""}`}>+</span>
     </button>
 
     <motion.div
