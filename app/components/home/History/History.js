@@ -21,6 +21,7 @@ function HistorySlider({
   const [scrollStart, setScrollStart] = useState(0);
   const scrollerRef = React.useRef(null);
 
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   useEffect(() => {
     const scroller = scrollerRef.current;
     if (!scroller) return;
@@ -138,42 +139,69 @@ function HistorySlider({
           </button>
         </div>
       )}
+      {/*   Change image in time autoscroll automatically */}
+      {/* {items[activeIndex]?.image && (
+        <div className="history-hover-panel">
+          <Image
+            src={items[activeIndex].image}
+            alt={`Year ${items[activeIndex].year} image`}
+            className="hover-panel-image"
+          />
+          <p className="hover-panel-content">{items[activeIndex].content}</p>
+        </div>
+      )} */}
+      <div className="history-slider-wrapper">
+        {hoveredIndex !== null && items[hoveredIndex]?.image && (
+          <div className="history-hover-panel">
+            <Image
+              src={items[hoveredIndex].image}
+              alt={`Year ${items[hoveredIndex].year} image`}
+              className="hover-panel-image"
+            />
+          </div>
+        )}
 
-      <div
-        className={`scroller ${isVertical ? "vertical" : "horizontal"}`}
-        ref={scrollerRef}
-      >
-        <div className="scroller__inner">
-          {(isMobile && !isVertical ? items : [...items, ...items]).map(
-            (item, index) => {
-              const isActive = index % items.length === activeIndex;
-              return (
-                <div
-                  key={`${item.year}-${index}`}
-                  className="history-slider-item marquee"
-                >
-                  <div className="circle-wrapper">
-                    <svg
-                      className="circle-svg"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                    >
-                      <circle
-                        className="circle-path"
-                        cx="20"
-                        cy="20"
-                        r="18"
-                        fill="none"
-                        stroke="#000"
-                        strokeWidth={isActive ? 1 : 0.5}
-                      />
-                    </svg>
-                    <div className="year-container">
-                      <p className={`year ${isActive ? "active" : ""}`}>
-                        {item.year}
-                      </p>
-                      {item.image && (
+        <div
+          className={`scroller ${isVertical ? "vertical" : "horizontal"}`}
+          ref={scrollerRef}
+        >
+          <div className="scroller__inner">
+            {(isMobile && !isVertical ? items : [...items, ...items]).map(
+              (item, index) => {
+                const isActive = index % items.length === activeIndex;
+                return (
+                  <div
+                    key={`${item.year}-${index}`}
+                    className="history-slider-item marquee"
+                  >
+                    <div className="circle-wrapper">
+                      <svg
+                        className="circle-svg"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 40 40"
+                      >
+                        <circle
+                          className="circle-path"
+                          cx="20"
+                          cy="20"
+                          r="18"
+                          fill="none"
+                          stroke="#000"
+                          strokeWidth={isActive ? 1 : 0.5}
+                        />
+                      </svg>
+                      <div
+                        className="year-container"
+                        onMouseEnter={() =>
+                          setHoveredIndex(index % items.length)
+                        }
+                        onMouseLeave={() => setHoveredIndex(null)}
+                      >
+                        <p className={`year ${isActive ? "active" : ""}`}>
+                          {item.year}
+                        </p>
+                        {/* {item.image && (
                         <div className="tooltip">
                           <Image
                             src={item.image}
@@ -181,14 +209,15 @@ function HistorySlider({
                             className="tooltip-image"
                           />
                         </div>
-                      )}
+                      )} */}
+                      </div>
                     </div>
+                    <p className="content">{item.content}</p>
                   </div>
-                  <p className="content">{item.content}</p>
-                </div>
-              );
-            }
-          )}
+                );
+              }
+            )}
+          </div>
         </div>
       </div>
 

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import DetailsPopup from "./detailsPopup";
-import accordionBg from "../../assets/images/brands/accordionbg.png";
+import accordionBg from "../../assets/images/brands/accordionbg.jpg";
 
 const AccordionItem = ({ item, isOpen, onToggle, onImageClick }) => (
   <div className="accordion-item">

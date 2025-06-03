@@ -33,6 +33,7 @@
     align-items: flex-start;
     border-radius: 8px;
     perspective: 1000px;
+    position: relative;
 }
 
 .infinite-line {
@@ -243,10 +244,9 @@
 }
 
 /* The tooltip itself: hidden by default */
-.year-container .tooltip {
+.tooltip {
     position: absolute;
     top: -90px;
-    /* adjust so it appears above the circle year */
     left: 50%;
     transform: translateX(-50%);
     display: none;
@@ -265,8 +265,12 @@
     display: block;
 }
 
+.year-container:hover .scroller.horizontal {
+    height: 90vh;
+}
+
 /* Optional: style the img inside tooltip */
-.year-container .tooltip-image {
+.tooltip-image {
     display: block;
     width: 500px;
     /* adjust to whatever fits your design */
@@ -276,9 +280,59 @@
     z-index: 1000;
 }
 
-
 /*gggv*/
+/*   Change image in time autoscroll automatically */
+/* .history-hover-panel {
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    z-index: 10;
+    position: relative;
+}
 
+.hover-panel-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.hover-panel-content {
+    font-size: 1rem;
+    color: #333;
+} */
+
+/*   Change image in time autoscroll automatically */
+
+
+/**/
+.history-slider-wrapper {
+    position: relative;
+}
+
+.history-hover-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    z-index: 10;
+    pointer-events: none;
+    /* Prevent flicker on hover */
+    transition: opacity 0.3s ease;
+}
+
+.hover-panel-image {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/**/
 
 
 

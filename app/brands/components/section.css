@@ -43,7 +43,7 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
 }
@@ -110,11 +110,6 @@
 }
 
 /*Accordion CSS */
-.universe-title {
-    text-align: center;
-    padding-bottom: 30px;
-}
-
 .accordion-wrapper {
     width: 100%;
     margin: 0 auto;
@@ -159,11 +154,6 @@
     position: relative;
 }
 
-.universe-item-title {
-    font-weight: 500;
-    font-size: 24px;
-
-}
 
 .toggle-button.rotated {
     transform: rotate(45deg);
@@ -203,13 +193,14 @@
 
 .universe-title {
     position: relative;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 500;
     margin: 1rem 0;
+    color: #363636;
 }
 
-.universe-title::before,
+/* .universe-title::before,
 .universe-title::after {
     content: "";
     display: inline-block;
@@ -222,11 +213,11 @@
 
 .universe-title::before {
     margin-right: 15px;
-}
-
+} */
+/* 
 .universe-title::after {
     margin-left: 15px;
-}
+} */
 
 .universe-image-wrapper {
     display: flex;
@@ -315,15 +306,22 @@
 
 .accordion-title-wrapper {
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     overflow: hidden;
-    /* prevents overflow during animation */
+    width: 300px;
+    height: 52px;
 }
 
 .universe-item-title {
     position: relative;
     z-index: 2;
     transition: transform 0.4s ease;
+    font-weight: 500;
+    font-size: 24px;
+    transform: translate(0, 0);
+    display: flex;
+    padding-top: 10px;
 }
 
 .accordion-bg {
@@ -342,6 +340,7 @@
 /* Hover animation: title moves right, bg moves left + fades in */
 .accordion-header:hover .universe-item-title {
     transform: translateX(30px);
+
 }
 
 .accordion-header:hover .accordion-bg {

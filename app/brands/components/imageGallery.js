@@ -137,8 +137,6 @@ const ImageGallery = ({ images }) => {
                   <Image
                     src={img.url}
                     alt={img.alt || `popup-${idx}`}
-                    width={800}
-                    height={600}
                     className="popup-image"
                   />
                 </div>
