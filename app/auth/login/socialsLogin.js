@@ -9,16 +9,14 @@ import Image from "next/image";
 const SocialsLogin = () => {
   const handleLogin = (provider) => {
     signIn(provider, {
-      callbackUrl: "/main",
+      callbackUrl: "https://puigback.artean.ru/main",
+      redirect: true,
     });
   };
 
   return (
     <div className={styles.socialButtons}>
-      <button
-        onClick={() => handleLogin("VKProvider")}
-        className={styles.socialButton}
-      >
+      <button onClick={() => handleLogin("vk")} className={styles.socialButton}>
         <Image src={vk} alt="PUIG VK" className={styles.socialIcon} />
       </button>
       <button
@@ -28,7 +26,7 @@ const SocialsLogin = () => {
         <Image src={ok} alt="PUIG OK" className={styles.socialIcon} />
       </button>
       <button
-        onClick={() => handleLogin("YandexProvider")}
+        onClick={() => handleLogin("yandex")}
         className={styles.socialButton}
       >
         <Image src={yandex} alt="PUIG Yandex" className={styles.socialIcon} />
