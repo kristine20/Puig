@@ -1,10 +1,15 @@
 import VKProvider from "next-auth/providers/vk";
 import YandexProvider from "next-auth/providers/yandex";
+import GoogleProvider from "next-auth/providers/google";
 // import OdnoklassnikiProvider from "next-auth/providers/odnoklassniki";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authConfig = {
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
     VKProvider({
       id: "vk",
       clientId: process.env.VK_CLIENT_ID,
@@ -103,11 +108,18 @@ export const authConfig = {
     }),
   ],
 
-  pages: {
-    signIn: "/auth", // use this for both login and register
-  },
+  // pages: {
+  //   signIn: "/auth", // use this for both login and register
+  // },
 
   callbacks: {
+    async yandex({ token, user }) {
+      console.log(token, user, "yandex");
+      if (user?.accessToken) {
+        token.accessToken = user.accessToken;
+      }
+      return token;
+    },
     async jwt({ token, user }) {
       console.log(token, "1");
       if (user?.accessToken) {
