@@ -6,10 +6,12 @@ import CredentialsProvider from "next-auth/providers/credentials";
 export const authConfig = {
   providers: [
     VKProvider({
+      id: "vk",
       clientId: process.env.VK_CLIENT_ID,
       clientSecret: process.env.VK_CLIENT_SECRET,
     }),
     YandexProvider({
+      id: "yandex",
       clientId: process.env.YANDEX_CLIENT_ID,
       clientSecret: process.env.YANDEX_CLIENT_SECRET,
     }),
@@ -107,6 +109,7 @@ export const authConfig = {
 
   callbacks: {
     async jwt({ token, user }) {
+      console.log(token, "1");
       if (user?.accessToken) {
         token.accessToken = user.accessToken;
       }
