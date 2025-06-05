@@ -1,24 +1,24 @@
 import VKProvider from "next-auth/providers/vk";
 import YandexProvider from "next-auth/providers/yandex";
-import GoogleProvider from "next-auth/providers/google";
+// import GoogleProvider from "next-auth/providers/google";
 // import OdnoklassnikiProvider from "next-auth/providers/odnoklassniki";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authConfig = {
   providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),
+    // GoogleProvider({
+    //   clientId: process.env.GOOGLE_CLIENT_ID,
+    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    // }),
     VKProvider({
       id: "vk",
-      clientId: process.env.VK_CLIENT_ID,
-      clientSecret: process.env.VK_CLIENT_SECRET,
+      clientId: process.env.NEXT_PUBLIC_VK_CLIENT_ID,
+      clientSecret: process.env.NEXT_PUBLIC_VK_CLIENT_SECRET,
     }),
     YandexProvider({
       id: "yandex",
-      clientId: process.env.YANDEX_CLIENT_ID,
-      clientSecret: process.env.YANDEX_CLIENT_SECRET,
+      clientId: process.env.NEXT_PUBLIC_YANDEX_CLIENT_ID,
+      clientSecret: process.env.NEXT_PUBLIC_YANDEX_CLIENT_SECRET,
     }),
     // OdnoklassnikiProvider({
     //   clientId: process.env.OK_CLIENT_ID,
@@ -108,9 +108,9 @@ export const authConfig = {
     }),
   ],
 
-  // pages: {
-  //   signIn: "/auth", // use this for both login and register
-  // },
+  pages: {
+    signIn: "/auth", // use this for both login and register
+  },
 
   callbacks: {
     async yandex({ token, user }) {
