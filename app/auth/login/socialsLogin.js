@@ -9,7 +9,7 @@ import Image from "next/image";
 const SocialsLogin = () => {
   const handleLogin = (provider) => {
     signIn(provider, {
-      callbackUrl: "/main", //`https://puigback.artean.ru/api/auth/callback/${provider}`,
+      callbackUrl: `https://puigback.artean.ru/api/auth/callback/${provider}`,
       // redirect: true,
     });
   };
