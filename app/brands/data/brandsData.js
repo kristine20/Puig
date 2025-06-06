@@ -56,6 +56,7 @@ import carolinachUniverse2 from "../../assets/images/brands/carolina/ch-2.jpeg";
 import carolinaclassicUniverse1 from "../../assets/images/brands/carolina/classic_1.jpg";
 
 // Nina Ricci images imports
+
 import ninaricciimg1 from "../../assets/images/brands/ninaricci/1.jpg";
 import ninaricciimg2 from "../../assets/images/brands/ninaricci/2.jpg";
 import ninaricciimg3 from "../../assets/images/brands/ninaricci/3.jpg";
@@ -86,6 +87,7 @@ import ninaclassicUniverse1 from "../../assets/images/brands/ninaricci/classic_1
 import ninaclassicUniverse2 from "../../assets/images/brands/ninaricci/classic_2.jpeg";
 
 // Jean Paul images imports
+
 import jeanpaulgaultierimg1 from "../../assets/images/brands/jeanpaulgaultier/1.jpg";
 import jeanpaulgaultierimg2 from "../../assets/images/brands/jeanpaulgaultier/2.jpeg";
 import jeanpaulgaultierimg3 from "../../assets/images/brands/jeanpaulgaultier/3.jpg";
@@ -122,6 +124,47 @@ import jeanpaulscandal2 from "../../assets/images/brands/jeanpaulgaultier/scanda
 import jeanpaulscandal3 from "../../assets/images/brands/jeanpaulgaultier/scandal3.png";
 import jeanpaulscandal4 from "../../assets/images/brands/jeanpaulgaultier/scandal4.jpg";
 import jeanpaulscandal5 from "../../assets/images/brands/jeanpaulgaultier/scandal5.jpg";
+
+// Banderas images imports
+
+import banderasimg1 from "../../assets/images/brands/banderas/1.png";
+import banderasimg2 from "../../assets/images/brands/banderas/2.jpg";
+import banderasimg3 from "../../assets/images/brands/banderas/3.jpg";
+import banderasimg4 from "../../assets/images/brands/banderas/4.jpg";
+import banderasimg5 from "../../assets/images/brands/banderas/5.jpg";
+import banderasimg6 from "../../assets/images/brands/banderas/6.jpg";
+import banderasimg7 from "../../assets/images/brands/banderas/7.jpg";
+import banderasimg8 from "../../assets/images/brands/banderas/8.jpg";
+import banderasimg9 from "../../assets/images/brands/banderas/9.jpg";
+import banderasimg10 from "../../assets/images/brands/banderas/10.jpg";
+
+import banderasicon1 from "../../assets/images/brands/banderas/icon_1.png";
+import banderasicon2 from "../../assets/images/brands/banderas/icon_2.png";
+import banderasicon3 from "../../assets/images/brands/banderas/icon_3.png";
+import banderasicon4 from "../../assets/images/brands/banderas/icon_4.jpg";
+
+import banderassecret1 from "../../assets/images/brands/banderas/secret_1.jpeg";
+import banderassecret2 from "../../assets/images/brands/banderas/secret_2.jpeg";
+import banderassecret3 from "../../assets/images/brands/banderas/secret_3.jpg";
+import banderassecret4 from "../../assets/images/brands/banderas/secret_4.jpeg";
+import banderassecret5 from "../../assets/images/brands/banderas/secret_5.jpeg";
+import banderassecret6 from "../../assets/images/brands/banderas/secret_6.jpeg";
+import banderassecret7 from "../../assets/images/brands/banderas/secret_7.png";
+import banderassecret8 from "../../assets/images/brands/banderas/secret_8.png";
+
+import banderasseduction1 from "../../assets/images/brands/banderas/seduction_1.jpeg";
+import banderasseduction2 from "../../assets/images/brands/banderas/seduction_2.png";
+import banderasseduction3 from "../../assets/images/brands/banderas/seduction_3.png";
+import banderasseduction4 from "../../assets/images/brands/banderas/seduction_4.png";
+import banderasseduction5 from "../../assets/images/brands/banderas/seduction_5.png";
+import banderasseduction6 from "../../assets/images/brands/banderas/seduction_6.png";
+import banderasseduction7 from "../../assets/images/brands/banderas/seduction_7.png";
+import banderasseduction8 from "../../assets/images/brands/banderas/seduction_8.png";
+
+import banderascover1 from "../../assets/images/brands/banderas/videogallery_1.jpg";
+import banderascover2 from "../../assets/images/brands/banderas/videogallery_2.jpg";
+import banderascover3 from "../../assets/images/brands/banderas/videogallery_3.jpg";
+import banderascover4 from "../../assets/images/brands/banderas/videogallery_4.jpg";
 
 export const brandData = {
   carolina: {
@@ -667,9 +710,47 @@ export const brandData = {
     videos: [
       {
         id: 1,
-        url: "https://rutube.ru/play/embed/437a77d31391596deb2365bc57ff258c/",
+        url: "https://www.youtube.com/embed/FNQ0tBo4k1I",
+      },
+      {
+        id: 2,
+        url: "https://www.youtube.com/embed/DCTSaNJX6Q8",
       },
       // { id: 2, url: "https://www.youtube.com/embed/DCTSaNJX6Q8" },
+    ],
+    videogallery: [
+      {
+        id: 1,
+        url: "https://www.youtube.com/embed/mzRcGU7_wlY",
+        cover: banderascover1,
+      },
+      {
+        id: 2,
+        url: "https://www.youtube.com/embed/3C72PxReV0c",
+        cover: banderascover2,
+      },
+      {
+        id: 3,
+        url: "https://www.youtube.com/embed/arnUQS431K4",
+        cover: banderascover3,
+      },
+      {
+        id: 4,
+        url: "https://www.youtube.com/embed/MDCZTONAKXU",
+        cover: banderascover4,
+      },
+    ],
+    images: [
+      { id: 1, url: banderasimg1 },
+      { id: 2, url: banderasimg2 },
+      { id: 3, url: banderasimg3 },
+      { id: 4, url: banderasimg4 },
+      { id: 5, url: banderasimg5 },
+      { id: 6, url: banderasimg6 },
+      { id: 7, url: banderasimg7 },
+      { id: 8, url: banderasimg8 },
+      { id: 9, url: banderasimg9 },
+      { id: 10, url: banderasimg10 },
     ],
     bio: {
       subtitle: "",
@@ -920,6 +1001,55 @@ export const perfumeryUniverses = {
         { id: 3, url: jeanpaulscandal3, title: "SCANDAL POUR HOMME" },
         { id: 4, url: jeanpaulscandal4, title: "SCANDAL LE PARFUM" },
         { id: 5, url: jeanpaulscandal5, title: "SCANDAL POUR HOMME LE PARFUM" },
+      ],
+    },
+  ],
+  banderas: [
+    {
+      title: "The Icon",
+      subtitle: "4 аромата",
+      citation: "«Успех, как стиль жизни»",
+      content:
+        "Успех не зависит от славы или власти. Он внутри тебя: в твоей способности каждый день бросать себе новый вызов, осознавать свои сильные стороны и ставить перед собой цели; знать, к чему ты стремишься, и наслаждаться каждым этапом этого пути, усердно работать, но оставаться верным своим ценностям и помнить, что следовать им — значит побеждать.",
+      historyLink: "#",
+      images: [
+        { id: 1, url: banderasicon1, title: "THE ICON" },
+        { id: 2, url: banderasicon2, title: "THE ICON EDP" },
+        { id: 3, url: banderasicon3, title: "THE ICON ELIXIR" },
+        { id: 4, url: banderasicon4, title: "THE ICON FOR WOMEN EDP" },
+      ],
+    },
+    {
+      title: "Seduction",
+      subtitle: "8 ароматов",
+      content:
+        "Горячая латиноамериканская парфюмерная вселенная Seduction от Banderas ― это вселенная, в которой нашло свое отражение тонкое искусство соблазнения настоящего искусителя и очаровательной соблазнительницы. Сочетание истинной мужественности и элегантности, присущие ему, и тонкое, женское искусство флирта, которым владеет она. Ароматы, построенные на соблазнительных контрастах, чтобы Вы смогли пережить новые чувства и ощущения, взглянув на мир по-другому.",
+      historyLink: "#",
+      images: [
+        { id: 1, url: banderasseduction1, title: "BLUE SEDUCTION" },
+        { id: 2, url: banderasseduction2, title: "BLACK SEDUCTION" },
+        { id: 3, url: banderasseduction3, title: "KING OF SEDUCTION" },
+        { id: 4, url: banderasseduction4, title: "KING OF SEDUCTION ABSOLUTE", },
+        { id: 5, url: banderasseduction5, title: "POWER OF SEDUCTION", },
+        { id: 6, url: banderasseduction6, title: "BLUE SEDUCTION FOR WOMEN" },
+        { id: 7, url: banderasseduction7, title: "QUEEN OF SEDUCTION", },
+        { id: 8, url: banderasseduction8, title: "QUEEN OF SEDUCTION LIVELY MUSE", },
+      ],
+    },
+    {
+      title: "Secret",
+      subtitle: "8 ароматов",
+      content: "Любой аромат коллекции The Secret Banderas ― это олицетворение южного темперамента, заключенного в стекле флакона. Тайны искушения под эгидой вселенной The Secret скрываются в узнаваемых флаконах с замочными скважинами и ключами. Прозрачный намек: открыть ящик Пандоры с захватывающими эмоциями и головокружительными страстями сможет тот, у кого ключ подойдет к замку. Любопытство, сокровенные желания или фантазии ― любая форма одержимости становится своеобразной отмычкой для обретения власти и силы над чувствами, своими и чужими.",
+      historyLink: "#",
+      images: [
+        { id: 1, url: banderassecret1, title: "THE SECRET" },
+        { id: 2, url: banderassecret2, title: "THE GOLDEN SECRET" },
+        { id: 3, url: banderassecret3, title: "THE SECRET TEMPTATION" },
+        { id: 4, url: banderassecret4, title: "HER SECRET TEMPTATION", },
+        { id: 5, url: banderassecret5, title: "HER GOLDEN SECRET", },
+        { id: 6, url: banderassecret6, title: "HER SECRET DESIRE" },
+        { id: 7, url: banderassecret7, title: "SECRET ABSOLU FOR HER", },
+        { id: 8, url: banderassecret8, title: "SECRET ABSOLU FOR HIM", },
       ],
     },
   ],

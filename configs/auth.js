@@ -1,7 +1,7 @@
 import VKProvider from "next-auth/providers/vk";
 import YandexProvider from "next-auth/providers/yandex";
 // import GoogleProvider from "next-auth/providers/google";
-// import OAuthProvider from "next-auth/providers/oauth";
+import OAuthProvider from "next-auth/providers/oauth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authConfig = {
@@ -10,56 +10,71 @@ export const authConfig = {
     //   clientId: process.env.GOOGLE_CLIENT_ID,
     //   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     // }),
-    VKProvider({
-      id: "vk",
-      clientId: process.env.NEXT_PUBLIC_VK_CLIENT_ID,
-      clientSecret: process.env.NEXT_PUBLIC_VK_CLIENT_SECRET,
-    }),
+    VKProvider(
+      // id: "vk",
+      // clientId: process.env.NEXT_PUBLIC_VK_CLIENT_ID,
+      // clientSecret: process.env.NEXT_PUBLIC_VK_CLIENT_SECRET,
+      {
+        id: "vk",
+        name: "VK",
+        type: "oauth",
+        version: "2.0",
+        authorization: "https://oauth.vk.com/authorize?response_type=code",
+        token: "https://oauth.vk.com/access_token",
+        clientId: process.env.NEXT_PUBLIC_VK_CLIENT_ID,
+        clientSecret: process.env.NEXT_PUBLIC_VK_CLIENT_SECRET,
+        scope: "email",
+        userinfo:
+          "https://api.vk.com/method/users.get?fields=photo_200&v=5.131",
+        profile: async (_profile, tokens) => {
+          const { access_token, email } = tokens;
+
+          const res = await fetch(
+            `https://api.vk.com/method/users.get?fields=photo_200&v=5.131&access_token=${access_token}`
+          );
+          const result = await res.json();
+          const user = result.response?.[0];
+
+          return {
+            id: user.id.toString(),
+            name: `${user.first_name} ${user.last_name}`,
+            email: email || null,
+            image: user.photo_200 || null,
+          };
+        },
+      }
+    ),
     YandexProvider({
       id: "yandex",
       clientId: process.env.NEXT_PUBLIC_YANDEX_CLIENT_ID,
       clientSecret: process.env.NEXT_PUBLIC_YANDEX_CLIENT_SECRET,
     }),
     // OAuthProvider({
-    //   id: "odnoklassniki",
-    //   name: "Odnoklassniki",
-    //   type: "oauth",
+    //   id: "vkk",
+    //   name: "vkk",
     //   version: "2.0",
-    //   scope: "GET_EMAIL",
-    //   params: { grant_type: "authorization_code" },
-    //   accessTokenUrl: "https://api.ok.ru/oauth/token.do",
-    //   requestTokenUrl: "https://connect.ok.ru/oauth/authorize",
-    //   authorizationUrl:
-    //     "https://connect.ok.ru/oauth/authorize?response_type=code",
-    //   profileUrl: "https://api.ok.ru/fb.do",
-    //   clientId: process.env.ODNOKLASSNIKI_CLIENT_ID,
-    //   clientSecret: process.env.ODNOKLASSNIKI_CLIENT_SECRET,
-    //   profile: async (profile, tokens) => {
-    //     const access_token = tokens.access_token;
-    //     const publicKey = process.env.ODNOKLASSNIKI_PUBLIC_KEY;
-    //     const clientSecret = process.env.ODNOKLASSNIKI_CLIENT_SECRET;
+    //   authorizationUrl: "https://oauth.vk.com/authorize?response_type=code",
+    //   tokenUrl: "https://oauth.vk.com/access_token",
+    //   clientId: process.env.NEXT_PUBLIC_VK_CLIENT_ID,
+    //   clientSecret: process.env.NEXT_PUBLIC_VK_CLIENT_SECRET,
+    //   scope: "email",
+    //   profileUrl:
+    //     "https://api.vk.com/method/users.get?fields=photo_200&v=5.131",
+    //   async profile(profile, tokens) {
+    //     const { access_token, email, user_id } = tokens;
 
-    //     const sigSource = `application_key=${publicKey}method=users.getCurrentUser${crypto
-    //       .createHash("md5")
-    //       .update(`${access_token}${clientSecret}`)
-    //       .digest("hex")}`;
-    //     const sig = crypto.createHash("md5").update(sigSource).digest("hex");
+    //     const res = await fetch(
+    //       `https://api.vk.com/method/users.get?fields=photo_200&v=5.131&access_token=${access_token}`
+    //     );
+    //     const data = await res.json();
 
-    //     const { data } = await axios.get("https://api.ok.ru/fb.do", {
-    //       params: {
-    //         method: "users.getCurrentUser",
-    //         access_token,
-    //         application_key: publicKey,
-    //         sig,
-    //         format: "json",
-    //       },
-    //     });
+    //     const user = data.response?.[0];
 
     //     return {
-    //       id: data.uid,
-    //       name: `${data.first_name} ${data.last_name}`,
-    //       email: data.email || null, // Email is only returned if permission granted
-    //       image: data.pic_3 || null,
+    //       id: user.id.toString(),
+    //       name: `${user.first_name} ${user.last_name}`,
+    //       email: email || null,
+    //       image: user.photo_200 || null,
     //     };
     //   },
     // }),

@@ -42,8 +42,8 @@ const SocialsLogin = () => {
   return (
     <div className={styles.socialButtons}>
       <button
-        //onClick={() => handleLogin("vk")}
-        onClick={handleVKLogin}
+        onClick={() => handleLogin("vk")}
+        // onClick={handleVKLogin}
         className={styles.socialButton}
       >
         <Image src={vk} alt="PUIG VK" className={styles.socialIcon} />
