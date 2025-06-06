@@ -11,7 +11,7 @@ const DetailsPopup = ({ image, onClose }) => {
   const foundDetail = Object.values(singleDetails)
     .flat()
     .find((item) => item.title === image.title);
-
+  console.log(foundDetail, "foundDetail");
   return (
     <AnimatePresence>
       <motion.div
@@ -107,6 +107,29 @@ const DetailsPopup = ({ image, onClose }) => {
                             height: "100%",
                           }}
                         ></iframe>
+                      </div>
+                    )}
+                    {desc.image && (
+                      <div
+                        style={{
+                          position: "relative",
+                          width: "100%",
+                          maxWidth: "600px",
+                          margin: "1rem auto",
+                          height: "auto",
+                        }}
+                      >
+                        <Image
+                          src={desc.image}
+                          alt={desc.title || `Image ${index + 1}`}
+                          layout="responsive"
+                          width={800}
+                          height={450}
+                          objectFit="cover"
+                          style={{
+                            borderRadius: "8px",
+                          }}
+                        />
                       </div>
                     )}
                   </div>

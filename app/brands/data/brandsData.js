@@ -55,6 +55,74 @@ import carolinachUniverse2 from "../../assets/images/brands/carolina/ch-2.jpeg";
 
 import carolinaclassicUniverse1 from "../../assets/images/brands/carolina/classic_1.jpg";
 
+// Nina Ricci images imports
+import ninaricciimg1 from "../../assets/images/brands/ninaricci/1.jpg";
+import ninaricciimg2 from "../../assets/images/brands/ninaricci/2.jpg";
+import ninaricciimg3 from "../../assets/images/brands/ninaricci/3.jpg";
+import ninaricciimg4 from "../../assets/images/brands/ninaricci/4.jpg";
+import ninaricciimg5 from "../../assets/images/brands/ninaricci/5.jpg";
+import ninaricciimg6 from "../../assets/images/brands/ninaricci/6.jpg";
+import ninaricciimg7 from "../../assets/images/brands/ninaricci/7.jpg";
+import ninaricciimg8 from "../../assets/images/brands/ninaricci/8.jpg";
+import ninaricciimg9 from "../../assets/images/brands/ninaricci/9.jpg";
+import ninaricciimg10 from "../../assets/images/brands/ninaricci/10.jpg";
+import ninaricciimg11 from "../../assets/images/brands/ninaricci/11.jpg";
+import ninaricciimg12 from "../../assets/images/brands/ninaricci/12.jpg";
+import ninaricciimg13 from "../../assets/images/brands/ninaricci/13.jpg";
+import ninaricciimg14 from "../../assets/images/brands/ninaricci/14.jpg";
+
+import ninacover1 from "../../assets/images/brands/ninaricci/videogallery1.jpg";
+import ninacover2 from "../../assets/images/brands/ninaricci/videogallery2.jpg";
+
+import ninaUniverse1 from "../../assets/images/brands/ninaricci/universe1.jpeg";
+import ninaUniverse2 from "../../assets/images/brands/ninaricci/universe2.png";
+import ninaUniverse3 from "../../assets/images/brands/ninaricci/universe3.png";
+import ninaUniverse4 from "../../assets/images/brands/ninaricci/universe4.png";
+import ninaUniverse5 from "../../assets/images/brands/ninaricci/universe5.png";
+import ninaUniverse6 from "../../assets/images/brands/ninaricci/universe6.jpg";
+import ninaUniverse7 from "../../assets/images/brands/ninaricci/universe7.png";
+
+import ninaclassicUniverse1 from "../../assets/images/brands/ninaricci/classic_1.jpeg";
+import ninaclassicUniverse2 from "../../assets/images/brands/ninaricci/classic_2.jpeg";
+
+// Jean Paul images imports
+import jeanpaulgaultierimg1 from "../../assets/images/brands/jeanpaulgaultier/1.jpg";
+import jeanpaulgaultierimg2 from "../../assets/images/brands/jeanpaulgaultier/2.jpeg";
+import jeanpaulgaultierimg3 from "../../assets/images/brands/jeanpaulgaultier/3.jpg";
+import jeanpaulgaultierimg4 from "../../assets/images/brands/jeanpaulgaultier/4.jpg";
+import jeanpaulgaultierimg5 from "../../assets/images/brands/jeanpaulgaultier/5.jpg";
+import jeanpaulgaultierimg6 from "../../assets/images/brands/jeanpaulgaultier/6.jpg";
+import jeanpaulgaultierimg7 from "../../assets/images/brands/jeanpaulgaultier/7.jpg";
+import jeanpaulgaultierimg8 from "../../assets/images/brands/jeanpaulgaultier/8.jpg";
+import jeanpaulgaultierimg9 from "../../assets/images/brands/jeanpaulgaultier/9.jpg";
+import jeanpaulgaultierimg10 from "../../assets/images/brands/jeanpaulgaultier/10.jpg";
+import jeanpaulgaultierimg11 from "../../assets/images/brands/jeanpaulgaultier/11.jpg";
+import jeanpaulgaultierimg12 from "../../assets/images/brands/jeanpaulgaultier/12.jpg";
+import jeanpaulgaultierimg13 from "../../assets/images/brands/jeanpaulgaultier/13.jpg";
+import jeanpaulgaultierimg14 from "../../assets/images/brands/jeanpaulgaultier/14.jpg";
+import jeanpaulgaultierimg15 from "../../assets/images/brands/jeanpaulgaultier/15.jpg";
+import jeanpaulgaultierimg16 from "../../assets/images/brands/jeanpaulgaultier/16.jpg";
+import jeanpaulgaultierimg17 from "../../assets/images/brands/jeanpaulgaultier/17.png";
+import jeanpaulgaultierimg18 from "../../assets/images/brands/jeanpaulgaultier/18.jpg";
+import jeanpaulgaultierimg19 from "../../assets/images/brands/jeanpaulgaultier/19.jpg";
+
+import jeanpaulclassique1 from "../../assets/images/brands/jeanpaulgaultier/classiquelemale1.png";
+import jeanpaulclassique2 from "../../assets/images/brands/jeanpaulgaultier/classiquelemale2.png";
+import jeanpaulclassique3 from "../../assets/images/brands/jeanpaulgaultier/classiquelemale3.png";
+import jeanpaulclassique4 from "../../assets/images/brands/jeanpaulgaultier/classiquelemale4.jpg";
+
+import jeanpaullabellelebeau1 from "../../assets/images/brands/jeanpaulgaultier/labellelebeau1.png";
+import jeanpaullabellelebeau2 from "../../assets/images/brands/jeanpaulgaultier/labellelebeau2.png";
+import jeanpaullabellelebeau3 from "../../assets/images/brands/jeanpaulgaultier/labellelebeau3.png";
+import jeanpaullabellelebeau4 from "../../assets/images/brands/jeanpaulgaultier/labellelebeau4.png";
+import jeanpaullabellelebeau5 from "../../assets/images/brands/jeanpaulgaultier/labellelebeau5.png";
+
+import jeanpaulscandal1 from "../../assets/images/brands/jeanpaulgaultier/scandal1.png";
+import jeanpaulscandal2 from "../../assets/images/brands/jeanpaulgaultier/scandal2.png";
+import jeanpaulscandal3 from "../../assets/images/brands/jeanpaulgaultier/scandal3.png";
+import jeanpaulscandal4 from "../../assets/images/brands/jeanpaulgaultier/scandal4.jpg";
+import jeanpaulscandal5 from "../../assets/images/brands/jeanpaulgaultier/scandal5.jpg";
+
 export const brandData = {
   carolina: {
     videoBioSections: [
@@ -402,9 +470,37 @@ export const brandData = {
     videos: [
       {
         id: 1,
-        url: "https://rutube.ru/play/embed/72e42953623043a2a1f033af56408fa1/",
+        url: "https://www.youtube.com/embed/3Rc-Zu3zajM",
       },
       //{ id: 2, url: "https://www.youtube.com/embed/YCyZbdqugkw" },
+    ],
+    videogallery: [
+      {
+        id: 1,
+        url: "https://www.youtube.com/embed/oTq7PB_KBzc",
+        cover: ninacover1,
+      },
+      {
+        id: 2,
+        url: "https://www.youtube.com/embed/QWBU38bo61A",
+        cover: ninacover2,
+      },
+    ],
+    images: [
+      { id: 1, url: ninaricciimg1 },
+      { id: 2, url: ninaricciimg2 },
+      { id: 3, url: ninaricciimg3 },
+      { id: 4, url: ninaricciimg4 },
+      { id: 5, url: ninaricciimg5 },
+      { id: 6, url: ninaricciimg6 },
+      { id: 7, url: ninaricciimg7 },
+      { id: 8, url: ninaricciimg8 },
+      { id: 9, url: ninaricciimg9 },
+      { id: 10, url: ninaricciimg10 },
+      { id: 11, url: ninaricciimg11 },
+      { id: 12, url: ninaricciimg12 },
+      { id: 13, url: ninaricciimg13 },
+      { id: 14, url: ninaricciimg14 },
     ],
     bio: {
       subtitle: "",
@@ -461,9 +557,34 @@ export const brandData = {
     videos: [
       {
         id: 1,
-        url: "https://rutube.ru/play/embed/abfc5d8342f9e4b107ed7533d50f308c/",
+        url: "https://www.youtube.com/embed/tuHh9OlcTBg",
+      },
+      {
+        id: 2,
+        url: "https://www.youtube.com/embed/zIupG2oXvIk",
       },
       //{ id: 2, url: "https://www.youtube.com/embed/YCyZbdqugkw" },
+    ],
+    images: [
+      { id: 1, url: jeanpaulgaultierimg1 },
+      { id: 2, url: jeanpaulgaultierimg2 },
+      { id: 3, url: jeanpaulgaultierimg3 },
+      { id: 4, url: jeanpaulgaultierimg4 },
+      { id: 5, url: jeanpaulgaultierimg5 },
+      { id: 6, url: jeanpaulgaultierimg6 },
+      { id: 7, url: jeanpaulgaultierimg7 },
+      { id: 8, url: jeanpaulgaultierimg8 },
+      { id: 9, url: jeanpaulgaultierimg9 },
+      { id: 10, url: jeanpaulgaultierimg10 },
+      { id: 11, url: jeanpaulgaultierimg11 },
+      { id: 12, url: jeanpaulgaultierimg12 },
+      { id: 13, url: jeanpaulgaultierimg13 },
+      { id: 14, url: jeanpaulgaultierimg14 },
+      { id: 15, url: jeanpaulgaultierimg15 },
+      { id: 16, url: jeanpaulgaultierimg16 },
+      { id: 17, url: jeanpaulgaultierimg17 },
+      { id: 18, url: jeanpaulgaultierimg18 },
+      { id: 19, url: jeanpaulgaultierimg19 },
     ],
     bio: {
       subtitle: "",
@@ -682,7 +803,7 @@ export const perfumeryUniverses = {
       historyLink: "#",
       images: [
         { id: 1, url: carolinaBBUniverse1, title: "BAD BOY" },
-        { id: 2, url: carolinaBBUniverse2, title: "BAD BOY LE PARFUM " },
+        { id: 2, url: carolinaBBUniverse2, title: "BAD BOY LE PARFUM" },
         { id: 3, url: carolinaBBUniverse3, title: "BAD BOY COBALT" },
         { id: 4, url: carolinaBBUniverse4, title: "BAD BOY EXTREME" },
         { id: 5, url: carolinaBBUniverse5, title: "BAD BOY COBALT ELIXIR" },
@@ -710,7 +831,7 @@ export const perfumeryUniverses = {
         "Американский модный дом Carolina Herrera регулярно представляет восхитительные коллекции невероятно стильной одежды. Эстетика продукции этой именитой марки заключается в сногсшибательной элегантности, благородной сдержанности и неповторимой соблазнительности. Великолепная парфюмерия бренда также наполнена исключительным изяществом.",
       historyLink: "#",
       images: [
-        { id: 1, url: carolinachUniverse1, title: "CH CAROLINA HERRERA " },
+        { id: 1, url: carolinachUniverse1, title: "CH CAROLINA HERRERA" },
         { id: 2, url: carolinachUniverse2, title: "CH MEN" },
       ],
     },
@@ -721,6 +842,85 @@ export const perfumeryUniverses = {
         "В классической вселенной ароматов от Carolina Herrera сегодня представлен один мужской аромат. И мы смело можем сказать, что это элегантность и изысканность в одном флаконе. Как и любая классика, такой аромат никогда не выйдет из моды и найдёт себе поклонников вовсе времена. Стиль Carolina Herrera чувствуется в каждой ноте...",
       historyLink: "#",
       images: [{ id: 1, url: carolinaclassicUniverse1, title: "CHIC FOR MEN" }],
+    },
+  ],
+  ninaricci: [
+    {
+      title: "Nina",
+      subtitle: "7 ароматов",
+      content:
+        "Самая волшебная сказка и самая романтическая мечта воплотились в культовой парфюмерной вселенной Les Belles de Nina от модного дома Nina Ricci. Композиции представлены в знаменитом флаконе-яблоке, который является современной вариацией невероятного и незабываемого хрустального флакона аромата Filles d’Eve, созданного компанией Lalique еще в 1952 году. Очарование, магия и волшебство ароматов вселенной Les Belles de Nina наполняют каждый флакон этой коллекции.",
+      historyLink: "#",
+      images: [
+        { id: 1, url: ninaUniverse1, title: "NINA" },
+        { id: 2, url: ninaUniverse2, title: "NINA ROUGE" },
+        { id: 3, url: ninaUniverse3, title: "NINA ROSE" },
+        { id: 4, url: ninaUniverse4, title: "NINA EXTRA ROUGE" },
+        { id: 5, url: ninaUniverse5, title: "NINA FLEUR" },
+        { id: 6, url: ninaUniverse6, title: "NINA LE PARFUM" },
+        { id: 7, url: ninaUniverse7, title: "NINA ILLUSION" },
+      ],
+    },
+    {
+      title: "Classic",
+      subtitle: "2 аромата",
+      content:
+        "Классическая вселенная ароматов от Nina Ricci непросто подчеркивает естественную красоту каждой женщины, но и раскрывает ее. Гармония роскоши и простоты, чарующее сочетание естественности и кокетливой игры, дух времени, истории, ольфакторной нитью переплетены с традициями и современностью, превнося в образ каждой женщины свою собственную, обворожительную историю от Нина Риччи.",
+      historyLink: "#",
+      images: [
+        { id: 1, url: ninaclassicUniverse1, title: "L'AIR DU TEMPS EDT" },
+        { id: 2, url: ninaclassicUniverse2, title: "L'AIR DU TEMPS EDP" },
+      ],
+    },
+  ],
+  jeanpaulgaultier: [
+    {
+      title: "CLASSIQUE & LE MALE",
+      subtitle: "4 аромата",
+      content:
+        "Это настоящая любовная история а ля Готье, которая случилась в морском порту! История отдающая дань уважения символическим и иконическим кодам модного дома Готье: корсету и тельняшке.",
+      historyLink: "#",
+      images: [
+        { id: 1, url: jeanpaulclassique1, title: "CLASSIQUE EDT" },
+        { id: 2, url: jeanpaulclassique2, title: "LE MALE EDT" },
+        { id: 3, url: jeanpaulclassique3, title: "LE MALE LE PARFUM EDP" },
+        { id: 4, url: jeanpaulclassique4, title: "LE MALE ELIXIR" },
+      ],
+    },
+    {
+      title: "LA BELLE & LE BEAU",
+      subtitle: "5 ароматов",
+      content:
+        "LA BELLE & LE BEAU — фантазия дизайнера о райских садах. Готье, подобному создателю, в течении 7 дней воплощал нашу идеальную пару в реальность, используя свой безграничный творческий потенциал!",
+      historyLink: "#",
+      images: [
+        { id: 1, url: jeanpaullabellelebeau1, title: "LA BELLE EDP" },
+        { id: 2, url: jeanpaullabellelebeau2, title: "LE BEAU EDT" },
+        { id: 3, url: jeanpaullabellelebeau3, title: "LA BELLE LE PARFUM EDP" },
+        {
+          id: 4,
+          url: jeanpaullabellelebeau4,
+          title: "LE BEAU PARADISE GARDEN",
+        },
+        {
+          id: 5,
+          url: jeanpaullabellelebeau5,
+          title: "LA BELLE PARADISE GARDEN",
+        },
+      ],
+    },
+    {
+      title: "SCANDAL",
+      subtitle: "5 ароматов",
+      content: "Жан-Поль Готье нарядил мужчин в юбки! Скандал!",
+      historyLink: "#",
+      images: [
+        { id: 1, url: jeanpaulscandal1, title: "SCANDAL EDP" },
+        { id: 2, url: jeanpaulscandal2, title: "SO SCANDAL EDP" },
+        { id: 3, url: jeanpaulscandal3, title: "SCANDAL POUR HOMME" },
+        { id: 4, url: jeanpaulscandal4, title: "SCANDAL LE PARFUM" },
+        { id: 5, url: jeanpaulscandal5, title: "SCANDAL POUR HOMME LE PARFUM" },
+      ],
     },
   ],
 };

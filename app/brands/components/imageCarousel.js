@@ -31,6 +31,7 @@ const CustomRightArrow = ({ onClick }) => (
 );
 
 const ImageCarousel = ({ galleryItems }) => {
+  console.log(galleryItems, "galleryItems");
   return (
     <div className={styles.carouselWrapper}>
       <div className={styles["carousel-container"]}>

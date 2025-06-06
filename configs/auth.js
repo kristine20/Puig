@@ -1,7 +1,7 @@
 import VKProvider from "next-auth/providers/vk";
 import YandexProvider from "next-auth/providers/yandex";
 // import GoogleProvider from "next-auth/providers/google";
-// import OdnoklassnikiProvider from "next-auth/providers/odnoklassniki";
+// import OAuthProvider from "next-auth/providers/oauth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authConfig = {
@@ -20,9 +20,48 @@ export const authConfig = {
       clientId: process.env.NEXT_PUBLIC_YANDEX_CLIENT_ID,
       clientSecret: process.env.NEXT_PUBLIC_YANDEX_CLIENT_SECRET,
     }),
-    // OdnoklassnikiProvider({
-    //   clientId: process.env.OK_CLIENT_ID,
-    //   clientSecret: process.env.OK_CLIENT_SECRET,
+    // OAuthProvider({
+    //   id: "odnoklassniki",
+    //   name: "Odnoklassniki",
+    //   type: "oauth",
+    //   version: "2.0",
+    //   scope: "GET_EMAIL",
+    //   params: { grant_type: "authorization_code" },
+    //   accessTokenUrl: "https://api.ok.ru/oauth/token.do",
+    //   requestTokenUrl: "https://connect.ok.ru/oauth/authorize",
+    //   authorizationUrl:
+    //     "https://connect.ok.ru/oauth/authorize?response_type=code",
+    //   profileUrl: "https://api.ok.ru/fb.do",
+    //   clientId: process.env.ODNOKLASSNIKI_CLIENT_ID,
+    //   clientSecret: process.env.ODNOKLASSNIKI_CLIENT_SECRET,
+    //   profile: async (profile, tokens) => {
+    //     const access_token = tokens.access_token;
+    //     const publicKey = process.env.ODNOKLASSNIKI_PUBLIC_KEY;
+    //     const clientSecret = process.env.ODNOKLASSNIKI_CLIENT_SECRET;
+
+    //     const sigSource = `application_key=${publicKey}method=users.getCurrentUser${crypto
+    //       .createHash("md5")
+    //       .update(`${access_token}${clientSecret}`)
+    //       .digest("hex")}`;
+    //     const sig = crypto.createHash("md5").update(sigSource).digest("hex");
+
+    //     const { data } = await axios.get("https://api.ok.ru/fb.do", {
+    //       params: {
+    //         method: "users.getCurrentUser",
+    //         access_token,
+    //         application_key: publicKey,
+    //         sig,
+    //         format: "json",
+    //       },
+    //     });
+
+    //     return {
+    //       id: data.uid,
+    //       name: `${data.first_name} ${data.last_name}`,
+    //       email: data.email || null, // Email is only returned if permission granted
+    //       image: data.pic_3 || null,
+    //     };
+    //   },
     // }),
 
     // 🔐 LOGIN

@@ -9,7 +9,7 @@ import Image from "next/image";
 const SocialsLogin = () => {
   const handleLogin = (provider) => {
     signIn(provider, {
-      callbackUrl: `https://puigback.artean.ru/api/auth/callback/${provider}`,
+      callbackUrl: "/main", //`https://puigback.artean.ru/api/auth/callback/${provider}`,
       // redirect: true,
     });
   };
@@ -48,10 +48,7 @@ const SocialsLogin = () => {
       >
         <Image src={vk} alt="PUIG VK" className={styles.socialIcon} />
       </button>
-      <button
-        // onClick={() => handleLogin("odnoklassniki")}
-        className={styles.socialButton}
-      >
+      <button onClick={() => handleLogin("ok")} className={styles.socialButton}>
         <Image src={ok} alt="PUIG OK" className={styles.socialIcon} />
       </button>
       <button
